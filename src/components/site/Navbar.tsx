@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import gsap from "gsap";
@@ -26,8 +25,14 @@ export default function Navbar() {
 
   useEffect(() => {
     if (!menuRef.current) return;
-    // initial state hidden
-    gsap.set(menuRef.current, { display: "none", height: 0, opacity: 0 });
+    // initial state hidden with improved initial values
+    gsap.set(menuRef.current, { 
+      display: "none", 
+      height: 0, 
+      opacity: 0,
+      transformOrigin: "top",
+      willChange: "transform, opacity, height" 
+    });
   }, []);
 
   useEffect(() => {
@@ -38,7 +43,13 @@ export default function Navbar() {
       gsap.fromTo(
         el,
         { height: 0, opacity: 0, y: -8 },
-        { height: "auto", opacity: 1, y: 0, duration: 0.25, ease: "power2.out" },
+        { 
+          height: "auto", 
+          opacity: 1, 
+          y: 0, 
+          duration: 0.3,
+          ease: "power3.out"
+        },
       );
       const links = el.querySelectorAll("a, button");
       gsap.fromTo(links, { opacity: 0, y: -4 }, { opacity: 1, y: 0, duration: 0.25, stagger: 0.03, ease: "power2.out", delay: 0.05 });
@@ -49,11 +60,10 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-white/10 bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
-        <div className="flex items-center gap-3">
+      <div className="container flex items-center justify-between">
+        <div className="flex items-center gap-3 py-3">
           <Link to="/" className="flex items-center gap-2" aria-label="Tech Kshitiz home">
-            <img src="https://res.cloudinary.com/dmu1qh4dj/image/upload/v1756782359/cropped_circle_image_y3vznc.png" alt="Tech Kshitiz logo" className="h-8 w-8 select-none rounded-full ring-1 ring-white/10" />
-            <span className="text-xl font-bold font-display tracking-tight">Tech Kshitiz</span>
+            <img src="/logo/logo 2.png" alt="Tech Kshitiz logo" className="h-12 w-auto select-none" />
           </Link>
         </div>
 

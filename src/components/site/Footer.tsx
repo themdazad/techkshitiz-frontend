@@ -3,15 +3,15 @@ import { Instagram, Twitter, Youtube, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-background/60 backdrop-blur">
+    <footer className="border-t border-white/10 bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container py-10 grid gap-8 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-2">
             <img src="https://res.cloudinary.com/dmu1qh4dj/image/upload/v1756782359/cropped_circle_image_y3vznc.png" alt="Tech Kshitiz logo" className="h-7 w-7 rounded-full ring-1 ring-white/10" />
-            <span className="font-display text-lg font-semibold">Tech Kshitiz</span>
+            <span className="font-display text-lg font-semibold">Techkshitiz</span>
           </div>
           <p className="mt-3 text-sm text-muted-foreground max-w-sm">
-            A celebration of innovation and creativity. Join us 21–23 Sept 2025 for hackathons, design sprints, quizzes and more.
+            A celebration of innovation and creativity. Join us 22-24 September 2025 for hackathons, design sprints, quizzes and more.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-8 md:contents">
@@ -46,8 +46,8 @@ export default function Footer() {
       </div>
       <div className="border-t">
         <div className="container py-6 text-xs text-gray-500 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+          <span className="text-gray-400">Technical Club of GEC, Siwan</span>
           <span>© 2025 Tech Kshitiz. All rights reserved.</span>
-          <span className="text-gray-400">Designed and Developed by Ayushmaan Shandilya</span>
         </div>
       </div>
     </footer>

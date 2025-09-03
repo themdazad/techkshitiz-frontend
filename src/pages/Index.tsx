@@ -69,27 +69,27 @@ export default function Index() {
       </div>
 
       {/* Hero */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden py-16">
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-[radial-gradient(1200px_400px_at_50%_-10%,hsl(var(--primary)/0.15),transparent),radial-gradient(800px_300px_at_80%_10%,hsl(var(--accent)/0.15),transparent)]" />
           <div className="absolute inset-0 opacity-[0.06] [background-image:linear-gradient(90deg,#fff_1px,transparent_1px),linear-gradient(#fff_1px,transparent_1px)] [background-size:40px_40px] mix-blend-overlay" />
         </div>
         {/* Watermark logo behind content */}
-        <div aria-hidden className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
+        {/* <div aria-hidden className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F0916ebaabc21457c896a581f1ee94f90%2F46f3594dbd9c4ecc83390d1d701bd27c?format=webp&width=800"
             alt="Tech Kshitiz large logo"
             className="w-[80vw] max-w-[820px] opacity-[0.08] md:opacity-[0.12] mix-blend-screen blur-[0.5px] animate-float"
           />
-        </div>
+        </div> */}
         <div className="container pt-12 md:pt-16 pb-16">
           <div className="relative z-10 grid gap-10 md:grid-cols-2 items-start">
             <div className="max-w-3xl animate-fade-up">
-              <p className="text-xs md:text-sm font-medium text-primary uppercase tracking-wide">21–23 September 2025 • Campus</p>
+              <p className="text-xs md:text-sm font-medium text-primary uppercase tracking-wide">22-23 September 2025 • Campus</p>
               <h1 className="heading mt-3 text-5xl md:text-7xl">
-                <span id="hero-title" className="hero-letters inline-block will-change-transform">
+                <span id="hero-title" className="hero-letters inline-block will-change-transform font-mono">
                   {"Tech Kshitiz".split("").map((ch, i) => (
-                    <span key={i} className={cn("gradient-text hero-letter hero-3d inline-block", ch === " " && "inline-block w-2")}> {ch === " " ? "\u00A0" : ch} </span>
+                    <span key={i} className={cn("gradient-text hero-letter hero-3d inline-block font-['Kode_Mono'] tracking-wider", ch === " " && "inline-block w-3")}> {ch === " " ? "\u00A0" : ch} </span>
                   ))}
                 </span>
               </h1>
