@@ -49,7 +49,7 @@ export default function Index() {
         letters.forEach((el) => el.classList.add("animate-gradient"));
       });
   }, []);
-
+ const brochureUrl = "https://drive.google.com";
   return (
     <div id="top" className="relative">
       {/* Global background stars video */}
@@ -100,6 +100,10 @@ export default function Index() {
               <div className="mt-4 lg:mt-6 flex flex-wrap gap-3">
                 <span className="inline-flex btn-gradient" onMouseMove={(e)=>{const t=e.currentTarget as HTMLElement; const r=t.getBoundingClientRect(); t.style.setProperty('--mx', `${e.clientX - r.left}px`);}}>
                   <Link to="/events" className="rounded-full bg-background/70 px-5 py-2.5 text-foreground text-sm border border-white/10 hover:bg-white/5 transition-colors">View Events</Link>
+                </span>
+                <span className="w-full lg:hidden" />
+                <span className="inline-flex btn-gradient" onMouseMove={(e)=>{const t=e.currentTarget as HTMLElement; const r=t.getBoundingClientRect(); t.style.setProperty('--mx', `${e.clientX - r.left}px`);}}>
+                  <a href={brochureUrl} target="_blank" rel="noreferrer" className="rounded-full bg-background/70 px-5 py-2.5 text-foreground text-sm border border-white/10 hover:bg-white/5 transition-colors">Download Brochure</a>
                 </span>
               </div>
             </div>
