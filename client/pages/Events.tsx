@@ -1,0 +1,169 @@
+import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
+import { events, type Category } from "@/data/events";
+import { Button } from "@/components/ui/button";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+
+const categories: (Category | "All")[] = [
+  "All",
+  "Coding & Technology",
+  "Hardware & Mechatronics",
+  "E-sports & Gaming",
+  "Engineering & Design",
+  "Brain Games & Quizzes",
+  "Creative & Showcase",
+];
+
+export default function EventsPage() {
+  const [query, setQuery] = useState("");
+  const [cat, setCat] = useState<(typeof categories)[number]>("All");
+
+  const filtered = useMemo(() => {
+    return events.filter((e) => {
+      const matchesCat = cat === "All" ? true : e.category === cat;
+      const q = query.toLowerCase().trim();
+      const matchesQ =
+        !q || [e.title, e.blurb, ...e.tags].join(" ").toLowerCase().includes(q);
+      return matchesCat && matchesQ;
+    });
+  }, [cat, query]);
+
+  return (
+    <div className="relative">
+      <section className="container pt-10 pb-6">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div>
+            <h1 className="heading text-3xl md:text-4xl">Explore Events</h1>
+            <p className="mt-2 text-muted-foreground max-w-2xl">
+              All the events occuring in Tech Kshitiz'25
+            </p>
+          </div>
+          <div className="flex gap-2">
+            <input
+              className="w-64 max-w-[60vw] rounded-md border border-white/10 bg-background/40 backdrop-blur px-3 py-2 outline-none focus:ring-2 focus:ring-primary"
+              placeholder="Search events..."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              aria-label="Search events"
+            />
+          </div>
+        </div>
+
+        <div className="mt-6 flex flex-wrap gap-2">
+          {categories.map((c) => {
+            const active = c === cat;
+            return (
+              <button
+                key={c}
+                onClick={() => setCat(c)}
+                className={cn(
+                  "rounded-full border px-3 py-1 text-sm",
+                  active
+                    ? "bg-gray-900 text-white border-gray-900"
+                    : "hover:bg-muted",
+                )}
+                aria-pressed={active}
+              >
+                {c}
+              </button>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="container pb-20">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {filtered.map((e) => (
+            <article
+              key={e.id}
+              className="group rounded-xl border border-white/10 bg-card/80 p-5 shadow-sm transition hover:shadow-md focus-within:shadow-md animate-card no-parallax"
+            >
+              <Link
+                to={`/events/${e.id}`}
+                className="block overflow-hidden rounded-lg"
+              >
+                <AspectRatio ratio={1}>
+                  <img
+                    src={`https://res.cloudinary.com/dxpleao6v/image/upload/${encodeURIComponent(e.imgUrl)}`}
+                    alt={`${e.title} photo`}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </AspectRatio>
+              </Link>
+
+              <div className="mt-4 flex items-start justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10 text-lg">
+                    <span aria-hidden>{e.emoji}</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">
+                      <Link to={`/events/${e.id}`} className="hover:underline">
+                        {e.title}
+                      </Link>
+                    </h3>
+                    <p className="text-xs text-gray-500">
+                      {e.category} • {e.level}
+                    </p>
+                  </div>
+                </div>
+                {e.duration.includes("TBA") && (
+                  <span
+                    className="rounded-full bg-yellow-100 px-2 py-0.5 text-[10px] font-medium text-yellow-900"
+                    title="Timing or duration to be announced"
+                  >
+                    TBA
+                  </span>
+                )}
+              </div>
+
+              <p className="mt-3 text-sm text-muted-foreground min-h-10">
+                {e.blurb}
+              </p>
+
+              <dl className="mt-4 grid grid-cols-2 gap-2 text-xs">
+                <div className="rounded-md border border-white/10 bg-white/5 p-2">
+                  <dt className="text-gray-300">Duration</dt>
+                  <dd className="text-gray-200">{e.duration}</dd>
+                </div>
+                <div className="rounded-md border border-white/10 bg-white/5 p-2">
+                  <dt className="text-gray-300">Location</dt>
+                  <dd className="text-gray-200">{e.location}</dd>
+                </div>
+              </dl>
+
+              <div className="mt-4 flex items-center justify-between">
+                <div className="flex flex-wrap gap-1">
+                  {e.tags.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-full bg-white/5 px-2 py-0.5 text-[10px] text-muted-foreground"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex gap-2">
+                  <Link
+                    to={`/events/${e.id}`}
+                    className="inline-flex items-center rounded-md border border-white/10 px-3 py-2 text-sm hover:bg-white/5"
+                  >
+                    Details
+                  </Link>
+                  <a href={e.registerLink} target="_blank" rel="noreferrer">
+                    <Button size="sm">Register</Button>
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function cn(...c: (string | false | null | undefined)[]) {
+  return c.filter(Boolean).join(" ");
+}
