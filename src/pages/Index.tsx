@@ -5,7 +5,7 @@ import { sponsors } from "@/data/sponsors";
 import gsap from "gsap";
 import { useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { Instagram, Twitter, Youtube, Linkedin } from "lucide-react";
+import { Instagram, Twitter, Youtube, Linkedin, Download } from "lucide-react";
 import { HeroCountdown } from "@/components/site/HeroCountdown";
 
 const highlights = [
@@ -103,7 +103,7 @@ export default function Index() {
                 </span>
                 <span className="w-full lg:hidden" />
                 <span className="inline-flex btn-gradient" onMouseMove={(e)=>{const t=e.currentTarget as HTMLElement; const r=t.getBoundingClientRect(); t.style.setProperty('--mx', `${e.clientX - r.left}px`);}}>
-                  <a href={brochureUrl} target="_blank" rel="noreferrer" className="rounded-full bg-background/70 px-5 py-2.5 text-foreground text-sm border border-white/10 hover:bg-white/5 transition-colors">Download Brochure</a>
+                  <a href={brochureUrl} target="_blank" rel="noreferrer" className="rounded-full bg-background/70 px-5 py-2.5 text-foreground text-sm border border-white/10 hover:bg-white/5 transition-colors"><Download/> Brochure</a>
                 </span>
               </div>
             </div>
