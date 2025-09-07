@@ -14,9 +14,32 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Titillium Web", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Noto Sans", "Ubuntu", "Cantarell", "Helvetica Neue", "Arial", "sans-serif"],
+        sans: [
+          "Titillium Web",
+          "ui-sans-serif",
+          "system-ui",
+          "-apple-system",
+          "Segoe UI",
+          "Roboto",
+          "Noto Sans",
+          "Ubuntu",
+          "Cantarell",
+          "Helvetica Neue",
+          "Arial",
+          "sans-serif",
+        ],
         display: ["Rowdies", "Titillium Web", "ui-sans-serif", "system-ui"],
-        mono: ["Kode Mono", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"],
+        mono: [
+          "Kode Mono",
+          "ui-monospace",
+          "SFMono-Regular",
+          "Menlo",
+          "Monaco",
+          "Consolas",
+          "Liberation Mono",
+          "Courier New",
+          "monospace",
+        ],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -95,7 +118,16 @@ export default {
           from: { opacity: "0", transform: "translateY(8px) scale(.98)" },
           to: { opacity: "1", transform: "translateY(0) scale(1)" },
         },
+        "gradient-x": {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
+        shine: {
+          "0%": { transform: "translateX(-100%) skewX(-15deg)" },
+          "100%": { transform: "translateX(200%) skewX(-15deg)" },
+        },
       },
+
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
@@ -103,6 +135,8 @@ export default {
         float: "float 6s ease-in-out infinite",
         "button-breathe": "button-breathe 3.2s ease-in-out infinite",
         "card-pop": "card-pop .5s ease-out both",
+        "gradient-x": "gradient-x 6s ease infinite",
+        shine: "shine 1.5s ease-in-out infinite",
       },
       boxShadow: {
         glow: "0 0 0 2px hsl(var(--ring) / 0.2), 0 10px 20px -10px hsl(var(--primary) / 0.6)",

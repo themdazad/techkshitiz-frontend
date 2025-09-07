@@ -91,7 +91,8 @@ export default function Index() {
         letters.forEach((el) => el.classList.add("animate-gradient"));
       });
   }, []);
-  const brochureUrl = "https://drive.google.com";
+  const brochureUrl =
+    "https://drive.google.com/file/d/1rK4fDuKG4xNPsj8MeFEEfT2wzeUF05Yp/view?usp=sharing";
   return (
     <div id="top" className="relative">
       {/* Global background stars video */}
@@ -119,7 +120,7 @@ export default function Index() {
         <div className="container py-2 text-xs md:text-sm text-muted-foreground flex items-center gap-2">
           <span className="live-dot" aria-hidden />
           <span className="gradient-text animate-gradient">
-            Live update: Registration closes 18 Sept{" "}
+            Live update: Registration Opens from 10th Sept{" "}
           </span>
         </div>
       </div>
@@ -142,18 +143,18 @@ export default function Index() {
           <div className="relative z-10 grid gap-10 md:grid-cols-2 items-start">
             <div className="max-w-3xl animate-fade-up">
               <p className="text-xs md:text-sm font-medium text-primary uppercase tracking-wide">
-                22-23 September 2025 • Campus
+                22-24 September 2025 • GEC Siwan Campus
               </p>
-              <h1 className="heading mt-3 text-5xl md:text-7xl">
+              <h1 className="heading mt-3 text-4xl md:text-7xl">
                 <span
                   id="hero-title"
                   className="hero-letters inline-block will-change-transform font-mono"
                 >
-                  {"Tech Kshitiz".split("").map((ch, i) => (
+                  {"TECH KSHITIZ".split("").map((ch, i) => (
                     <span
                       key={i}
                       className={cn(
-                        "gradient-text hero-letter hero-3d inline-block font-['Kode_Mono'] tracking-wider",
+                        "gradient-text hero-letter hero-3d inline-block font-['Kode_Mono'] tracking-wider animate-gradient",
                         ch === " " && "inline-block w-3",
                       )}
                     >
@@ -172,35 +173,37 @@ export default function Index() {
               <HeroCountdown className="mt-5 lg:hidden" />
 
               <div className="mt-4 lg:mt-6 flex flex-wrap gap-3">
-                <span
-                  className="inline-flex btn-gradient live-banner"
-                  onMouseMove={(e) => {
-                    const t = e.currentTarget as HTMLElement;
-                    const r = t.getBoundingClientRect();
-                    t.style.setProperty("--mx", `${e.clientX - r.left}px`);
-                  }}
-                >
+                {/* View Events Button */}
+                <span className="relative inline-flex rounded-full overflow-hidden border border-white/10">
+                  {/* Moving gradient background */}
+                  <span className="absolute inset-0 bg-gradient-to-r from-primary/30 via-accent/30 to-secondary/30 bg-[length:200%_200%] animate-gradient-x" />
+                  {/* Shine sweep effect */}
+                  <span className="absolute inset-0 bg-white/20 animate-shine" />
+                  {/* Overlay for readability */}
+                  <span className="absolute inset-0 bg-background/60 backdrop-blur-sm" />
                   <Link
                     to="/events"
-                    className="rounded-full bg-background/70 px-5 py-2.5 text-foreground text-sm border border-white/10 hover:bg-white/5 transition-colors"
+                    className="relative z-10 rounded-full px-5 py-2.5 text-foreground text-sm hover:scale-105 transition-transform duration-300"
                   >
                     View Events
                   </Link>
                 </span>
+
                 <span className="w-full lg:hidden" />
-                <span
-                  className="inline-flex btn-gradient live-banner"
-                  onMouseMove={(e) => {
-                    const t = e.currentTarget as HTMLElement;
-                    const r = t.getBoundingClientRect();
-                    t.style.setProperty("--mx", `${e.clientX - r.left}px`);
-                  }}
-                >
+
+                {/* Brochure Button */}
+                <span className="relative inline-flex rounded-full overflow-hidden border border-white/10">
+                  {/* Moving gradient background */}
+                  <span className="absolute inset-0 bg-gradient-to-r from-primary/30 via-accent/30 to-secondary/30 bg-[length:200%_200%] animate-gradient-x" />
+                  {/* Shine sweep effect */}
+                  <span className="absolute inset-0 bg-white/20 animate-shine" />
+                  {/* Overlay for readability */}
+                  <span className="absolute inset-0 bg-background/60 backdrop-blur-sm" />
                   <a
                     href={brochureUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full bg-background/70 px-5 py-2.5 text-foreground text-sm border border-white/10 hover:bg-white/5 transition-colors"
+                    className="relative z-10 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-foreground text-sm hover:scale-105 transition-transform duration-300"
                   >
                     <svg
                       className="h-4 w-4"
@@ -236,7 +239,7 @@ export default function Index() {
 
       {/* What's new in 2025 (from About) */}
       <section className="container pt-4 pb-10">
-        <h2 className="heading text-2xl md:text-3xl">What’s new in 2025</h2>
+        <h2 className="heading text-3xl md:text-4xl">What's new in 2025</h2>
         <div className="mt-4 grid gap-4 md:grid-cols-3">
           <div className="rounded-xl border border-white/15 bg-gradient-to-br from-white/5 to-transparent backdrop-blur p-5 shadow-sm">
             <p className="font-semibold text-white">Three‑Day Mega Fest</p>
@@ -295,7 +298,7 @@ export default function Index() {
 
       <section className="container py-10 md:py-14">
         <div className="flex items-end justify-between">
-          <h2 className="heading text-2xl md:text-3xl">Highlights</h2>
+          <h2 className="heading text-3xl md:text-4xl">Highlights</h2>
           <Link
             className="text-sm text-muted-foreground hover:text-foreground"
             to="/events"
@@ -329,7 +332,7 @@ export default function Index() {
       <section className="bg-background/30 border-y border-white/5 backdrop-blur">
         <div className="container py-12">
           <div className="flex items-end justify-between">
-            <h2 className="heading text-2xl md:text-3xl">Quick Schedule</h2>
+            <h2 className="heading text-3xl md:text-4xl">Quick Schedule</h2>
             <Link
               to="/schedule"
               className="text-sm text-muted-foreground hover:text-foreground"
@@ -362,9 +365,9 @@ export default function Index() {
       </section>
 
       {/* Sponsors */}
-      <section id="sponsors" className="container py-12">
+      {/* <section id="sponsors" className="container py-12">
         <div className="flex items-end justify-between">
-          <h2 className="heading text-2xl md:text-3xl">Sponsors</h2>
+          <h2 className="heading text-3xl md:text-4xl">Sponsors</h2>
           <a
             className="text-sm text-muted-foreground hover:text-foreground"
             href="#"
@@ -387,12 +390,12 @@ export default function Index() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Winners teaser */}
       <section className="container py-12">
         <div className="flex items-end justify-between">
-          <h2 className="heading text-2xl md:text-3xl">Winners</h2>
+          <h2 className="heading text-3xl md:text-4xl">Winners</h2>
           <Link
             className="text-sm text-muted-foreground hover:text-foreground"
             to="/winners"
@@ -428,7 +431,7 @@ export default function Index() {
       {/* Gallery teaser */}
       <section className="container pb-20">
         <div className="flex items-end justify-between">
-          <h2 className="heading text-2xl md:text-3xl">Gallery</h2>
+          <h2 className="heading text-3xl md:text-4xl">Gallery</h2>
           <Link
             className="text-sm text-muted-foreground hover:text-foreground"
             to="/gallery"
@@ -462,7 +465,22 @@ export default function Index() {
       {/* Social */}
       <section className="container pb-20">
         <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10 p-8 text-center backdrop-blur">
-          <h3 className="heading text-2xl">Be part of the community</h3>
+          <h3 className="heading text-2xl md:text-3xl ">
+            <span className="section-letters inline-block will-change-transform">
+              {"Be the part of our community".split("").map((ch, i) => (
+                <span
+                  key={i}
+                  className={cn(
+                    "gradient-text hero-letter hero-3d inline-block",
+                    ch === " " && "inline-block w-2",
+                  )}
+                >
+                  {" "}
+                  {ch === " " ? "\u00A0" : ch}{" "}
+                </span>
+              ))}
+            </span>
+          </h3>
           <p className="mt-2 text-muted-foreground">
             Follow for updates, teasers, and behind‑the‑scenes.
           </p>

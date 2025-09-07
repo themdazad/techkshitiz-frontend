@@ -1,6 +1,8 @@
 import { useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
 import { events } from "@/data/events";
+import { Download, Calendar, ArrowRight,Clock, Users, IndianRupee, Trophy } from "lucide-react";
+
 
 export default function EventDetail() {
   const { id } = useParams<{ id: string }>();
@@ -23,7 +25,7 @@ export default function EventDetail() {
         <span className="mx-1">/</span>
         <Link to="/events" className="hover:underline">Events</Link>
         <span className="mx-1">/</span>
-        <span className="text-gray-900">{ev.title}</span>
+        <span className="text-gray-400">{ev.title}</span>
       </nav>
 
       <header className="mt-3 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
@@ -36,16 +38,31 @@ export default function EventDetail() {
             <p className="mt-1 text-muted-foreground">{ev.category} • {ev.level} • {ev.duration} • {ev.location}</p>
           </div>
         </div>
-        <div className="flex gap-2">
-          <a href={ev.rulebookLink} target="_blank" rel="noreferrer" className="rounded-md border px-4 py-3 text-sm hover:bg-muted">Download Rulebook</a>
-          <a href={ev.registerLink} target="_blank" rel="noreferrer" className="rounded-md bg-primary px-5 py-3 text-primary-foreground shadow-glow hover:brightness-105">Register</a>
+        <div className="flex gap-3">
+          <a 
+            href={ev.rulebookLink} 
+            target="_blank" 
+            rel="noreferrer" 
+            className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-sm font-medium backdrop-blur transition-all duration-200 hover:bg-white/10 hover:border-white/30"
+          >
+            <Download className="h-4 w-4" />
+            Rulebook
+          </a>
+          <a 
+            href={ev.registerLink} 
+            target="_blank" 
+            rel="noreferrer" 
+            className="relative overflow-hidden rounded-lg bg-gradient-to-r from-primary via-purple-600 to-primary px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] before:transition-transform before:duration-700 hover:before:translate-x-[100%]"
+          >
+            Register Now
+          </a>
         </div>
       </header>
 
       <section className="mt-8 grid gap-6 md:grid-cols-3">
-        <article className="md:col-span-2 rounded-xl border border-white/10 bg-card/60 backdrop-blur p-6 animate-card">
+        <article className="md:col-span-2 rounded-xl border border-white/10 bg-card/60 backdrop-blur p-6 transition-all duration-200 hover:border-white/20 hover:bg-card/70 animate-card">
           <h2 className="font-semibold">Overview</h2>
-          <p className="mt-2 text-gray-300">{ev.blurb} This event encourages creativity and collaboration. Bring your laptop and enthusiasm. Rules and prompts will be shared on the day of the event. Time management and team communication are key to success.</p>
+          <p className="mt-2 text-gray-300">{ev.blura}{ev.blurb}</p>
           <div className="mt-4 flex flex-wrap gap-2">
             {ev.tags.map((t) => (
               <span key={t} className="rounded-full bg-white/5 px-3 py-1 text-xs text-muted-foreground">{t}</span>
@@ -65,9 +82,9 @@ export default function EventDetail() {
               <h3 className="font-semibold">Coordinators</h3>
               <ul className="mt-2 space-y-2 text-sm text-gray-300">
                 {(ev.coordinators ?? [
-                  { name: "Kritika", phone: "+91 9000000001" },
-                  { name: "Ayushmaan", phone: "+91 9060717563" },
-                  { name: "Rahul", phone: "+91 9000000003" },
+                  { name: "Ayushmaan", phone: "+91 0000000000" },
+                  { name: "Ayushmaan", phone: "+91 0000000000" },
+                  { name: "Ayushmaan", phone: "+91 0000000000" },
                 ]).map((c, i) => (
                   <li key={i} className="flex items-center justify-between rounded-md border border-white/10 bg-white/5 px-3 py-2">
                     <span className="font-medium">{c.name}</span>
@@ -78,20 +95,23 @@ export default function EventDetail() {
             </div>
           </div>
         </article>
-        <article className="rounded-xl border border-white/10 bg-card/60 backdrop-blur p-6 animate-card">
+        <article className="rounded-xl border border-white/10 bg-card/60 backdrop-blur p-6 transition-all duration-200 hover:border-white/20 hover:bg-card/70 animate-card">
           <h3 className="font-semibold">At a glance</h3>
           <dl className="mt-3 grid grid-cols-1 gap-3 text-sm">
             <div><dt className="text-gray-500">Prizes</dt><dd className="font-medium">Goodies, Certificate</dd></div>
             <div><dt className="text-gray-500">Duration</dt><dd className="font-medium">{ev.duration}</dd></div>
             <div><dt className="text-gray-500">Location</dt><dd className="font-medium">{ev.location}</dd></div>
-            <div><dt className="text-gray-500">Category</dt><dd className="font-medium">{ev.category}</dd></div>
+            <div><dt className="text-gray-500">Registration Fee </dt><dd className="font-medium">{ev.registration}</dd></div>
           </dl>
-          <div className="mt-4 flex items-center justify-between gap-3">
-            <div className="inline-flex btn-gradient" onMouseMove={(e)=>{const t=e.currentTarget as HTMLElement; const r=t.getBoundingClientRect(); t.style.setProperty('--mx', `${e.clientX - r.left}px`);}}>
-              <Link to="/schedule" className="inline-flex items-center rounded-full bg-background/70 backdrop-blur px-3 py-1.5 text-sm border border-white/10 hover:bg-white/5 transition-colors">
-                Check schedule →
-              </Link>
-            </div>
+          <div className="mt-6">
+            <Link 
+              to="/schedule" 
+              className="inline-flex items-center gap-2 w-full justify-center rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 group"
+            >
+              <Calendar className="h-4 w-4" />
+              Check Schedule
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
           </div>
         </article>
       </section>
@@ -100,9 +120,13 @@ export default function EventDetail() {
         <h2 className="font-semibold">Similar events</h2>
         <div className="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {events.filter((e) => e.category === ev.category && e.id !== ev.id).slice(0,3).map((s) => (
-            <Link key={s.id} to={`/events/${s.id}`} className="rounded-xl border border-white/10 bg-card/60 backdrop-blur p-4 hover:shadow-md">
+            <Link 
+              key={s.id} 
+              to={`/events/${s.id}`} 
+              className="rounded-xl border border-white/10 bg-card/60 backdrop-blur p-4 transition-all duration-200 hover:shadow-md hover:border-white/20 hover:bg-card/70"
+            >
               <div className="flex items-center gap-3"><span className="text-lg" aria-hidden>{s.emoji}</span><span className="font-medium">{s.title}</span></div>
-              <p className="mt-1 text-sm text-muted-foreground">{s.blurb}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{s.blura}</p>
             </Link>
           ))}
         </div>

@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container py-10 grid gap-8 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-2">
-            <img src="https://res.cloudinary.com/dmu1qh4dj/image/upload/v1756782359/cropped_circle_image_y3vznc.png" alt="Tech Kshitiz logo" className="h-7 w-7 rounded-full ring-1 ring-white/10" />
+            {/* <img src="https://res.cloudinary.com/dmu1qh4dj/image/upload/v1756782359/cropped_circle_image_y3vznc.png" alt="Tech Kshitiz logo" className="h-7 w-7 rounded-full ring-1 ring-white/10" /> */}
             <span className="font-display text-lg font-semibold">Techkshitiz</span>
           </div>
           <p className="mt-3 text-sm text-muted-foreground max-w-sm">
