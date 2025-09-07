@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button";
 
 export default function ContactPage() {
   const address = "Campus of Siwan Engineering College, Mairwa Road, Old Suta Mill Factory, Bhada Khurd, Siwan Pin -841226";
-  const phone = "+919060717563";
-  const email = "gecsiwan@gmail.com";
+  const phone = "+917547899822";
+  const email = "gecsiwan.techkshitiz@gmail.com";
 
   const mapQuery = encodeURIComponent("Siwan Engineering College, Mairwa Road, Bhada Khurd, Siwan 841226");
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
@@ -21,18 +21,19 @@ export default function ContactPage() {
           <h2 className="font-semibold flex items-center gap-2"><MapPin className="h-4 w-4" /> Address</h2>
           <p className="mt-2 text-sm text-gray-300">{address}</p>
           <div className="mt-3">
-            <a href={mapsUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-primary-foreground text-sm">View Direction</a>
+            <a href={mapsUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary via-purple-600 to-primary px-4 py-2 text-white text-sm">View Direction</a>
+           
           </div>
         </article>
         <article className="rounded-xl border border-white/10 bg-card/60 backdrop-blur p-6">
           <h2 className="font-semibold flex items-center gap-2"><Phone className="h-4 w-4" /> Phone</h2>
           <p className="mt-2 text-sm text-gray-300">Find us on: <a className="underline" href={mapsUrl} target="_blank" rel="noreferrer">Google Maps</a></p>
-          <a className="mt-3 inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-primary-foreground" href={`tel:${phone}`}>Call Now</a>
+          <a className="mt-3 inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary via-purple-600 to-primary px-4 py-2 text-white" href={`tel:${phone}`}>Call Now</a>
         </article>
         <article className="rounded-xl border border-white/10 bg-card/60 backdrop-blur p-6">
           <h2 className="font-semibold flex items-center gap-2"><Mail className="h-4 w-4" /> Email</h2>
           <p className="mt-2 text-sm text-gray-300">Email us on:</p>
-          <a className="mt-3 inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-primary-foreground text-sm" href={`mailto:${email}`}>Email Now</a>
+          <a className="mt-3 inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary via-purple-600 to-primary px-4 py-2 text-white text-sm" href={`mailto:${email}`}>Email Now</a>
         </article>
       </section>
 

@@ -16,23 +16,22 @@ const navItems = [
   { to: "/contact", label: "Contact" },
 ];
 
-
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
-  const start = useMemo(() => new Date("2025-09-21T08:00:00"), []);
+  const start = useMemo(() => new Date("2025-09-22T08:00:00+05:30"), []);
   const { diff, days, hours, minutes, seconds } = useCountdown(start);
   const live = diff === 0;
 
   useEffect(() => {
     if (!menuRef.current) return;
     // initial state hidden with improved initial values
-    gsap.set(menuRef.current, { 
-      display: "none", 
-      height: 0, 
+    gsap.set(menuRef.current, {
+      display: "none",
+      height: 0,
       opacity: 0,
       transformOrigin: "top",
-      willChange: "transform, opacity, height" 
+      willChange: "transform, opacity, height",
     });
   }, []);
 
@@ -44,18 +43,36 @@ export default function Navbar() {
       gsap.fromTo(
         el,
         { height: 0, opacity: 0, y: -8 },
-        { 
-          height: "auto", 
-          opacity: 1, 
-          y: 0, 
+        {
+          height: "auto",
+          opacity: 1,
+          y: 0,
           duration: 0.3,
-          ease: "power3.out"
+          ease: "power3.out",
         },
       );
       const links = el.querySelectorAll("a, button");
-      gsap.fromTo(links, { opacity: 0, y: -4 }, { opacity: 1, y: 0, duration: 0.25, stagger: 0.03, ease: "power2.out", delay: 0.05 });
+      gsap.fromTo(
+        links,
+        { opacity: 0, y: -4 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.25,
+          stagger: 0.03,
+          ease: "power2.out",
+          delay: 0.05,
+        },
+      );
     } else {
-      gsap.to(el, { height: 0, opacity: 0, y: -6, duration: 0.2, ease: "power2.in", onComplete: () => gsap.set(el, { display: "none" }) });
+      gsap.to(el, {
+        height: 0,
+        opacity: 0,
+        y: -6,
+        duration: 0.2,
+        ease: "power2.in",
+        onComplete: () => gsap.set(el, { display: "none" }),
+      });
     }
   }, [open]);
 
@@ -63,8 +80,16 @@ export default function Navbar() {
     <header className="sticky top-0 z-40 w-full border-b border-white/10 bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex items-center justify-between">
         <div className="flex items-center gap-3 py-3">
-          <Link to="/" className="flex items-center gap-2" aria-label="Tech Kshitiz home">
-            <img src="/logo/logo 2.png" alt="Tech Kshitiz logo" className="h-12 w-auto select-none" />
+          <Link
+            to="/"
+            className="flex items-center gap-2"
+            aria-label="Tech Kshitiz home"
+          >
+            <img
+              src="/logo/logo 2.png"
+              alt="Tech Kshitiz logo"
+              className="h-12 w-auto select-none"
+            />
           </Link>
         </div>
 
@@ -87,32 +112,46 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center gap-3">
           <div className="relative rounded-full p-[1px] bg-gradient-to-r from-primary/60 via-accent/60 to-secondary/60 shadow-sm">
-            <div className={cn(
-              "inline-flex items-center gap-2 rounded-full bg-background/70 backdrop-blur px-3 py-1.5 text-sm font-medium border border-white/10",
-              live && "bg-green-50/90",
-            )} aria-live="polite">
+            <div
+              className={cn(
+                "inline-flex items-center gap-2 rounded-full bg-background/70 backdrop-blur px-3 py-1.5 text-sm font-medium border border-white/10",
+                live && "bg-green-50/90",
+              )}
+              aria-live="polite"
+            >
               {live ? (
                 <>
-                  <span className="inline-block h-2 w-2 rounded-full bg-green-500 animate-pulse" aria-hidden />
+                  <span
+                    className="inline-block h-2 w-2 rounded-full bg-green-500 animate-pulse"
+                    aria-hidden
+                  />
                   Live Now
                 </>
               ) : (
                 <div className="flex items-center gap-2">
                   <span className="text-gray-300">Starts in:</span>
                   <span className="inline-flex items-center gap-1">
-                    <span className="rounded-md bg-gray-900 text-white px-1.5 py-0.5 text-[10px] font-semibold tabular-nums">{String(days).padStart(2, "0")}</span>
+                    <span className="rounded-md bg-gray-900 text-white px-1.5 py-0.5 text-[10px] font-semibold tabular-nums">
+                      {String(days).padStart(2, "0")}
+                    </span>
                     <span className="text-xs text-gray-300">d</span>
                   </span>
                   <span className="inline-flex items-center gap-1">
-                    <span className="rounded-md bg-gray-900 text-white px-1.5 py-0.5 text-[10px] font-semibold tabular-nums">{String(hours).padStart(2, "0")}</span>
+                    <span className="rounded-md bg-gray-900 text-white px-1.5 py-0.5 text-[10px] font-semibold tabular-nums">
+                      {String(hours).padStart(2, "0")}
+                    </span>
                     <span className="text-xs text-gray-300">h</span>
                   </span>
                   <span className="inline-flex items-center gap-1">
-                    <span className="rounded-md bg-gray-900 text-white px-1.5 py-0.5 text-[10px] font-semibold tabular-nums">{String(minutes).padStart(2, "0")}</span>
+                    <span className="rounded-md bg-gray-900 text-white px-1.5 py-0.5 text-[10px] font-semibold tabular-nums">
+                      {String(minutes).padStart(2, "0")}
+                    </span>
                     <span className="text-xs text-gray-300">m</span>
                   </span>
                   <span className="inline-flex items-center gap-1">
-                    <span className="rounded-md bg-gray-900 text-white px-1.5 py-0.5 text-[10px] font-semibold tabular-nums">{String(seconds).padStart(2, "0")}</span>
+                    <span className="rounded-md bg-gray-900 text-white px-1.5 py-0.5 text-[10px] font-semibold tabular-nums">
+                      {String(seconds).padStart(2, "0")}
+                    </span>
                     <span className="text-xs text-gray-300">s</span>
                   </span>
                 </div>

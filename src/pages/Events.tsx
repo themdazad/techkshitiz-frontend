@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { events, type Category } from "@/data/events";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Clock, Users, UserCheck, Trophy } from "lucide-react";
 
 const categories: (Category | "All")[] = [
   "All",
@@ -23,7 +24,7 @@ export default function EventsPage() {
       const matchesCat = cat === "All" ? true : e.category === cat;
       const q = query.toLowerCase().trim();
       const matchesQ =
-        !q || [e.title, e.blurb, ...e.tags].join(" ").toLowerCase().includes(q);
+        !q || [e.title, e.blura, ...e.tags].join(" ").toLowerCase().includes(q);
       return matchesCat && matchesQ;
     });
   }, [cat, query]);
@@ -76,13 +77,13 @@ export default function EventsPage() {
           {filtered.map((e) => (
             <article
               key={e.id}
-              className="group rounded-xl border border-white/10 bg-card/80 p-5 shadow-sm transition hover:shadow-md focus-within:shadow-md animate-card no-parallax"
+              className="group rounded-xl border border-white/10 bg-card/80 p-5 shadow-sm transition-all duration-200 hover:shadow-md hover:border-white/20 focus-within:shadow-md focus-within:border-white/20 animate-card no-parallax"
             >
               <Link
                 to={`/events/${e.id}`}
                 className="block overflow-hidden rounded-lg"
               >
-                <AspectRatio ratio={1}>
+                <AspectRatio ratio={16/9}>
                   <img
                     src={`https://res.cloudinary.com/dxpleao6v/image/upload/${encodeURIComponent(e.imgUrl)}`}
                     alt={`${e.title} photo`}
@@ -119,19 +120,29 @@ export default function EventsPage() {
               </div>
 
               <p className="mt-3 text-sm text-muted-foreground min-h-10">
-                {e.blurb}
+                {e.blura}
               </p>
 
-              <dl className="mt-4 grid grid-cols-2 gap-2 text-xs">
-                <div className="rounded-md border border-white/10 bg-white/5 p-2">
-                  <dt className="text-gray-300">Duration</dt>
-                  <dd className="text-gray-200">{e.duration}</dd>
+              <div className="mt-4 grid grid-cols-2 gap-3 text-xs">
+                <div className="flex items-center gap-2 p-3">
+                  <Clock className="h-4 w-4 text-blue-500 flex-shrink-0" />
+                  <span className="text-gray-300">{e.duration}</span>
                 </div>
-                <div className="rounded-md border border-white/10 bg-white/5 p-2">
-                  <dt className="text-gray-300">Location</dt>
-                  <dd className="text-gray-200">{e.location}</dd>
+                <div className="flex items-center gap-2 p-3">
+                  <Users className="h-4 w-4 text-green-500 flex-shrink-0" />
+                  <span className="text-gray-300">{e.teamSize}</span>
                 </div>
-              </dl>
+              </div>
+              <div className="mt-2 grid grid-cols-2 gap-3 text-xs">
+                <div className="flex items-center gap-2 p-3">
+                  <UserCheck className="h-4 w-4 text-purple-500 flex-shrink-0" />
+                  <span className="text-gray-300">{e.registration}</span>
+                </div>
+                <div className="flex items-center gap-2 p-3">
+                  <Trophy className="h-4 w-4 text-amber-500 flex-shrink-0" />
+                  <span className="text-gray-300">{e.prize}</span>
+                </div>
+              </div>
 
               <div className="mt-4 flex items-center justify-between">
                 <div className="flex flex-wrap gap-1">

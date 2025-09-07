@@ -6,14 +6,14 @@ export default function SchedulePage() {
       <header className="mb-6">
         <h1 className="heading text-3xl md:text-4xl">Event Schedule</h1>
         <p className="mt-2 max-w-3xl text-muted-foreground">
-          Three-day schedule for Tech Kshitiz (21–23 September 2025).
+          Three-day schedule for Tech Kshitiz (22–24 September 2025).
         </p>
       </header>
 
       {([
-        { key: "Day 01", date: "21 Sept 2025" },
-        { key: "Day 02", date: "22 Sept 2025" },
-        { key: "Day 03", date: "23 Sept 2025" },
+        { key: "Day 01", date: "22 Sept 2025" },
+        { key: "Day 02", date: "23 Sept 2025" },
+        { key: "Day 03", date: "24 Sept 2025" },
       ] as const).map((d) => (
         <section key={d.key} className="mt-10">
           <div className="flex items-end justify-between">
