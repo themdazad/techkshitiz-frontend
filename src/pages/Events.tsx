@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { events, type Category } from "@/data/events";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Clock, Users, UserCheck, Trophy } from "lucide-react";
+import { Clock, Users, IndianRupee, Trophy } from "lucide-react";
 
 const categories: (Category | "All")[] = [
   "All",
@@ -135,7 +135,7 @@ export default function EventsPage() {
               </div>
               <div className="mt-2 grid grid-cols-2 gap-3 text-xs">
                 <div className="flex items-center gap-2 p-3">
-                  <UserCheck className="h-4 w-4 text-purple-500 flex-shrink-0" />
+                  <IndianRupee className="h-4 w-4 text-purple-500 flex-shrink-0" />
                   <span className="text-gray-300">{e.registration}</span>
                 </div>
                 <div className="flex items-center gap-2 p-3">

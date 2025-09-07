@@ -1,7 +1,8 @@
 import { useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
 import { events } from "@/data/events";
-import { Download, Calendar, ArrowRight } from "lucide-react";
+import { Download, Calendar, ArrowRight,Clock, Users, IndianRupee, Trophy } from "lucide-react";
+
 
 export default function EventDetail() {
   const { id } = useParams<{ id: string }>();
@@ -100,7 +101,7 @@ export default function EventDetail() {
             <div><dt className="text-gray-500">Prizes</dt><dd className="font-medium">Goodies, Certificate</dd></div>
             <div><dt className="text-gray-500">Duration</dt><dd className="font-medium">{ev.duration}</dd></div>
             <div><dt className="text-gray-500">Location</dt><dd className="font-medium">{ev.location}</dd></div>
-            <div><dt className="text-gray-500">Category</dt><dd className="font-medium">{ev.category}</dd></div>
+            <div><dt className="text-gray-500">Registration Fee </dt><dd className="font-medium">{ev.registration}</dd></div>
           </dl>
           <div className="mt-6">
             <Link 
