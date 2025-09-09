@@ -64,9 +64,9 @@ export default function EventDetail() {
           <h2 className="font-semibold">Overview</h2>
           <p className="mt-2 text-gray-300">{ev.blura}{ev.blurb}</p>
           <div className="mt-4 flex flex-wrap gap-2">
-            {ev.tags.map((t) => (
+            {/* {ev.tags.map((t) => (
               <span key={t} className="rounded-full bg-white/5 px-3 py-1 text-xs text-muted-foreground">{t}</span>
-            ))}
+            ))} */}
           </div>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2">

@@ -145,16 +145,16 @@ export default function Index() {
               <p className="text-xs md:text-sm font-medium text-primary uppercase tracking-wide">
                 22-24 September 2025 • GEC Siwan Campus
               </p>
-              <h1 className="heading mt-3 text-4xl md:text-7xl">
+              <h1 className="heading mt-3 text-6xl md:text-9xl">
                 <span
                   id="hero-title"
                   className="hero-letters inline-block will-change-transform font-mono"
                 >
-                  {"TECH KSHITIZ".split("").map((ch, i) => (
+                  {"techkshitiz".split("").map((ch, i) => (
                     <span
                       key={i}
                       className={cn(
-                        "gradient-text hero-letter hero-3d inline-block font-['Kode_Mono'] tracking-wider animate-gradient",
+                        "gradient-text hero-letter hero-3d inline-block tracking-tighter font-['Kode_Mono'] animate-gradient",
                         ch === " " && "inline-block w-3",
                       )}
                     >
@@ -365,35 +365,37 @@ export default function Index() {
       </section>
 
       {/* Sponsors */}
-      {/* <section id="sponsors" className="container py-12">
-        <div className="flex items-end justify-between">
-          <h2 className="heading text-3xl md:text-4xl">Sponsors</h2>
-          <a
-            className="text-sm text-muted-foreground hover:text-foreground"
-            href="#"
-          >
-            Media kit →
-          </a>
-        </div>
-        <div className="mt-6 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center">
-          {sponsors.map((src, i) => (
-            <div
-              key={i}
-              className="h-12 rounded-md border bg-card/60 backdrop-blur grid place-items-center animate-card"
-            >
-              <img
-                src={src}
-                alt="Sponsor logo"
-                className="max-h-8 object-contain opacity-80"
-                loading="lazy"
-              />
-            </div>
-          ))}
-        </div>
-      </section> */}
+      <section id="sponsors" className="container py-12">
+  <div className="flex items-end justify-between">
+    <h2 className="heading text-3xl md:text-4xl">Sponsors</h2>
+    <a
+      className="text-sm text-muted-foreground hover:text-foreground"
+      href="#"
+    >
+      Media kit →
+    </a>
+  </div>
+
+  <div className="mt-6 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center">
+    {sponsors.map((src, i) => (
+      <div
+        key={i}
+        className="aspect-[5/3] rounded-md border bg-card/60 backdrop-blur grid place-items-center animate-card"
+      >
+        <img
+          src={src}
+          alt="Sponsor logo"
+          className="w-full h-full object-cover p-4"
+          loading="lazy"
+        />
+      </div>
+    ))}
+  </div>
+</section>
+
 
       {/* Winners teaser */}
-      <section className="container py-12">
+      {/* <section className="container py-12">
         <div className="flex items-end justify-between">
           <h2 className="heading text-3xl md:text-4xl">Winners</h2>
           <Link
@@ -426,7 +428,7 @@ export default function Index() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Gallery teaser */}
       <section className="container pb-20">

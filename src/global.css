@@ -210,3 +210,17 @@
 @media (prefers-reduced-motion: reduce) {
   .glow-ring::before { animation: none !important; }
 }
+
+@font-face {
+  font-family: 'Magz';
+  src: url('/public/fonts/Magz.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue';
+  src: url('/public/fonts/NeueMachina-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

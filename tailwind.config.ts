@@ -40,6 +40,8 @@ export default {
           "Courier New",
           "monospace",
         ],
+        magz: ["Magz", "sans-serif"],
+        neue :["neue","sans-serif"]
       },
       colors: {
         border: "hsl(var(--border))",
