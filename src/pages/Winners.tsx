@@ -17,42 +17,42 @@ const winnersByEvent: EventWinners[] = [
     { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
   ]},
-  { event: "Technical Quiz", id: "technical-quiz", rows: [
+  { event: "Web Designing", id: "technical-quiz", rows: [
     { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
   ]},
-  { event: "IoT Fusion", id: "iot-fusion", rows: [
+  { event: "Typing Master", id: "iot-fusion", rows: [
     { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
   ]},
-  { event: "E-Sports", id: "e-sports", rows: [
+  { event: "IoT Fusion", id: "e-sports", rows: [
     { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
   ]},
-  { event: "Chess Online", id: "chess-online", rows: [
+  { event: "RC Car Racing", id: "chess-online", rows: [
     { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
   ]},
-  { event: "Graphic Design", id: "graphic-design", rows: [
+  { event: "E-sports (BGMI,Free Fire)", id: "graphic-design", rows: [
     { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
   ]},
-  { event: "Circuit Design", id: "circuit-design", rows: [
+  { event: "Bridge Designing", id: "circuit-design", rows: [
     { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
   ]},
-  { event: "Bridge Design", id: "bridge-design", rows: [
+  { event: "AutoCAD Designing", id: "bridge-design", rows: [
     { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
   ]},
-  { event: "Crosswords", id: "crosswords", rows: [
+  { event: "Circuit Designing", id: "crosswords", rows: [
     { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
@@ -62,27 +62,32 @@ const winnersByEvent: EventWinners[] = [
     { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
   ]},
-  { event: "Crafting & Decorating Stalls", id: "crafting-stalls", rows: [
+  { event: "Technical Quiz", id: "crafting-stalls", rows: [
     { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
   ]},
-  { event: "Rangoli Event", id: "rangoli-event", rows: [
+  { event: "Rubix Cube Challange", id: "rangoli-event", rows: [
     { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
   ]},
-  { event: "Tech Flash: Logo & Legacy", id: "tech-flash", rows: [
+  { event: "Videography Competition", id: "tech-flash", rows: [
     { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
   ]},
-  { event: "Extempore (Technical)", id: "extempore", rows: [
+  { event: "Graphic Designing", id: "extempore", rows: [
     { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
   ]},
-  { event: "Rubix Cube", id: "rubix-cube", rows: [
+  { event: "Crafting & Decoration Stalls", id: "rubix-cube", rows: [
+    { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
+    { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
+    { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
+  ]},
+   { event: "Technical Rangoli", id: "rubix-cube", rows: [
     { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
     { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
@@ -98,9 +103,9 @@ export default function WinnersPage() {
         <h1 className="heading text-3xl md:text-4xl">Winners</h1>
         <p className="mt-2 max-w-2xl text-muted-foreground">Spotlight on champions across events</p>
       </header>
-
+      {/* Winners Marquee */}
       {/* Auto-scrolling strip */}
-      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-card/60 backdrop-blur p-6 animate-card">
+      {/* <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-card/60 backdrop-blur p-6 animate-card">
         <div className="marquee w-max flex items-stretch gap-8">
           {looped.map((w, i) => (
             <figure key={`${w.name}-${i}`} className="shrink-0 w-40 text-center">
@@ -112,7 +117,7 @@ export default function WinnersPage() {
             </figure>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Winners tables per event */}
       <section className="mt-10 space-y-10">
