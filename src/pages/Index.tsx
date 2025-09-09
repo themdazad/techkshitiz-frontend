@@ -73,7 +73,7 @@ export default function Index() {
     tl.to(letters, {
       y: -36,
       opacity: 0,
-      filter: "blur(4px)",
+      filter: "blur(0px)",
       duration: 0.32,
       ease: "power2.in",
       stagger: 0.02,
@@ -145,15 +145,29 @@ export default function Index() {
               <p className="text-xs md:text-sm font-medium text-primary uppercase tracking-wide">
                 22-24 September 2025 • GEC Siwan Campus
               </p>
-              <h1 className="heading mt-3 text-4xl md:text-8xl">
-                <span id="hero-title" className="hero-letters inline-block will-change-transform">
-                  {"Tech Kshitiz".split("").map((ch, i) => (
-                    <span key={i} className={cn("gradient-text hero-letter hero-3d inline-block", ch === " " && "inline-block w-2")}> {ch === " " ? "\u00A0" : ch} </span>
+              <h1 className="heading mt-3 text-[2.80rem] md:text-7xl  ">
+                <span
+                  id="hero-title"
+                  className="hero-letters inline-block will-change-transform"
+                >
+                  {"TechKshitiz".split("").map((ch, i) => (
+                    <span
+                      key={i}
+                      className={cn(
+                        "gradient-text hero-letter hero-3d inline-block",
+                        ch === " " && "inline-block w-2",
+                      )}
+                    >
+                      {" "}
+                      {ch === " " ? "\u00A0" : ch}{" "}
+                    </span>
                   ))}
-                  <span className="hero-letter hero-3d inline-block text-white">'25</span>
+                  <span className="hero-letter hero-3d inline-block text-white">
+                    '25
+                  </span>
                 </span>
               </h1>
-              <p className="mt-4 text-lg md:text-xl text-muted-foreground">
+              <p className="mt-4 text-lg md:text-lg text-muted-foreground">
                 Imagine. Build. Break. Create. A modern technical fest that
                 celebrates innovation, collaboration, and hands‑on tech
                 organised by Government Engineering College Siwan.
@@ -233,7 +247,7 @@ export default function Index() {
           <div className="rounded-xl border border-white/15 bg-gradient-to-br from-white/5 to-transparent backdrop-blur p-5 shadow-sm">
             <p className="font-semibold text-white">Three‑Day Mega Fest</p>
             <p className="mt-1 text-sm text-gray-300">
-              21–23 Sept 2025 with schedules and streamlined registrations.
+              22–24 Sept 2025 with schedules and streamlined registrations.
             </p>
           </div>
           <div className="rounded-xl border border-white/15 bg-gradient-to-br from-white/5 to-transparent backdrop-blur p-5 shadow-sm">
@@ -246,8 +260,7 @@ export default function Index() {
           <div className="rounded-xl border border-white/15 bg-gradient-to-br from-white/5 to-transparent backdrop-blur p-5 shadow-sm">
             <p className="font-semibold text-white">Industry Connect</p>
             <p className="mt-1 text-sm text-gray-300">
-              Mentor hours, alumni talks, and project showcases to elevate
-              outcomes.
+              Mentor hours,Team work and project showcases to elevate outcomes.
             </p>
           </div>
         </div>
@@ -269,9 +282,9 @@ export default function Index() {
           <div className="grid grid-cols-2 gap-4">
             {[
               { label: "Projects Completed", value: "48+" },
-              { label: "Total Participants", value: "1200+" },
+              { label: "Total Participants", value: "250+" },
               { label: "Prizes Worth", value: "₹50K+" },
-              { label: "Total Events", value: "17+" },
+              { label: "Total Events", value: "16+" },
             ].map((m) => (
               <div
                 key={m.label}
@@ -355,33 +368,32 @@ export default function Index() {
 
       {/* Sponsors */}
       <section id="sponsors" className="container py-12">
-  <div className="flex items-end justify-between">
-    <h2 className="heading text-3xl md:text-4xl">Sponsors</h2>
-    <a
-      className="text-sm text-muted-foreground hover:text-foreground"
-      href="#"
-    >
-      Media kit →
-    </a>
-  </div>
+        <div className="flex items-end justify-between">
+          <h2 className="heading text-3xl md:text-4xl">Sponsors</h2>
+          <a
+            className="text-sm text-muted-foreground hover:text-foreground"
+            href="#"
+          >
+            Media kit →
+          </a>
+        </div>
 
-  <div className="mt-6 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center">
-    {sponsors.map((src, i) => (
-      <div
-        key={i}
-        className="aspect-[5/3] rounded-md border bg-card/60 backdrop-blur grid place-items-center animate-card"
-      >
-        <img
-          src={src}
-          alt="Sponsor logo"
-          className="w-full h-full object-cover p-4"
-          loading="lazy"
-        />
-      </div>
-    ))}
-  </div>
-</section>
-
+        <div className="mt-6 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center">
+          {sponsors.map((src, i) => (
+            <div
+              key={i}
+              className="aspect-[6/4] rounded-md border bg-card/60 backdrop-blur grid place-items-center animate-card"
+            >
+              <img
+                src={src}
+                alt="Sponsor logo"
+                className="w-full h-full object-contain p-4"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* Winners teaser */}
       {/* <section className="container py-12">

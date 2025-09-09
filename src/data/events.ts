@@ -48,7 +48,7 @@ export const events: EventItem[] = [
     registration:"99",
     category: "Coding & Technology",
     tags: ["team", "innovation"],
-    rulebookLink: "https://drive.google.com/file/d/1rH07gxyOUc1dwF5IGVwj6e0Kl-G6ykJF/view?usp=sharing",
+    rulebookLink: "https://drive.google.com/file/d/1Yny4rPLp4VOysFcYZHwy6ECEKRpDV-SG/view?usp=sharing",
     registerLink: "https://forms.gle/594YQ4Bs9e8Kg6QU9",
     rules: [
       "Original code only",
@@ -100,7 +100,7 @@ export const events: EventItem[] = [
     registration:"99",
     category: "Coding & Technology",
     tags: ["solo", "speed"],
-    rulebookLink: "https://drive.google.com/file/d/1kHBQOexdyMH0KzI0ZvPZM5Q87mxGptPz/view?usp=sharing",
+    rulebookLink: "https://drive.google.com/file/d/1dq_S9uc6-FcAfkWiMZ2F31vqcFrDI6_0/view?usp=sharing",
     registerLink: "https://forms.gle/ZMx6zkd5NKXhQPMp6",
     coordinators: [
       { name: "Ayushmaan Shandilya", phone: "+91 8969352535" },
@@ -199,12 +199,13 @@ export const events: EventItem[] = [
     prize: "Goodies , Certificate",
     registration: "99",
     tags: ["team", "tournament"],
-    rulebookLink: "https://drive.google.com/file/d/1HD78NZ-d9B8NGRf1PPBm1TR7-57c32jp/view?usp=sharing",
+    rulebookLink: "https://drive.google.com/file/d/1qI1ykF4NvnUsF5A3XkmwWtkpfBk7905-/view?usp=sharing",
     registerLink: "https://forms.gle/Wt35Fb7Zy3ZiCUsX6",
     coordinators: [
       { name: "Danish Hamraj", phone: "+91 8969352535" },
       { name: "Rajnish Kumar", phone: "+91 8825107885" },
       { name: "Pratik Kumar", phone: "+91 9123250583" },
+      { name: "Rajeev Sharma", phone: "+91 9304477244" },
       { name: "Priyanshu Raj", phone: "+91 6207795220" },
       { name: "Vivekanad Kumar", phone: "+91 7367911077" },
       { name: "Ayush Kumar", phone: "+91 9304005082" },
@@ -254,6 +255,7 @@ export const events: EventItem[] = [
     rulebookLink: "https://drive.google.com/file/d/1v-0zLsF9PYdGvaGUrvkgAsyuz6qk8oQs/view?usp=sharing",
     registerLink: "https://forms.gle/fzBSrFNfrykCYUPn8",
     coordinators: [
+      { name: "Saurabh Mishra", phone: "+91 9973320409" },
       { name: "Priyanshu Kumar", phone: "+91 9771945740" },
       { name: "Nirbhay Singh", phone: "+91 9708115614" },
     ],
@@ -425,7 +427,7 @@ export const events: EventItem[] = [
     registration:"Free",
     category: "Creative & Showcase",
     tags: ["team", "craft"],
-    rulebookLink: DEFAULT_RULEBOOK,
+    rulebookLink: "https://drive.google.com/file/d/1mgavU1ne8s2BjC1pXo7TLu6IFn2YHB0c/view?usp=sharing",
     registerLink: "https://forms.gle/XL3ivtmQd8ctNG9D6",
     coordinators: [
       { name: "Ruchi Kumari", phone: "............" },
