@@ -35,7 +35,7 @@ export default function EventDetail() {
           </div>
           <div>
             <h1 className="heading text-3xl md:text-4xl">{ev.title}</h1>
-            <p className="mt-1 text-muted-foreground">{ev.category} • {ev.level} • {ev.duration} • {ev.location}</p>
+            <p className="mt-1 text-muted-foreground">{ev.category} • {ev.duration} • {ev.location}</p>
           </div>
         </div>
         <div className="flex gap-3">

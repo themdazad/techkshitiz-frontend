@@ -92,7 +92,7 @@ export default function Index() {
       });
   }, []);
   const brochureUrl =
-    "https://drive.google.com/file/d/1rK4fDuKG4xNPsj8MeFEEfT2wzeUF05Yp/view?usp=sharing";
+    "https://drive.google.com/file/d/1t_T-MOSRUjyo9WucdQBOTGEKfnXX-Nst/view?usp=sharing";
   return (
     <div id="top" className="relative">
       {/* Global background stars video */}
@@ -145,23 +145,12 @@ export default function Index() {
               <p className="text-xs md:text-sm font-medium text-primary uppercase tracking-wide">
                 22-24 September 2025 • GEC Siwan Campus
               </p>
-              <h1 className="heading mt-3 text-6xl md:text-9xl">
-                <span
-                  id="hero-title"
-                  className="hero-letters inline-block will-change-transform font-mono"
-                >
-                  {"techkshitiz".split("").map((ch, i) => (
-                    <span
-                      key={i}
-                      className={cn(
-                        "gradient-text hero-letter hero-3d inline-block tracking-tighter font-['Kode_Mono'] animate-gradient",
-                        ch === " " && "inline-block w-3",
-                      )}
-                    >
-                      {" "}
-                      {ch === " " ? "\u00A0" : ch}{" "}
-                    </span>
+              <h1 className="heading mt-3 text-4xl md:text-8xl">
+                <span id="hero-title" className="hero-letters inline-block will-change-transform">
+                  {"Tech Kshitiz".split("").map((ch, i) => (
+                    <span key={i} className={cn("gradient-text hero-letter hero-3d inline-block", ch === " " && "inline-block w-2")}> {ch === " " ? "\u00A0" : ch} </span>
                   ))}
+                  <span className="hero-letter hero-3d inline-block text-white">'25</span>
                 </span>
               </h1>
               <p className="mt-4 text-lg md:text-xl text-muted-foreground">

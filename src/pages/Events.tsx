@@ -105,7 +105,7 @@ export default function EventsPage() {
                       </Link>
                     </h3>
                     <p className="text-xs text-gray-500">
-                      {e.category} • {e.level}
+                      {e.category} • 
                     </p>
                   </div>
                 </div>
