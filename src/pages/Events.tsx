@@ -105,7 +105,7 @@ export default function EventsPage() {
                       </Link>
                     </h3>
                     <p className="text-xs text-gray-500">
-                      {e.category} • {e.level}
+                      {e.category} • 
                     </p>
                   </div>
                 </div>
@@ -146,14 +146,14 @@ export default function EventsPage() {
 
               <div className="mt-4 flex items-center justify-between">
                 <div className="flex flex-wrap gap-1">
-                  {e.tags.map((t) => (
+                  {/* {e.tags.map((t) => (
                     <span
                       key={t}
                       className="rounded-full bg-white/5 px-2 py-0.5 text-[10px] text-muted-foreground"
                     >
                       {t}
                     </span>
-                  ))}
+                  ))} */}
                 </div>
                 <div className="flex gap-2">
                   <Link

@@ -35,7 +35,7 @@ export default function EventDetail() {
           </div>
           <div>
             <h1 className="heading text-3xl md:text-4xl">{ev.title}</h1>
-            <p className="mt-1 text-muted-foreground">{ev.category} • {ev.level} • {ev.duration} • {ev.location}</p>
+            <p className="mt-1 text-muted-foreground">{ev.category} • {ev.duration} • {ev.location}</p>
           </div>
         </div>
         <div className="flex gap-3">
@@ -64,9 +64,9 @@ export default function EventDetail() {
           <h2 className="font-semibold">Overview</h2>
           <p className="mt-2 text-gray-300">{ev.blura}{ev.blurb}</p>
           <div className="mt-4 flex flex-wrap gap-2">
-            {ev.tags.map((t) => (
+            {/* {ev.tags.map((t) => (
               <span key={t} className="rounded-full bg-white/5 px-3 py-1 text-xs text-muted-foreground">{t}</span>
-            ))}
+            ))} */}
           </div>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2">

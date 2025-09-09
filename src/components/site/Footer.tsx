@@ -8,7 +8,7 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-2">
             {/* <img src="https://res.cloudinary.com/dmu1qh4dj/image/upload/v1756782359/cropped_circle_image_y3vznc.png" alt="Tech Kshitiz logo" className="h-7 w-7 rounded-full ring-1 ring-white/10" /> */}
-            <span className="font-display text-lg font-semibold">Techkshitiz</span>
+            <span id="hero-title" className="font-display text-4xl">Techkshitiz</span>
           </div>
           <p className="mt-3 text-sm text-muted-foreground max-w-sm">
             A celebration of innovation and creativity. Join us 22-24 September 2025 for hackathons, design sprints, quizzes and more.
