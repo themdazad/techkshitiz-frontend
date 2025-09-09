@@ -9,7 +9,7 @@ const navItems = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/events", label: "Events" },
-  { to: "/members", label: "Members" },
+  // { to: "/members", label: "Members" },
   { to: "/schedule", label: "Schedule" },
   { to: "/gallery", label: "Gallery" },
   { to: "/winners", label: "Winners" },
@@ -100,7 +100,7 @@ export default function Navbar() {
               to={item.to}
               className={({ isActive }) =>
                 cn(
-                  "relative text-sm font-medium text-gray-300 hover:text-white transition-colors after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:rounded after:bg-gradient-to-r after:from-primary after:via-accent after:to-secondary after:transition-all",
+                  "relative text-sm font-medium text-gray-300 hover:text-white transition-colors after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:rounded after:bg-gradient-to-r after:from-primary after:via-accent after:to-secondary after:transition-all font-spacemono",
                   isActive && "text-white after:w-full",
                 )
               }

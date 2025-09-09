@@ -52,7 +52,7 @@ export default function EventDetail() {
             href={ev.registerLink} 
             target="_blank" 
             rel="noreferrer" 
-            className="relative overflow-hidden rounded-lg bg-gradient-to-r from-primary via-purple-600 to-primary px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] before:transition-transform before:duration-700 hover:before:translate-x-[100%]"
+            className="relative overflow-hidden rounded-lg bg-gradient-to-r from-primary via-sky-600 to-primary px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] before:transition-transform before:duration-700 hover:before:translate-x-[100%]"
           >
             Register Now
           </a>
@@ -70,14 +70,14 @@ export default function EventDetail() {
           </div>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2">
-            <div>
+            {/* <div>
               <h3 className="font-semibold">Rules</h3>
               <ul className="mt-2 list-disc pl-5 text-sm text-gray-300 space-y-1">
                 {(ev.rules ?? ["Original work only","Follow time limits","Respect fair play"]).map((r, i) => (
                   <li key={i}>{r}</li>
                 ))}
               </ul>
-            </div>
+            </div> */}
             <div>
               <h3 className="font-semibold">Coordinators</h3>
               <ul className="mt-2 space-y-2 text-sm text-gray-300">
@@ -98,17 +98,17 @@ export default function EventDetail() {
         <article className="rounded-xl border border-white/10 bg-card/60 backdrop-blur p-6 transition-all duration-200 hover:border-white/20 hover:bg-card/70 animate-card">
           <h3 className="font-semibold">At a glance</h3>
           <dl className="mt-3 grid grid-cols-1 gap-3 text-sm">
-            <div><dt className="text-gray-500">Prizes</dt><dd className="font-medium">Goodies, Certificate</dd></div>
-            <div><dt className="text-gray-500">Duration</dt><dd className="font-medium">{ev.duration}</dd></div>
-            <div><dt className="text-gray-500">Location</dt><dd className="font-medium">{ev.location}</dd></div>
-            <div><dt className="text-gray-500">Registration Fee </dt><dd className="font-medium">{ev.registration}</dd></div>
+            <div><dt className="text-gray-500 font-gruppo">Prizes</dt><dd className="font-medium font-spacemono">Goodies, Certificate</dd></div>
+            <div><dt className="text-gray-500 font-gruppo">Duration</dt><dd className="font-medium font-spacemono">{ev.duration}</dd></div>
+            <div><dt className="text-gray-500 font-gruppo">Location</dt><dd className="font-medium font-spacemono">{ev.location}</dd></div>
+            <div><dt className="text-gray-500 font-gruppo">Registration Fee </dt><dd className="font-medium font-spacemono">{ev.registration}</dd></div>
           </dl>
           <div className="mt-6">
             <Link 
               to="/schedule" 
-              className="inline-flex items-center gap-2 w-full justify-center rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 group"
+              className="inline-flex items-center gap-2 w-full justify-center rounded-lg bg-gradient-to-r from-blue-600 to-sky-600 px-4 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 group"
             >
-              <Calendar className="h-4 w-4" />
+              <Calendar className="h-4 w-4 " />
               Check Schedule
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>

@@ -14,7 +14,7 @@ export default function Footer() {
             A celebration of innovation and creativity. Join us 22-24 September 2025 for hackathons, design sprints, quizzes and more.
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-8 md:contents">
+        <div className="grid grid-cols-2 gap-8 md:contents font-spacemono">
           <div>
             <h4 className="text-sm font-semibold mb-3">Explore</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
@@ -28,7 +28,7 @@ export default function Footer() {
             <h4 className="text-sm font-semibold mb-3">About</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><Link className="hover:text-foreground" to="/about">Mission</Link></li>
-              <li><Link className="hover:text-foreground" to="/members">Members</Link></li>
+              {/* <li><Link className="hover:text-foreground" to="/members">Members</Link></li> */}
               <li><Link className="hover:text-foreground" to="/contact">Contact</Link></li>
               <li><a className="hover:text-foreground" href="#faq">FAQ</a></li>
             </ul>

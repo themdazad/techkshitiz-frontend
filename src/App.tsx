@@ -16,7 +16,7 @@ import GalleryPage from "./pages/Gallery";
 import WinnersPage from "./pages/Winners";
 import ContactPage from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-import MembersPage from "./pages/Members";
+// import MembersPage from "./pages/Members";
 
 const queryClient = new QueryClient();
 
@@ -36,7 +36,7 @@ const App = () => (
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/winners" element={<WinnersPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/members" element={<MembersPage />} />
+            {/* <Route path="/members" element={<MembersPage />} /> */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>

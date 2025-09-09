@@ -56,7 +56,7 @@ export default function AboutPage() {
           <a 
             href="/events"
             rel="noreferrer" 
-            className="relative overflow-hidden rounded-lg bg-gradient-to-r from-primary via-purple-600 to-primary px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] before:transition-transform before:duration-700 hover:before:translate-x-[100%]"
+            className="relative overflow-hidden rounded-lg bg-gradient-to-r from-primary via-sky-600 to-primary px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] before:transition-transform before:duration-700 hover:before:translate-x-[100%]"
           >
             Explore Events
           </a>
@@ -180,7 +180,7 @@ export default function AboutPage() {
       </section>
 
       {/* Organizing team marquee */}
-      <section className="mt-12">
+      {/* <section className="mt-12">
         <h2 className="heading text-2xl md:text-3xl">Organizing Team</h2>
         <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-card/60 backdrop-blur p-6 mt-4">
           <div className="marquee w-max flex items-stretch gap-8">
@@ -205,7 +205,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Developers Section */}
       {/* <section className="mt-12">
@@ -336,7 +336,7 @@ export default function AboutPage() {
       </section>
 
       {/* FAQ */}
-      <section className="mt-12" id="faq">
+      <section className="mt-12 font-spacemono" id="faq">
         <h2 className="heading text-2xl md:text-3xl">FAQ</h2>
         <Accordion
           type="single"

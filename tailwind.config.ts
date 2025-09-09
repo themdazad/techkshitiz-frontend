@@ -40,6 +40,10 @@ export default {
           "Courier New",
           "monospace",
         ],
+        'gruppo': ['Gruppo', 'sans-serif'],
+        'magz': ['Magz', 'sans-serif'],
+        'spacemono': ['Space Mono', 'monospace'],
+        
       },
       colors: {
         border: "hsl(var(--border))",
