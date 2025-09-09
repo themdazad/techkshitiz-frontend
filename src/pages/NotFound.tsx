@@ -15,7 +15,7 @@ const NotFound = () => {
         <h1 className="mt-4 text-4xl font-bold">404</h1>
         <p className="mt-2 text-gray-600">Page not found. The link may be broken or the page may have moved.</p>
         <div className="mt-6 flex justify-center gap-3">
-          <Link to="/" className="rounded-md bg-primary px-4 py-2 text-primary-foreground">Go Home</Link>
+          <Link to="/" className="relative overflow-hidden rounded-lg bg-gradient-to-r from-primary via-sky-600 to-primary px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] before:transition-transform before:duration-700 hover:before:translate-x-[100%]">Go Home</Link>
           <Link to="/events" className="rounded-md border px-4 py-2">Browse Events</Link>
         </div>
       </div>
