@@ -134,7 +134,6 @@ export const events: EventItem[] = [
     coordinators: [
       { name: "Pratik Kumar", phone: "+91 9123250583" },
       { name: "Abhishek Kumar", phone: "+91 9473456197" },
-      { name: "Sandeep Kumar", phone: "+91 7633092729" },
     ],
   },
 
@@ -324,13 +323,10 @@ export const events: EventItem[] = [
     registerLink: "https://forms.gle/xTfdext9uBPQbrN66",
     coordinators: [
       { name: "Priyanshu Raj", phone: "+91 6207795220" },
-      { name: "Rajnish Kumar", phone: "+91 9142778727" },
       { name: "Kumar Mohit", phone: "+91 7645924757" },
-      { name: "Danish Hamraj", phone: "+91 8619993607" },
       { name: "Ritika Rani", phone: "............" },
       { name: "Anisha Patel", phone: "............" },
       { name: "Pragya Rani", phone: "............" },
-      { name: "Sweety Kumari", phone: "............" },
     ],
   },
   {
@@ -452,12 +448,7 @@ export const events: EventItem[] = [
       "https://drive.google.com/file/d/1mgavU1ne8s2BjC1pXo7TLu6IFn2YHB0c/view?usp=sharing",
     registerLink: "https://forms.gle/XL3ivtmQd8ctNG9D6",
     coordinators: [
-      { name: "Ruchi Kumari", phone: "............" },
-      { name: "Kashish Singhal", phone: "............" },
       { name: "Khushee Pandey", phone: "............" },
-      { name: "Pragya Rani", phone: "............" },
-      { name: "Anisha Patel", phone: "............" },
-      { name: "Ritika Rani", phone: "............" },
       { name: "Sweety Kumari", phone: "............" },
     ],
   },
@@ -482,7 +473,6 @@ export const events: EventItem[] = [
     registerLink: "https://forms.gle/GExCc6dQEwf4QkRp9",
     coordinators: [
       { name: "Sweety Kumari", phone: "............" },
-      { name: "Khushee Pandey", phone: "............" },
       { name: "Aaditi Kumari", phone: "............" },
       { name: "Kashish Singhal", phone: "............" },
     ],
