@@ -15,3 +15,10 @@ export const clubIncharges : clubIncharge[]=[
   { name: "Dr. Yamika Patel", branch: "Mechanical Engineering", photo: "https://res.cloudinary.com/dcsqprug1/image/upload/v1757235664/yamikapatel_apkdex.jpg" },
   { name: "Prof. Mohit Prakash", branch: "Electrical Engineering", photo: "https://res.cloudinary.com/dcsqprug1/image/upload/v1757235663/mohitprakash_gzkvp9.jpg" },
 ]
+
+export type clubHead = { name: string;branch: string; photo: string;description:string ; linkedin:string; };
+export const clubHeads : clubHead[]=[
+  { name: "Md. Azad", branch: "Electrical Engineering", photo: "https://res.cloudinary.com/dswkss8nj/image/upload/v1757491754/mdazad_fgzj4h.jpg",description:"Team Management & Planning", linkedin:"https://www.linkedin.com/in/themdazad/"},
+  { name: "Abhinav Kumar", branch: "Electrical Engineering", photo: "https://res.cloudinary.com/dswkss8nj/image/upload/v1757491743/abhinav_uhlkyy.jpg",description:"Event Management & Planning", linkedin:"https://www.linkedin.com/in/abhinav-kumar-gecsiwan/" },
+  { name: "Shahnoor Ishtiyaque", branch: "CSE - IoT", photo: "https://res.cloudinary.com/dswkss8nj/image/upload/v1757491745/shahnoor_massm1.jpg" ,description:"Promotions and participants Management",linkedin:"https://www.linkedin.com/in/shahnoor-ishtiyaque-496843297/" },
+]

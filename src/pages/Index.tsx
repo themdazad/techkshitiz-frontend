@@ -145,7 +145,7 @@ export default function Index() {
               <p className="text-xs md:text-sm font-medium text-primary uppercase tracking-wide">
                 22-24 September 2025 • GEC Siwan Campus
               </p>
-              <h1 className="heading mt-3 text-[2.80rem] md:text-7xl  ">
+              <h1 className="heading mt-3 text-4xl md:text-7xl  ">
                 <span
                   id="hero-title"
                   className="hero-letters inline-block will-change-transform"
