@@ -120,7 +120,7 @@ export default function Index() {
         <div className="container py-2 text-xs md:text-sm text-muted-foreground flex items-center gap-2">
           <span className="live-dot" aria-hidden />
           <span className="gradient-text animate-gradient">
-            Live update: Registration Opens from 10th Sept{" "}
+            Live update: Registration is now OPEN{" "}
           </span>
         </div>
       </div>
@@ -253,8 +253,8 @@ export default function Index() {
           <div className="rounded-xl border border-white/15 bg-gradient-to-br from-white/5 to-transparent backdrop-blur p-5 shadow-sm">
             <p className="font-semibold text-white">Expanded Event Roster</p>
             <p className="mt-1 text-sm text-gray-300">
-              16 events across Coding, Design, Hardware, Strategy, and
-              Culture/Games.
+              16+ events across Coding, Design, Engineering, Hardware, Strategy,
+              and Culture/Games.
             </p>
           </div>
           <div className="rounded-xl border border-white/15 bg-gradient-to-br from-white/5 to-transparent backdrop-blur p-5 shadow-sm">
@@ -468,22 +468,25 @@ export default function Index() {
       {/* Social */}
       <section className="container pb-20">
         <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10 p-8 text-center backdrop-blur">
-          <h3 className="heading text-2xl md:text-3xl ">
+          <h2 className="heading text-2xl md:text-3xl text-center">
             <span className="section-letters inline-block will-change-transform">
-              {"Be the part of our community".split("").map((ch, i) => (
-                <span
-                  key={i}
-                  className={cn(
-                    "gradient-text hero-letter hero-3d inline-block",
-                    ch === " " && "inline-block w-2",
-                  )}
-                >
-                  {" "}
-                  {ch === " " ? "\u00A0" : ch}{" "}
+              {"Be the part of our community".split(" ").map((word, i) => (
+                <span key={i} className="inline-block mr-2">
+                  {word.split("").map((ch, j) => (
+                    <span
+                      key={j}
+                      className={cn(
+                        "gradient-text hero-letter hero-3d inline-block",
+                      )}
+                    >
+                      {ch}
+                    </span>
+                  ))}
                 </span>
               ))}
             </span>
-          </h3>
+          </h2>
+
           <p className="mt-2 text-muted-foreground">
             Follow for updates, teasers, and behind‑the‑scenes.
           </p>

@@ -49,7 +49,7 @@ export const events: EventItem[] = [
     category: "Coding & Technology",
     tags: ["team", "innovation"],
     rulebookLink:
-      "https://drive.google.com/file/d/1Yny4rPLp4VOysFcYZHwy6ECEKRpDV-SG/view?usp=sharing",
+      "https://drive.google.com/file/d/1iqtVBH1-f67QIXKzDA06rp4ATziqpjx7/view?usp=sharing",
     registerLink: "https://forms.gle/594YQ4Bs9e8Kg6QU9",
     rules: [
       "Original code only",
@@ -184,9 +184,9 @@ export const events: EventItem[] = [
     registerLink: "https://forms.gle/LdQQ7y9Cuxt6YvAi9",
     coordinators: [
       { name: "Rajnish Kumar", phone: "+91 9142778727" },
+      { name: "Sachin Chandra", phone: "+91 6205845434" },
       { name: "Abhishek Kumar", phone: "+91 9473456197" },
       { name: "Priyanshu Kumar", phone: "+91 9771945740" },
-      { name: "Sachin Chandra", phone: "+91 6205845434" },
     ],
   },
 
