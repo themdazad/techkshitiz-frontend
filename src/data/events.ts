@@ -378,7 +378,7 @@ export const events: EventItem[] = [
       { name: "Ruchi Kumari", phone: "............" },
     ],
   },
-
+// DEMO TEXT
   // 6. Creative & Showcase
   {
     id: "videography",
