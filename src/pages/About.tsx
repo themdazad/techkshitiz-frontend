@@ -38,9 +38,9 @@ export default function AboutPage() {
           About Tech Kshitiz
         </h1>
         <p className="mt-4 text-muted-foreground leading-relaxed">
-          🚀 Welcome to <strong>Techkshitiz</strong> - the leading technical
-          club at Government Engineering College, Siwan! 🚀 Techkshitiz is a
-          vibrant community fostering technical excellence and innovation among
+          Welcome to <strong>Techkshitiz</strong> - the leading technical club
+          at Government Engineering College, Siwan! Techkshitiz is a vibrant
+          community fostering technical excellence and innovation among
           students. We provide a platform for hands-on learning, exploration of
           cutting-edge technologies, and collaboration with like-minded peers.
           Through engaging workshops, seminars, and hackathons, we empower
@@ -71,11 +71,11 @@ export default function AboutPage() {
         <div className="mt-4 grid gap-4 md:grid-cols-3">
           <FeatureCard
             title="Three‑Day Mega Fest"
-            desc="21–23 Sept 2025 with mobile‑first schedules and streamlined registrations."
+            desc="22–24 Sept 2025 with mobile‑first schedules and streamlined registrations."
           />
           <FeatureCard
             title="Expanded Event Roster"
-            desc="16 events across Coding, Design, Hardware, Strategy, and Culture/Games."
+            desc="16+ events across Coding, Design, Engineering, Hardware, Strategy, and Culture/Games."
           />
           <FeatureCard
             title="Industry Connect"
@@ -134,7 +134,7 @@ export default function AboutPage() {
           cultural creativity—there's a track for every talent level.
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
-          {["Coding", "Design", "Hardware", "Strategy", "Culture/Games"].map(
+          {["Coding", "Design", "Hardware", "Brain Games", "E-Sports"].map(
             (t) => (
               <span
                 key={t}
@@ -176,7 +176,7 @@ export default function AboutPage() {
         </div>
       </section>
       {/* Techincal club head section */}
-<section className="mt-12">
+      <section className="mt-12">
   <h2 className="heading text-2xl md:text-3xl">Technical Club Head</h2>
 
   {/* Grid Layout */}
@@ -218,8 +218,15 @@ export default function AboutPage() {
             )}
           </div>
 
-          {/* Branch */}
-          <p className="text-sm text-muted-foreground">{m.branch}</p>
+          {/* Branch + Batch */}
+          <div className="mt-1 flex flex-wrap justify-center sm:justify-start items-center gap-2">
+            <p className="text-sm text-muted-foreground">{m.branch}</p>
+            {m.batch && (
+              <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-primary/20 text-primary">
+                {m.batch}
+              </span>
+            )}
+          </div>
 
           {/* Short Description */}
           <p className="mt-2 text-xs md:text-sm text-gray-400">
@@ -230,6 +237,7 @@ export default function AboutPage() {
     ))}
   </div>
 </section>
+
 
       {/* Organizing team marquee */}
       {/* <section className="mt-12">
@@ -347,7 +355,7 @@ export default function AboutPage() {
         <h2 className="heading text-2xl md:text-3xl">Venue & Dates</h2>
         <div className="mt-4">
           <div className="rounded-xl border border-white/10 bg-card/60 backdrop-blur p-6">
-            <h3 className="font-semibold">21–23 September 2025</h3>
+            <h3 className="font-semibold">22–24 September 2025</h3>
             <p className="mt-2 text-sm text-gray-300">
               Government Engineering College, Siwan — Campus venue (see Contact
               for full address).
