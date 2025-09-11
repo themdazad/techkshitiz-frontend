@@ -5,7 +5,7 @@ export type Category =
   | "Engineering & Design"
   | "Brain Games & Quizzes"
   | "Creative & Showcase";
-
+// testing
 export interface EventItem {
   id: string;
   title: string;
