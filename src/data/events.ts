@@ -49,7 +49,7 @@ export const events: EventItem[] = [
     category: "Coding & Technology",
     tags: ["team", "innovation"],
     rulebookLink:
-      "https://docs.google.com/document/d/1datHJzUzL23NSyuQJEqHf8PzFGZKyZ1Mf_v8bvHIuCM/edit?usp=sharing",
+      "https://docs.google.com/document/d/1YS-udtEH7kOrWoehvBaU7P-guIDqIJxzd16gjor5kHQ/edit?usp=sharing",
     registerLink: "https://forms.gle/594YQ4Bs9e8Kg6QU9",
     rules: [
       "Original code only",
