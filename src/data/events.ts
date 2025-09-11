@@ -324,6 +324,7 @@ export const events: EventItem[] = [
     coordinators: [
       { name: "Priyanshu Raj", phone: "+91 6207795220" },
       { name: "Kumar Mohit", phone: "+91 7645924757" },
+      { name: "Rajnish Kumar", phone: "+91 9142778727" },
       { name: "Ritika Rani", phone: "............" },
       { name: "Anisha Patel", phone: "............" },
       { name: "Pragya Rani", phone: "............" },
