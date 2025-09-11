@@ -76,7 +76,7 @@ export const events: EventItem[] = [
     prize: "Goodies , Certificate",
     registration: "Free",
     category: "Coding & Technology",
-    tags: ["solo", "speed"],
+    tags: ["single", "speed"],
     rulebookLink:
       "https://docs.google.com/document/d/1f3NRZznSats1l3JpPEcpWt5ZTa-Y-QcotMEi6ueVTaw/edit?usp=sharing",
     registerLink: "https://forms.gle/NqUWBsutAbssfd1UA",
