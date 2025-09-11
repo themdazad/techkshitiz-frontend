@@ -49,7 +49,7 @@ export const events: EventItem[] = [
     category: "Coding & Technology",
     tags: ["team", "innovation"],
     rulebookLink:
-      "https://drive.google.com/file/d/1iqtVBH1-f67QIXKzDA06rp4ATziqpjx7/view?usp=sharing",
+      "https://docs.google.com/document/d/1datHJzUzL23NSyuQJEqHf8PzFGZKyZ1Mf_v8bvHIuCM/edit?usp=sharing",
     registerLink: "https://forms.gle/594YQ4Bs9e8Kg6QU9",
     rules: [
       "Original code only",
@@ -78,7 +78,7 @@ export const events: EventItem[] = [
     category: "Coding & Technology",
     tags: ["solo", "speed"],
     rulebookLink:
-      "https://drive.google.com/file/d/10-UrP1jPHRskIPMPeVrREna8wafWM_wo/view?usp=sharing",
+      "https://docs.google.com/document/d/1f3NRZznSats1l3JpPEcpWt5ZTa-Y-QcotMEi6ueVTaw/edit?usp=sharing",
     registerLink: "https://forms.gle/NqUWBsutAbssfd1UA",
     coordinators: [
       { name: "Adeel Ala", phone: "+91 8873469135" },
@@ -103,7 +103,7 @@ export const events: EventItem[] = [
     category: "Coding & Technology",
     tags: ["solo", "speed"],
     rulebookLink:
-      "https://drive.google.com/file/d/1dq_S9uc6-FcAfkWiMZ2F31vqcFrDI6_0/view?usp=sharing",
+      "https://docs.google.com/document/d/1gkLkyMqdhZ3VgUUVG_QYdpjtasBLZImGDA0NKaCufdc/edit?usp=sharing",
     registerLink: "https://forms.gle/ZMx6zkd5NKXhQPMp6",
     coordinators: [
       { name: "Ayushmaan Shandilya", phone: "+91 8969352535" },
@@ -129,7 +129,7 @@ export const events: EventItem[] = [
     category: "Coding & Technology",
     tags: ["solo", "speed"],
     rulebookLink:
-      "https://drive.google.com/file/d/17EteGpUxOuBT0BWEZWnI94nGQGE_A1XX/view?usp=sharing",
+      "https://docs.google.com/document/d/1QAxf09-9IRrscTrORK5HZ5N1btmgxyR3tG5l7AKjBGM/edit?usp=sharing",
     registerLink: "https://forms.gle/34Y8j8P9ppBuEYJF6",
     coordinators: [
       { name: "Pratik Kumar", phone: "+91 9123250583" },
@@ -155,7 +155,7 @@ export const events: EventItem[] = [
     category: "Hardware & Mechatronics",
     tags: ["team", "hardware"],
     rulebookLink:
-      "https://drive.google.com/file/d/1iY7Nq6LI4hxe79gStPe-Spk9EkTQj_px/view?usp=sharing",
+      "https://docs.google.com/document/d/1vUT_KpIa7lGxGi1bBlUl1vt_NELkeu1TVI8CzSGZscE/edit?usp=sharing",
     registerLink: "https://forms.gle/yk7uxiF2Jm6yU7Zd9",
     coordinators: [
       { name: "Rajesh Kumar Baitha", phone: "+91 8873039882" },
@@ -180,7 +180,7 @@ export const events: EventItem[] = [
     category: "Hardware & Mechatronics",
     tags: ["team", "race"],
     rulebookLink:
-      "https://drive.google.com/file/d/11Bx_FTaVdH-X3L2yYkQ8L5hoDfp2VyW8/view?usp=sharing",
+      "https://docs.google.com/document/d/1zO1h5-ZlwyU91fyJL5b4cxzZOV5NYzGMiHQ8t_6XfY8/edit?usp=sharing",
     registerLink: "https://forms.gle/LdQQ7y9Cuxt6YvAi9",
     coordinators: [
       { name: "Rajnish Kumar", phone: "+91 9142778727" },
@@ -208,7 +208,7 @@ export const events: EventItem[] = [
     registration: "99",
     tags: ["team", "tournament"],
     rulebookLink:
-      "https://drive.google.com/file/d/1qI1ykF4NvnUsF5A3XkmwWtkpfBk7905-/view?usp=sharing",
+      "https://docs.google.com/document/d/1AEyMxJK9cX7jLULgXPd6uwshUdAGXmadrV9qiQlceNM/edit?usp=sharing",
     registerLink: "https://forms.gle/Wt35Fb7Zy3ZiCUsX6",
     coordinators: [
       { name: "Danish Hamraj", phone: "+91 8969352535" },
@@ -239,7 +239,7 @@ export const events: EventItem[] = [
     category: "Engineering & Design",
     tags: ["team", "civil"],
     rulebookLink:
-      "https://drive.google.com/file/d/17YUxaX-GwM2NWMyXRCvFtparNZoWiiAF/view?usp=sharing",
+      "https://docs.google.com/document/d/17Lj1TLR_bOQ0syeR4HbEnKoCSzrZLx4t5vE545fn6lM/edit?usp=sharing",
     registerLink: "https://forms.gle/dTiZpFT57DdeRGLh8",
     coordinators: [
       { name: "Nirbhay Singh", phone: "+91 9708115614" },
@@ -265,7 +265,7 @@ export const events: EventItem[] = [
     category: "Engineering & Design",
     tags: ["solo", "cad"],
     rulebookLink:
-      "https://drive.google.com/file/d/1v-0zLsF9PYdGvaGUrvkgAsyuz6qk8oQs/view?usp=sharing",
+      "https://docs.google.com/document/d/1jJX-_iyavhuaM2C5F_fF873OHzEKeoc118vctKXparg/edit?usp=sharing",
     registerLink: "https://forms.gle/fzBSrFNfrykCYUPn8",
     coordinators: [
       { name: "Saurabh Mishra", phone: "+91 9973320409" },
@@ -291,7 +291,7 @@ export const events: EventItem[] = [
     category: "Engineering & Design",
     tags: ["team", "electronics"],
     rulebookLink:
-      "https://drive.google.com/file/d/1DvXRapa8M2ly-5GApn4HokshuLIMihYC/view?usp=sharing",
+      "https://docs.google.com/document/d/1WjKZVCg5A-WDrombp8Q-A-8y7l7dS-1v4nDaU6CfRog/edit?usp=sharing",
     registerLink: "https://forms.gle/M1en6KcfcJknFNhh9",
     coordinators: [
       { name: "Priyanshu Kumar", phone: "+91 9771945740" },
@@ -319,7 +319,7 @@ export const events: EventItem[] = [
     category: "Brain Games & Quizzes",
     tags: ["team", "puzzle"],
     rulebookLink:
-      "https://drive.google.com/file/d/1VOao2UaqvLvM-n9rukDrg8ib5-7uhiMU/view?usp=sharing",
+      "https://docs.google.com/document/d/1CbVyNmoZ985MB-U0cPgv5CoPNyQPGMvqCuTwy1wMml0/edit?usp=sharing",
     registerLink: "https://forms.gle/xTfdext9uBPQbrN66",
     coordinators: [
       { name: "Priyanshu Raj", phone: "+91 6207795220" },
@@ -346,7 +346,7 @@ export const events: EventItem[] = [
     category: "Brain Games & Quizzes",
     tags: ["solo", "quiz"],
     rulebookLink:
-      "https://drive.google.com/file/d/1bTpGGJ06mzxD_nPxx7jxRs8ZJUM1r-uN/view?usp=sharing",
+      "https://docs.google.com/document/d/150SH_sU3GEz1x53Fn5RQfVfyLslcK10o3ucyLVZbQ4U/edit?usp=sharing",
     registerLink: "https://forms.gle/mNMj8V49RqiXp6na9",
     coordinators: [
       { name: "Kumar Mohit", phone: "+91 7645924757" },
@@ -371,7 +371,7 @@ export const events: EventItem[] = [
     category: "Brain Games & Quizzes",
     tags: ["solo", "quiz"],
     rulebookLink:
-      "https://drive.google.com/file/d/1BWStyZSU2L_kfNV6jYhlIIIKcX0ZFmgZ/view?usp=sharing",
+      "https://docs.google.com/document/d/1_wP96O2zMI1kjhRXuDhp9-9a-WcCmHZMI7b5AjOte_k/edit?usp=sharing",
     registerLink: "https://forms.gle/JJyDTMx67csvRv4t5",
     coordinators: [
       { name: "Rajan Kumar", phone: "+91 8228051357" },
@@ -397,7 +397,7 @@ export const events: EventItem[] = [
     category: "Creative & Showcase",
     tags: ["solo", "media"],
     rulebookLink:
-      "https://drive.google.com/file/d/1kBzrAFwIvivG9aymPRP3lx6V1zJL3aJ9/view?usp=sharing",
+      "https://docs.google.com/document/d/1eqKrvmxLueGwWvFwi42Ro7nnYTBlX-k1ujF9syM8QAY/edit?usp=sharing",
     registerLink: "https://forms.gle/g5gPdmmLeuAtiipVA",
     coordinators: [{ name: "Saurabh Mishra", phone: "+91 9973320409" }],
   },
@@ -418,7 +418,7 @@ export const events: EventItem[] = [
     category: "Creative & Showcase",
     tags: ["solo", "design"],
     rulebookLink:
-      "https://drive.google.com/file/d/1x7KAYFE681QsJ0m8M471yg6O-Zf4ah04/view?usp=sharing",
+      "https://docs.google.com/document/d/1dY_K14tpu24Yad0CLSavzconQiygJbVvT8GIdnGy-_A/edit?usp=sharing",
     registerLink: "https://forms.gle/79bgh6ktzcWuU46L6",
     coordinators: [
       { name: "Harish Tiwari", phone: "+91 9572736198" },
@@ -445,7 +445,7 @@ export const events: EventItem[] = [
     category: "Creative & Showcase",
     tags: ["team", "craft"],
     rulebookLink:
-      "https://drive.google.com/file/d/1mgavU1ne8s2BjC1pXo7TLu6IFn2YHB0c/view?usp=sharing",
+      "https://docs.google.com/document/d/1Vs_IksNTRVBAZwh3CRRdac7NaH0wiw95xz8KxAwly9I/edit?usp=sharing",
     registerLink: "https://forms.gle/XL3ivtmQd8ctNG9D6",
     coordinators: [
       { name: "Khushee Pandey", phone: "............" },
@@ -469,7 +469,7 @@ export const events: EventItem[] = [
     category: "Creative & Showcase",
     tags: ["team", "art"],
     rulebookLink:
-      "https://drive.google.com/file/d/11PCVvpf6JEFquQbJMgNnEN7Tx5JVff8p/view?usp=sharing",
+      "https://docs.google.com/document/d/1lVh6EGmz1UPEXpbfainHhSdmUhde2fHc2onjjnctmBk/edit?usp=sharing",
     registerLink: "https://forms.gle/GExCc6dQEwf4QkRp9",
     coordinators: [
       { name: "Sweety Kumari", phone: "............" },
