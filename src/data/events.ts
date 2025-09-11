@@ -379,6 +379,7 @@ export const events: EventItem[] = [
     ],
   },
 // DEMO TEXT
+// HELLO 
   // 6. Creative & Showcase
   {
     id: "videography",
