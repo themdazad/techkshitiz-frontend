@@ -8,8 +8,11 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { organizingTeam, clubIncharges, clubHeads } from "@/data/org";
-
+import {faqs} from "@/data/faq";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 export default function AboutPage() {
+  
   // Developer data - you can move this to a separate data file if needed
   const developers = [
     {
@@ -27,6 +30,20 @@ export default function AboutPage() {
       },
     },
   ];
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === "#faq") {
+      const el = document.getElementById("faq");
+      if (el) {
+        // 100ms delay taaki content render ho jaye
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location]);
+
 
   return (
     <div className="container py-12">
@@ -177,67 +194,66 @@ export default function AboutPage() {
       </section>
       {/* Techincal club head section */}
       <section className="mt-12">
-  <h2 className="heading text-2xl md:text-3xl">Technical Club Head</h2>
+        <h2 className="heading text-2xl md:text-3xl">Technical Club Head</h2>
 
-  {/* Grid Layout */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-    {clubHeads.map((m, i) => (
-      <div
-        key={`${m.name}-${i}`}
-        className="group rounded-2xl border border-white/10 bg-card/60 p-6 shadow-md hover:shadow-xl hover:border-primary/30 transition-all duration-300 flex flex-col sm:flex-row items-center gap-6"
-      >
-        {/* Profile Picture */}
-        <div className="flex-shrink-0">
-          <div className="h-20 w-20 sm:h-24 sm:w-24 overflow-hidden rounded-full ring-2 ring-primary/20 group-hover:ring-primary/40 transition">
-            <img
-              src={m.photo}
-              alt={m.name}
-              className="h-full w-full object-cover"
-              loading="lazy"
-            />
-          </div>
+        {/* Grid Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+          {clubHeads.map((m, i) => (
+            <div
+              key={`${m.name}-${i}`}
+              className="group rounded-2xl border border-white/10 bg-card/60 p-6 shadow-md hover:shadow-xl hover:border-primary/30 transition-all duration-300 flex flex-col sm:flex-row items-center gap-6"
+            >
+              {/* Profile Picture */}
+              <div className="flex-shrink-0">
+                <div className="h-20 w-20 sm:h-24 sm:w-24 overflow-hidden rounded-full ring-2 ring-primary/20 group-hover:ring-primary/40 transition">
+                  <img
+                    src={m.photo}
+                    alt={m.name}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="flex-1 text-center sm:text-left">
+                {/* Name with LinkedIn Icon */}
+                <div className="flex items-center justify-center sm:justify-start gap-2">
+                  <h3 className="text-base md:text-lg font-semibold text-gray-200">
+                    {m.name}
+                  </h3>
+                  {m.linkedin && (
+                    <a
+                      href={m.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center w-6 h-6 rounded-full text-white/50 hover:text-white transition-colors duration-200"
+                      aria-label={`${m.name}'s LinkedIn profile`}
+                    >
+                      <Linkedin className="w-5 h-5" />
+                    </a>
+                  )}
+                </div>
+
+                {/* Branch + Batch */}
+                <div className="mt-1 flex flex-wrap justify-center sm:justify-start items-center gap-2">
+                  <p className="text-sm text-muted-foreground">{m.branch}</p>
+                  {m.batch && (
+                    <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-primary/20 text-primary">
+                      {m.batch}
+                    </span>
+                  )}
+                </div>
+
+                {/* Short Description */}
+                <p className="mt-2 text-xs md:text-sm text-gray-400">
+                  {m.description}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
-
-        {/* Content */}
-        <div className="flex-1 text-center sm:text-left">
-          {/* Name with LinkedIn Icon */}
-          <div className="flex items-center justify-center sm:justify-start gap-2">
-            <h3 className="text-base md:text-lg font-semibold text-gray-200">
-              {m.name}
-            </h3>
-            {m.linkedin && (
-              <a
-                href={m.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-6 h-6 rounded-full text-white/50 hover:text-white transition-colors duration-200"
-                aria-label={`${m.name}'s LinkedIn profile`}
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-            )}
-          </div>
-
-          {/* Branch + Batch */}
-          <div className="mt-1 flex flex-wrap justify-center sm:justify-start items-center gap-2">
-            <p className="text-sm text-muted-foreground">{m.branch}</p>
-            {m.batch && (
-              <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-primary/20 text-primary">
-                {m.batch}
-              </span>
-            )}
-          </div>
-
-          {/* Short Description */}
-          <p className="mt-2 text-xs md:text-sm text-gray-400">
-            {m.description}
-          </p>
-        </div>
-      </div>
-    ))}
-  </div>
-</section>
-
+      </section>
 
       {/* Organizing team marquee */}
       {/* <section className="mt-12">
@@ -378,35 +394,23 @@ export default function AboutPage() {
         </div>
       </section>
       {/* FAQ */}
-      <section className="mt-12 font-spacemono" id="faq">
+      <section className="mt-12" id="faq">
         <h2 className="heading text-2xl md:text-3xl">FAQ</h2>
         <Accordion
           type="single"
           collapsible
-          className="mt-4 divide-y divide-white/10 rounded-xl border border-white/10 bg-card/60 backdrop-blur"
+          className="space-y-0 font-spacemono"
         >
-          <AccordionItem value="eligibility" className="px-4">
-            <AccordionTrigger>Who can participate?</AccordionTrigger>
-            <AccordionContent className="text-sm text-gray-300">
-              Students from all years and streams are welcome. Some events are
-              team‑based; check the event card for details.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="rules" className="px-4">
-            <AccordionTrigger>Are there general rules?</AccordionTrigger>
-            <AccordionContent className="text-sm text-gray-300">
-              Yes — fairness, originality, and safety. Specific rules are shown
-              on each event's details sections.For more info downlaod rulebook
-              and follow accordingly.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="registration" className="px-4">
-            <AccordionTrigger>How do I register?</AccordionTrigger>
-            <AccordionContent className="text-sm text-gray-300">
-              Go the event section and select the event on which you want to
-              participate and fill the respective google form
-            </AccordionContent>
-          </AccordionItem>
+          {faqs.map((faq, index) => (
+            <AccordionItem key={faq.id} value={faq.id}>
+              <AccordionTrigger >
+                {faq.question}
+              </AccordionTrigger>
+              <AccordionContent>
+                {faq.answer}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
         </Accordion>
       </section>
     </div>
