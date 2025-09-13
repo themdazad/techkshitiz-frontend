@@ -228,7 +228,7 @@ export const events: EventItem[] = [
     blurb:
       "The Bridge Design event at Techkshitiz is a competition where participants showcase their structural engineering skills by designing and building bridges that can withstand weight. This event empowers tech enthusiasts through hands-on workshops and competitions",
     level: "Intermediate",
-    duration: "12 hrs",
+    duration: "3 hrs",
     location: "Lab",
     teamSize: "3",
     prize: "Goodies , Certificate",
