@@ -113,7 +113,7 @@ export default function Index() {
             type="video/mp4"
           />
         </video>
-        <div className="absolute inset-0 bg-slate-900/80" />
+        <div className="absolute inset-0 bg-slate-900/50" />
       </div>
 
       {/* Live update bar */}
@@ -121,7 +121,7 @@ export default function Index() {
         <div className="container py-2 text-xs md:text-sm text-muted-foreground flex items-center gap-2">
           <span className="live-dot" aria-hidden />
           <span className="gradient-text animate-gradient">
-            Live update: Registration is now OPEN (Only for Bihar){" "}
+            Live update: Registration closing on 18th Sept. (Only for Bihar){" "}
           </span>
         </div>
       </div>
@@ -130,7 +130,16 @@ export default function Index() {
       <section className="relative overflow-hidden py-16">
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-[radial-gradient(1200px_400px_at_50%_-10%,hsl(var(--primary)/0.15),transparent),radial-gradient(800px_300px_at_80%_10%,hsl(var(--accent)/0.15),transparent)]" />
-          <div className="absolute inset-0 opacity-[0.06] [background-image:linear-gradient(90deg,#fff_1px,transparent_1px),linear-gradient(#fff_1px,transparent_1px)] [background-size:40px_40px] mix-blend-overlay" />
+          {/* Grid pattern with fade effect */}
+          <div 
+            className="absolute inset-0 opacity-[0.06] mix-blend-overlay"
+            style={{
+              backgroundImage: 'linear-gradient(90deg,#fff 1px,transparent 1px),linear-gradient(#fff 1px,transparent 1px)',
+              backgroundSize: '40px 40px',
+              maskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)',
+              WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)'
+            }}
+          />
         </div>
 
         <div className="container pt-12 md:pt-16 pb-16">
@@ -229,7 +238,7 @@ export default function Index() {
 
       {/* What's new in 2025 (from About) */}
       <section className="container pt-4 pb-10">
-        <h2 className="heading text-3xl md:text-4xl text-sky-600">
+        <h2 className="heading text-3xl md:text-4xl font-normal text-sky-600">
           What's new in 2025
         </h2>
         <div className="mt-4 grid gap-4 md:grid-cols-3">
@@ -289,7 +298,7 @@ export default function Index() {
 
       <section className="container py-10 md:py-14">
         <div className="flex items-end justify-between">
-          <h2 className="heading text-3xl md:text-4xl">Highlights</h2>
+          <h2 className="heading text-3xl md:text-4xl font-normal text-sky-600">Highlights</h2>
           <Link
             className="text-sm text-muted-foreground hover:text-foreground"
             to="/events"
@@ -323,7 +332,7 @@ export default function Index() {
       <section className="bg-background/30 border-y border-white/5 backdrop-blur">
         <div className="container py-12">
           <div className="flex items-end justify-between">
-            <h2 className="heading text-3xl md:text-4xl">Quick Schedule</h2>
+            <h2 className="heading text-3xl md:text-4xl font-normal text-sky-600">Quick Schedule</h2>
             <Link
               to="/schedule"
               className="text-sm text-muted-foreground hover:text-foreground"
@@ -358,7 +367,7 @@ export default function Index() {
       {/* Sponsors */}
       <section id="sponsors" className="container py-12">
         <div className="flex items-end justify-between">
-          <h2 className="heading text-3xl md:text-4xl">Sponsors</h2>
+          <h2 className="heading text-3xl md:text-4xl font-normal text-sky-600">Sponsors</h2>
           <a
             className="text-sm text-muted-foreground hover:text-foreground"
             href="#"
@@ -423,7 +432,7 @@ export default function Index() {
       {/* Gallery teaser */}
       <section className="container pb-20">
         <div className="flex items-end justify-between">
-          <h2 className="heading text-3xl md:text-4xl">Gallery</h2>
+          <h2 className="heading text-3xl md:text-4xl font-normal text-sky-600">Gallery</h2>
           <Link
             className="text-sm text-muted-foreground hover:text-foreground"
             to="/gallery"

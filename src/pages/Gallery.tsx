@@ -32,7 +32,7 @@ export default function GalleryPage() {
     <div className="container py-16">
       <header className="flex items-end justify-between">
         <div>
-          <h1 className="heading text-3xl md:text-4xl">Gallery</h1>
+          <h1 className="heading text-3xl md:text-4xl font-normal text-sky-600">Gallery</h1>
           <p className="mt-2 max-w-2xl text-muted-foreground">Snapshots from events</p>
         </div>
         <div className="hidden md:flex gap-2">
