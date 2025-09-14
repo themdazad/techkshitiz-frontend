@@ -46,6 +46,7 @@ export default function AboutPage() {
 
 
   return (
+    
     <div className="container py-12">
       <header className="max-w-3xl">
         <p className="text-xs md:text-sm font-medium text-primary uppercase tracking-wide ">

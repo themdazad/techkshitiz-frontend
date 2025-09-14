@@ -57,29 +57,44 @@ export default function EventDetail() {
           <div>
             <h1 className="heading text-3xl md:text-4xl">{ev.title}</h1>
             <p className="mt-1 text-muted-foreground">
-              {ev.category} • {ev.duration} • 
-              {/* {ev.location} */}
+              {ev.category} • {ev.duration} •{/* {ev.location} */}
             </p>
           </div>
         </div>
         <div className="flex gap-3">
-          <a
-            href={ev.rulebookLink}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-sm font-medium backdrop-blur transition-all duration-200 hover:bg-white/10 hover:border-white/30"
-          >
-            <Download className="h-4 w-4" />
-            Rulebook
-          </a>
-          <a
-            href={ev.registerLink}
-            target="_blank"
-            rel="noreferrer"
-            className="relative overflow-hidden rounded-lg bg-gradient-to-r from-primary via-sky-600 to-primary px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] before:transition-transform before:duration-700 hover:before:translate-x-[100%]"
-          >
-            Register Now
-          </a>
+          {/* Rulebook Button */}
+          {ev.id === "circuit-designing" ? (
+            <span className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-sm font-medium backdrop-blur opacity-50 cursor-not-allowed">
+              <Download className="h-4 w-4" />
+              Rulebook
+            </span>
+          ) : (
+            <a
+              href={ev.rulebookLink}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-sm font-medium backdrop-blur transition-all duration-200 hover:bg-white/10 hover:border-white/30"
+            >
+              <Download className="h-4 w-4" />
+              Rulebook
+            </a>
+          )}
+
+          {/* Register Button */}
+          {ev.id === "circuit-designing" ? (
+            <span className="relative overflow-hidden rounded-lg bg-gray-500/40 px-6 py-3 text-sm font-semibold text-white opacity-50 cursor-not-allowed">
+              Registeration Closed
+            </span>
+          ) : (
+            <a
+              href={ev.registerLink}
+              target="_blank"
+              rel="noreferrer"
+              className="relative overflow-hidden rounded-lg bg-gradient-to-r from-primary via-sky-600 to-primary px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] before:transition-transform before:duration-700 hover:before:translate-x-[100%]"
+            >
+              Register Now
+            </a>
+          )}
         </div>
       </header>
 
@@ -143,9 +158,7 @@ export default function EventDetail() {
           <dl className="mt-3 grid grid-cols-1 gap-3 text-sm">
             <div>
               <dt className="text-gray-500 font-gruppo font-bold">Prizes</dt>
-              <dd className="font-medium font-spacemono">
-                {ev.prize}
-              </dd>
+              <dd className="font-medium font-spacemono">{ev.prize}</dd>
             </div>
             <div>
               <dt className="text-gray-500 font-gruppo font-bold">Duration</dt>
@@ -156,11 +169,15 @@ export default function EventDetail() {
               <dd className="font-medium font-spacemono">{ev.location}</dd>
             </div> */}
             <div>
-              <dt className="text-gray-500 font-gruppo font-bold ">Team Size</dt>
+              <dt className="text-gray-500 font-gruppo font-bold ">
+                Team Size
+              </dt>
               <dd className="font-medium font-spacemono">{ev.teamSize}</dd>
             </div>
             <div>
-              <dt className="text-gray-500 font-gruppo font-bold">Registration Fee </dt>
+              <dt className="text-gray-500 font-gruppo font-bold">
+                Registration Fee{" "}
+              </dt>
               <dd className="font-medium font-spacemono">{ev.registration}</dd>
             </div>
           </dl>

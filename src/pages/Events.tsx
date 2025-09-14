@@ -83,7 +83,7 @@ export default function EventsPage() {
                 to={`/events/${e.id}`}
                 className="block overflow-hidden rounded-lg"
               >
-                <AspectRatio ratio={16/9}>
+                <AspectRatio ratio={16 / 9}>
                   <img
                     src={`https://res.cloudinary.com/dxpleao6v/image/upload/${encodeURIComponent(e.imgUrl)}`}
                     alt={`${e.title} photo`}
@@ -104,9 +104,7 @@ export default function EventsPage() {
                         {e.title}
                       </Link>
                     </h3>
-                    <p className="text-xs text-gray-500">
-                      {e.category} • 
-                    </p>
+                    <p className="text-xs text-gray-500">{e.category} •</p>
                   </div>
                 </div>
                 {e.duration.includes("TBA") && (
@@ -158,12 +156,18 @@ export default function EventsPage() {
                 <div className="flex gap-2">
                   <Link
                     to={`/events/${e.id}`}
-                    className="inline-flex items-center rounded-md border border-white/10 px-3 py-2 text-sm hover:bg-white/5"
+                    className={`inline-flex items-center rounded-md border border-white/10 px-3 py-2 text-sm hover:bg-white/5 
+    ${e.id === "circuit-designing" ? "opacity-50 pointer-events-none cursor-not-allowed" : ""}`}
                   >
                     Details
                   </Link>
+
                   <a href={e.registerLink} target="_blank" rel="noreferrer">
-                    <Button size="sm">Register</Button>
+                    <Button size="sm" disabled={e.id === "circuit-designing"}>
+                      {e.id === "circuit-designing"
+                        ? "Closed"
+                        : "Register"}{" "}
+                    </Button>
                   </a>
                 </div>
               </div>

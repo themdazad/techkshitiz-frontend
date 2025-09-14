@@ -5,8 +5,9 @@ import { sponsors } from "@/data/sponsors";
 import gsap from "gsap";
 import { useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { Instagram, Twitter, Youtube, Linkedin, Download } from "lucide-react";
+import { Instagram, Twitter, Youtube, Linkedin, Download, DownloadIcon } from "lucide-react";
 import { HeroCountdown } from "@/components/site/HeroCountdown";
+import { Button } from "@/components/ui/button";
 
 const highlights = [
   {
@@ -92,7 +93,7 @@ export default function Index() {
       });
   }, []);
   const brochureUrl =
-    "https://drive.google.com/file/d/1t_T-MOSRUjyo9WucdQBOTGEKfnXX-Nst/view?usp=sharing";
+    "https://drive.google.com/file/d/1Xy5Xoz2Y5NWWf1WHy3DXp6HNup4magm3/view?usp=sharing";
   return (
     <div id="top" className="relative">
       {/* Global background stars video */}
@@ -112,7 +113,7 @@ export default function Index() {
             type="video/mp4"
           />
         </video>
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-slate-900/80" />
       </div>
 
       {/* Live update bar */}
@@ -120,7 +121,7 @@ export default function Index() {
         <div className="container py-2 text-xs md:text-sm text-muted-foreground flex items-center gap-2">
           <span className="live-dot" aria-hidden />
           <span className="gradient-text animate-gradient">
-            Live update: Registration is now OPEN{" "}
+            Live update: Registration is now OPEN (Only for Bihar){" "}
           </span>
         </div>
       </div>
@@ -170,7 +171,7 @@ export default function Index() {
               <div className="mt-4 lg:mt-6 flex flex-wrap gap-3">
                 {/* View Events Button */}
                 <span className="relative inline-flex rounded-full overflow-hidden border border-white/10">
-                  <span className="absolute inset-0 bg-gradient-to-r from-primary/30 via-accent/30 to-secondary/30 bg-[length:200%_200%] animate-gradient-x" />
+                  <span className="absolute inset-0 " />
                   <span className="absolute inset-0 bg-white/20 animate-shine" />
                   <span className="absolute inset-0 bg-background/60 backdrop-blur-sm" />
                   <Link
@@ -183,10 +184,11 @@ export default function Index() {
 
                 <span className="w-full lg:hidden" />
 
+                
                 {/* Brochure Button */}
                 <span className="relative inline-flex rounded-full overflow-hidden border border-white/10">
-                  <span className="absolute inset-0 bg-gradient-to-r from-primary/30 via-accent/30 to-secondary/30 bg-[length:200%_200%] animate-gradient-x" />
-                  <span className="absolute inset-0 bg-white/20 animate-shine" />
+                  <span className="absolute inset-0  animate-gradient-x" />
+                  <span className="absolute inset-0 animate-shine" />
                   <span className="absolute inset-0 bg-background/60 backdrop-blur-sm" />
                   <a
                     href={brochureUrl}
@@ -227,7 +229,9 @@ export default function Index() {
 
       {/* What's new in 2025 (from About) */}
       <section className="container pt-4 pb-10">
-        <h2 className="heading text-3xl md:text-4xl">What's new in 2025</h2>
+        <h2 className="heading text-3xl md:text-4xl text-sky-600">
+          What's new in 2025
+        </h2>
         <div className="mt-4 grid gap-4 md:grid-cols-3">
           <div className="rounded-xl border border-white/15 bg-gradient-to-br from-white/5 to-transparent backdrop-blur p-5 shadow-sm">
             <p className="font-semibold text-white">Three‑Day Mega Fest</p>
