@@ -34,7 +34,7 @@ export default function EventsPage() {
       <section className="container pt-10 pb-6">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
-            <h1 className="heading text-3xl md:text-4xl">Explore Events</h1>
+            <h1 className="heading text-3xl md:text-4xl font-normal text-sky-600">Explore Events</h1>
             <p className="mt-2 text-muted-foreground max-w-2xl">
               All the events occuring in Tech Kshitiz'25
             </p>
@@ -83,7 +83,7 @@ export default function EventsPage() {
                 to={`/events/${e.id}`}
                 className="block overflow-hidden rounded-lg"
               >
-                <AspectRatio ratio={16/9}>
+                <AspectRatio ratio={16 / 9}>
                   <img
                     src={`https://res.cloudinary.com/dxpleao6v/image/upload/${encodeURIComponent(e.imgUrl)}`}
                     alt={`${e.title} photo`}
@@ -104,9 +104,7 @@ export default function EventsPage() {
                         {e.title}
                       </Link>
                     </h3>
-                    <p className="text-xs text-gray-500">
-                      {e.category} • 
-                    </p>
+                    <p className="text-xs text-gray-500">{e.category} •</p>
                   </div>
                 </div>
                 {e.duration.includes("TBA") && (
@@ -123,24 +121,26 @@ export default function EventsPage() {
                 {e.blura}
               </p>
 
-              <div className="mt-4 grid grid-cols-2 gap-3 text-xs">
-                <div className="flex items-center gap-2 p-3">
+              <div className="mt-4 grid grid-cols-3 gap-2 text-xs">
+                <div className="flex items-center gap-1 p-2">
                   <Clock className="h-4 w-4 text-blue-500 flex-shrink-0" />
-                  <span className="text-gray-300">{e.duration}</span>
+                  <span className="text-gray-300 text-[10px] leading-tight">{e.duration}</span>
                 </div>
-                <div className="flex items-center gap-2 p-3">
+                <div className="flex items-center gap-1 p-2">
                   <Users className="h-4 w-4 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-300">{e.teamSize}</span>
+                  <span className="text-gray-300 text-[10px] leading-tight">{e.teamSize}</span>
+                </div>
+                <div className="flex items-center gap-1 p-2">
+                  <IndianRupee className="h-4 w-4 text-purple-500 flex-shrink-0" />
+                  <span className="text-gray-300 text-[10px] leading-tight">{e.registration}</span>
                 </div>
               </div>
-              <div className="mt-2 grid grid-cols-2 gap-3 text-xs">
-                <div className="flex items-center gap-2 p-3">
-                  <IndianRupee className="h-4 w-4 text-purple-500 flex-shrink-0" />
-                  <span className="text-gray-300">{e.registration}</span>
-                </div>
-                <div className="flex items-center gap-2 p-3">
+              
+
+              <div className="mt-2 text-xs">
+                <div className="flex items-center gap-2 p-2">
                   <Trophy className="h-4 w-4 text-amber-500 flex-shrink-0" />
-                  <span className="text-gray-300">{e.prize}</span>
+                  <span className="text-gray-300 ">{e.prize}</span>
                 </div>
               </div>
 
@@ -158,12 +158,18 @@ export default function EventsPage() {
                 <div className="flex gap-2">
                   <Link
                     to={`/events/${e.id}`}
-                    className="inline-flex items-center rounded-md border border-white/10 px-3 py-2 text-sm hover:bg-white/5"
+                    className={`inline-flex items-center rounded-md border border-white/10 px-3 py-2 text-sm hover:bg-white/5 
+    ${e.id === "circuit-designing" ? "opacity-50 pointer-events-none cursor-not-allowed" : ""}`}
                   >
                     Details
                   </Link>
+
                   <a href={e.registerLink} target="_blank" rel="noreferrer">
-                    <Button size="sm">Register</Button>
+                    <Button size="sm" disabled={e.id === "circuit-designing"}>
+                      {e.id === "circuit-designing"
+                        ? "Closed"
+                        : "Register"}{" "}
+                    </Button>
                   </a>
                 </div>
               </div>

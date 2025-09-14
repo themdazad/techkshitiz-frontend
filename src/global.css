@@ -67,7 +67,7 @@
 
   .dark {
     /* Dark theme */
-    --background: 222 84% 4%; 
+    --background: 222 84% 4%;
     --foreground: 210 40% 98%;
 
     --card: 222.2 84% 4.9%;
@@ -118,7 +118,9 @@
   }
 
   /* Typography rules */
-  p,span,td {
+  p,
+  span,
+  td {
     font-family: "Space Mono", monospace;
   }
   #hero-title,
@@ -127,7 +129,10 @@
   }
 
   /* Utilities */
-    .heading { @apply font-display tracking-normal text-foreground; font-family: 'Gruppo', sans-serif; }
+  .heading {
+    @apply font-display tracking-normal text-foreground;
+    font-family: "Gruppo", sans-serif;
+  }
   .gradient-text {
     background: linear-gradient(
       120deg,
@@ -406,6 +411,18 @@
   100% {
     transform: translateY(5px);
   }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+.new-animate-float {
+  animation: float 4s ease-in-out infinite;
 }
 @layer utilities {
   .animate-float-slow {

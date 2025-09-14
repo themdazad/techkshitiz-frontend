@@ -5,8 +5,9 @@ import { sponsors } from "@/data/sponsors";
 import gsap from "gsap";
 import { useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { Instagram, Twitter, Youtube, Linkedin, Download } from "lucide-react";
+import { Instagram, Twitter, Youtube, Linkedin, Download, DownloadIcon } from "lucide-react";
 import { HeroCountdown } from "@/components/site/HeroCountdown";
+import { Button } from "@/components/ui/button";
 
 const highlights = [
   {
@@ -92,7 +93,7 @@ export default function Index() {
       });
   }, []);
   const brochureUrl =
-    "https://drive.google.com/file/d/1t_T-MOSRUjyo9WucdQBOTGEKfnXX-Nst/view?usp=sharing";
+    "https://drive.google.com/file/d/1Xy5Xoz2Y5NWWf1WHy3DXp6HNup4magm3/view?usp=sharing";
   return (
     <div id="top" className="relative">
       {/* Global background stars video */}
@@ -112,7 +113,7 @@ export default function Index() {
             type="video/mp4"
           />
         </video>
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-slate-900/50" />
       </div>
 
       {/* Live update bar */}
@@ -120,7 +121,7 @@ export default function Index() {
         <div className="container py-2 text-xs md:text-sm text-muted-foreground flex items-center gap-2">
           <span className="live-dot" aria-hidden />
           <span className="gradient-text animate-gradient">
-            Live update: Registration is now OPEN{" "}
+            Live update: Registration closing on 18th Sept. (Only for Bihar){" "}
           </span>
         </div>
       </div>
@@ -129,23 +130,25 @@ export default function Index() {
       <section className="relative overflow-hidden py-16">
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-[radial-gradient(1200px_400px_at_50%_-10%,hsl(var(--primary)/0.15),transparent),radial-gradient(800px_300px_at_80%_10%,hsl(var(--accent)/0.15),transparent)]" />
-          <div className="absolute inset-0 opacity-[0.06] [background-image:linear-gradient(90deg,#fff_1px,transparent_1px),linear-gradient(#fff_1px,transparent_1px)] [background-size:40px_40px] mix-blend-overlay" />
-        </div>
-        {/* Watermark logo behind content */}
-        {/* <div aria-hidden className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets%2F0916ebaabc21457c896a581f1ee94f90%2F46f3594dbd9c4ecc83390d1d701bd27c?format=webp&width=800"
-            alt="Tech Kshitiz large logo"
-            className="w-[80vw] max-w-[820px] opacity-[0.08] md:opacity-[0.12] mix-blend-screen blur-[0.5px] animate-float"
+          {/* Grid pattern with fade effect */}
+          <div 
+            className="absolute inset-0 opacity-[0.06] mix-blend-overlay"
+            style={{
+              backgroundImage: 'linear-gradient(90deg,#fff 1px,transparent 1px),linear-gradient(#fff 1px,transparent 1px)',
+              backgroundSize: '40px 40px',
+              maskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)',
+              WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)'
+            }}
           />
-        </div> */}
+        </div>
+
         <div className="container pt-12 md:pt-16 pb-16">
-          <div className="relative z-10 grid gap-10 md:grid-cols-2 items-start">
+          <div className="relative z-10 grid gap-10 md:grid-cols-2 md:items-center items-center min-h-[60vh]">
             <div className="max-w-3xl animate-fade-up">
               <p className="text-xs md:text-sm font-medium text-primary uppercase tracking-wide">
                 22-24 September 2025 • GEC Siwan Campus
               </p>
-              <h1 className="heading mt-3 text-4xl md:text-7xl  ">
+              <h1 className="heading mt-3 text-4xl md:text-7xl">
                 <span
                   id="hero-title"
                   className="hero-letters inline-block will-change-transform"
@@ -158,8 +161,7 @@ export default function Index() {
                         ch === " " && "inline-block w-2",
                       )}
                     >
-                      {" "}
-                      {ch === " " ? "\u00A0" : ch}{" "}
+                      {ch === " " ? "\u00A0" : ch}
                     </span>
                   ))}
                   <span className="hero-letter hero-3d inline-block text-white">
@@ -167,7 +169,7 @@ export default function Index() {
                   </span>
                 </span>
               </h1>
-              <p className="mt-4 text-lg md:text-lg text-muted-foreground">
+              <p className="mt-4 text-lg text-muted-foreground">
                 Imagine. Build. Break. Create. A modern technical fest that
                 celebrates innovation, collaboration, and hands‑on tech
                 organised by Government Engineering College Siwan.
@@ -178,11 +180,8 @@ export default function Index() {
               <div className="mt-4 lg:mt-6 flex flex-wrap gap-3">
                 {/* View Events Button */}
                 <span className="relative inline-flex rounded-full overflow-hidden border border-white/10">
-                  {/* Moving gradient background */}
-                  <span className="absolute inset-0 bg-gradient-to-r from-primary/30 via-accent/30 to-secondary/30 bg-[length:200%_200%] animate-gradient-x" />
-                  {/* Shine sweep effect */}
+                  <span className="absolute inset-0 " />
                   <span className="absolute inset-0 bg-white/20 animate-shine" />
-                  {/* Overlay for readability */}
                   <span className="absolute inset-0 bg-background/60 backdrop-blur-sm" />
                   <Link
                     to="/events"
@@ -194,13 +193,11 @@ export default function Index() {
 
                 <span className="w-full lg:hidden" />
 
+                
                 {/* Brochure Button */}
                 <span className="relative inline-flex rounded-full overflow-hidden border border-white/10">
-                  {/* Moving gradient background */}
-                  <span className="absolute inset-0 bg-gradient-to-r from-primary/30 via-accent/30 to-secondary/30 bg-[length:200%_200%] animate-gradient-x" />
-                  {/* Shine sweep effect */}
-                  <span className="absolute inset-0 bg-white/20 animate-shine" />
-                  {/* Overlay for readability */}
+                  <span className="absolute inset-0  animate-gradient-x" />
+                  <span className="absolute inset-0 animate-shine" />
                   <span className="absolute inset-0 bg-background/60 backdrop-blur-sm" />
                   <a
                     href={brochureUrl}
@@ -227,14 +224,13 @@ export default function Index() {
                 </span>
               </div>
             </div>
-            <div className="hidden md:block md:self-start">
-              <div className="relative ml-auto w-full max-w-md glow-ring">
-                <img
-                  src="https://res.cloudinary.com/dcsqprug1/image/upload/v1756827622/logo_2_z2uwno.png"
-                  alt="Tech Kshitiz logo"
-                  className="w-full h-auto object-contain block animate-float-slow glow-soft"
-                />
-              </div>
+
+            <div className="relative ml-auto w-full max-w-md glow-ring">
+              <img
+                src="https://res.cloudinary.com/dswkss8nj/image/upload/v1757832290/prize_reveal_shgnjm.png"
+                alt="Tech Kshitiz logo"
+                className="w-full h-auto object-contain new-animate-float glow-soft"
+              />
             </div>
           </div>
         </div>
@@ -242,7 +238,9 @@ export default function Index() {
 
       {/* What's new in 2025 (from About) */}
       <section className="container pt-4 pb-10">
-        <h2 className="heading text-3xl md:text-4xl">What's new in 2025</h2>
+        <h2 className="heading text-3xl md:text-4xl font-normal text-sky-600">
+          What's new in 2025
+        </h2>
         <div className="mt-4 grid gap-4 md:grid-cols-3">
           <div className="rounded-xl border border-white/15 bg-gradient-to-br from-white/5 to-transparent backdrop-blur p-5 shadow-sm">
             <p className="font-semibold text-white">Three‑Day Mega Fest</p>
@@ -300,7 +298,7 @@ export default function Index() {
 
       <section className="container py-10 md:py-14">
         <div className="flex items-end justify-between">
-          <h2 className="heading text-3xl md:text-4xl">Highlights</h2>
+          <h2 className="heading text-3xl md:text-4xl font-normal text-sky-600">Highlights</h2>
           <Link
             className="text-sm text-muted-foreground hover:text-foreground"
             to="/events"
@@ -334,7 +332,7 @@ export default function Index() {
       <section className="bg-background/30 border-y border-white/5 backdrop-blur">
         <div className="container py-12">
           <div className="flex items-end justify-between">
-            <h2 className="heading text-3xl md:text-4xl">Quick Schedule</h2>
+            <h2 className="heading text-3xl md:text-4xl font-normal text-sky-600">Quick Schedule</h2>
             <Link
               to="/schedule"
               className="text-sm text-muted-foreground hover:text-foreground"
@@ -369,7 +367,7 @@ export default function Index() {
       {/* Sponsors */}
       <section id="sponsors" className="container py-12">
         <div className="flex items-end justify-between">
-          <h2 className="heading text-3xl md:text-4xl">Sponsors</h2>
+          <h2 className="heading text-3xl md:text-4xl font-normal text-sky-600">Sponsors</h2>
           <a
             className="text-sm text-muted-foreground hover:text-foreground"
             href="#"
@@ -434,7 +432,7 @@ export default function Index() {
       {/* Gallery teaser */}
       <section className="container pb-20">
         <div className="flex items-end justify-between">
-          <h2 className="heading text-3xl md:text-4xl">Gallery</h2>
+          <h2 className="heading text-3xl md:text-4xl font-normal text-sky-600">Gallery</h2>
           <Link
             className="text-sm text-muted-foreground hover:text-foreground"
             to="/gallery"

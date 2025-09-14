@@ -1,8 +1,15 @@
 import { useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
 import { events } from "@/data/events";
-import { Download, Calendar, ArrowRight,Clock, Users, IndianRupee, Trophy } from "lucide-react";
-
+import {
+  Download,
+  Calendar,
+  ArrowRight,
+  Clock,
+  Users,
+  IndianRupee,
+  Trophy,
+} from "lucide-react";
 
 export default function EventDetail() {
   const { id } = useParams<{ id: string }>();
@@ -12,8 +19,15 @@ export default function EventDetail() {
     return (
       <div className="container py-16">
         <h1 className="heading text-3xl">Event not found</h1>
-        <p className="mt-2 text-muted-foreground">We couldn't find this event. Please browse all events.</p>
-        <Link to="/events" className="mt-4 inline-block rounded-md border px-4 py-2 text-sm hover:bg-muted">Back to Events</Link>
+        <p className="mt-2 text-muted-foreground">
+          We couldn't find this event. Please browse all events.
+        </p>
+        <Link
+          to="/events"
+          className="mt-4 inline-block rounded-md border px-4 py-2 text-sm hover:bg-muted"
+        >
+          Back to Events
+        </Link>
       </div>
     );
   }
@@ -21,48 +35,76 @@ export default function EventDetail() {
   return (
     <div className="container py-12">
       <nav className="text-sm text-muted-foreground">
-        <Link to="/" className="hover:underline">Home</Link>
+        <Link to="/" className="hover:underline">
+          Home
+        </Link>
         <span className="mx-1">/</span>
-        <Link to="/events" className="hover:underline">Events</Link>
+        <Link to="/events" className="hover:underline">
+          Events
+        </Link>
         <span className="mx-1">/</span>
-        <span className="text-gray-400">{ev.title}</span>
+        <span className=" font-normal text-sky-600">{ev.title}</span>
       </nav>
 
       <header className="mt-3 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div className="flex items-start gap-4">
-          <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10 text-2xl" aria-hidden>
+          <div
+            className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10 text-2xl"
+            aria-hidden
+          >
             {ev.emoji}
           </div>
           <div>
             <h1 className="heading text-3xl md:text-4xl">{ev.title}</h1>
-            <p className="mt-1 text-muted-foreground">{ev.category} • {ev.duration} • {ev.location}</p>
+            <p className="mt-1 text-muted-foreground">
+              {ev.category} • {ev.duration} •{/* {ev.location} */}
+            </p>
           </div>
         </div>
         <div className="flex gap-3">
-          <a 
-            href={ev.rulebookLink} 
-            target="_blank" 
-            rel="noreferrer" 
-            className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-sm font-medium backdrop-blur transition-all duration-200 hover:bg-white/10 hover:border-white/30"
-          >
-            <Download className="h-4 w-4" />
-            Rulebook
-          </a>
-          <a 
-            href={ev.registerLink} 
-            target="_blank" 
-            rel="noreferrer" 
-            className="relative overflow-hidden rounded-lg bg-gradient-to-r from-primary via-sky-600 to-primary px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] before:transition-transform before:duration-700 hover:before:translate-x-[100%]"
-          >
-            Register Now
-          </a>
+          {/* Rulebook Button */}
+          {ev.id === "circuit-designing" ? (
+            <span className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-sm font-medium backdrop-blur opacity-50 cursor-not-allowed">
+              <Download className="h-4 w-4" />
+              Rulebook
+            </span>
+          ) : (
+            <a
+              href={ev.rulebookLink}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-sm font-medium backdrop-blur transition-all duration-200 hover:bg-white/10 hover:border-white/30"
+            >
+              <Download className="h-4 w-4" />
+              Rulebook
+            </a>
+          )}
+
+          {/* Register Button */}
+          {ev.id === "circuit-designing" ? (
+            <span className="relative overflow-hidden rounded-lg bg-gray-500/40 px-6 py-3 text-sm font-semibold text-white opacity-50 cursor-not-allowed">
+              Registration Closed
+            </span>
+          ) : (
+            <a
+              href={ev.registerLink}
+              target="_blank"
+              rel="noreferrer"
+              className="relative overflow-hidden rounded-lg bg-gradient-to-r from-primary via-sky-600 to-primary px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] before:transition-transform before:duration-700 hover:before:translate-x-[100%]"
+            >
+              Register Now
+            </a>
+          )}
         </div>
       </header>
 
       <section className="mt-8 grid gap-6 md:grid-cols-3">
         <article className="md:col-span-2 rounded-xl border border-white/10 bg-card/60 backdrop-blur p-6 transition-all duration-200 hover:border-white/20 hover:bg-card/70 animate-card">
           <h2 className="font-semibold">Overview</h2>
-          <p className="mt-2 text-gray-300">{ev.blura}{ev.blurb}</p>
+          <p className="mt-2 text-gray-300">
+            {ev.blura}
+            {ev.blurb}
+          </p>
           <div className="mt-4 flex flex-wrap gap-2">
             {/* {ev.tags.map((t) => (
               <span key={t} className="rounded-full bg-white/5 px-3 py-1 text-xs text-muted-foreground">{t}</span>
@@ -70,25 +112,41 @@ export default function EventDetail() {
           </div>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2">
-            {/* <div>
-              <h3 className="font-semibold">Rules</h3>
+            <div>
+              <h3 className="font-semibold">Important Notes</h3>
               <ul className="mt-2 list-disc pl-5 text-sm text-gray-300 space-y-1">
-                {(ev.rules ?? ["Original work only","Follow time limits","Respect fair play"]).map((r, i) => (
-                  <li key={i}>{r}</li>
-                ))}
+                {(ev.rules ?? [])
+                  .concat([
+                    "Participants need to carry their college ID with them during the event.",
+                    "Free hostel accommodation is available for girls, with food charges applicable as per the Mess if availed.",
+                    "For boys, accommodation is available at ₹100 per day, with food charges as per the Mess if availed.",
+                  ])
+                  .map((r, i) => (
+                    <li key={i}>{r}</li>
+                  ))}
               </ul>
-            </div> */}
+            </div>
             <div>
               <h3 className="font-semibold">Coordinators</h3>
               <ul className="mt-2 space-y-2 text-sm text-gray-300">
-                {(ev.coordinators ?? [
-                  { name: "Ayushmaan", phone: "+91 0000000000" },
-                  { name: "Ayushmaan", phone: "+91 0000000000" },
-                  { name: "Ayushmaan", phone: "+91 0000000000" },
-                ]).map((c, i) => (
-                  <li key={i} className="flex items-center justify-between rounded-md border border-white/10 bg-white/5 px-3 py-2">
+                {(
+                  ev.coordinators ?? [
+                    { name: "Ayushmaan", phone: "+91 0000000000" },
+                    { name: "Ayushmaan", phone: "+91 0000000000" },
+                    { name: "Ayushmaan", phone: "+91 0000000000" },
+                  ]
+                ).map((c, i) => (
+                  <li
+                    key={i}
+                    className="flex items-center justify-between rounded-md border border-white/10 bg-white/5 px-3 py-2"
+                  >
                     <span className="font-medium">{c.name}</span>
-                    <a className="text-primary hover:underline" href={`tel:${c.phone}`}>{c.phone}</a>
+                    <a
+                      className="text-primary hover:underline"
+                      href={`tel:${c.phone}`}
+                    >
+                      {c.phone}
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -98,14 +156,34 @@ export default function EventDetail() {
         <article className="rounded-xl border border-white/10 bg-card/60 backdrop-blur p-6 transition-all duration-200 hover:border-white/20 hover:bg-card/70 animate-card">
           <h3 className="font-semibold">At a glance</h3>
           <dl className="mt-3 grid grid-cols-1 gap-3 text-sm">
-            <div><dt className="text-gray-500 font-gruppo">Prizes</dt><dd className="font-medium font-spacemono">Goodies, Certificate</dd></div>
-            <div><dt className="text-gray-500 font-gruppo">Duration</dt><dd className="font-medium font-spacemono">{ev.duration}</dd></div>
-            <div><dt className="text-gray-500 font-gruppo">Location</dt><dd className="font-medium font-spacemono">{ev.location}</dd></div>
-            <div><dt className="text-gray-500 font-gruppo">Registration Fee </dt><dd className="font-medium font-spacemono">{ev.registration}</dd></div>
+            <div>
+              <dt className="text-gray-500 font-gruppo font-bold">Prizes</dt>
+              <dd className="font-medium font-spacemono">{ev.prize}</dd>
+            </div>
+            <div>
+              <dt className="text-gray-500 font-gruppo font-bold">Duration</dt>
+              <dd className="font-medium font-spacemono">{ev.duration}</dd>
+            </div>
+            {/* <div>
+              <dt className="text-gray-500 font-gruppo">Location</dt>
+              <dd className="font-medium font-spacemono">{ev.location}</dd>
+            </div> */}
+            <div>
+              <dt className="text-gray-500 font-gruppo font-bold ">
+                Team Size
+              </dt>
+              <dd className="font-medium font-spacemono">{ev.teamSize}</dd>
+            </div>
+            <div>
+              <dt className="text-gray-500 font-gruppo font-bold">
+                Registration Fee{" "}
+              </dt>
+              <dd className="font-medium font-spacemono">{ev.registration}</dd>
+            </div>
           </dl>
           <div className="mt-6">
-            <Link 
-              to="/schedule" 
+            <Link
+              to="/schedule"
               className="inline-flex items-center gap-2 w-full justify-center rounded-lg bg-gradient-to-r from-blue-600 to-sky-600 px-4 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 group"
             >
               <Calendar className="h-4 w-4 " />
@@ -119,16 +197,24 @@ export default function EventDetail() {
       <section className="mt-10">
         <h2 className="font-semibold">Similar events</h2>
         <div className="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {events.filter((e) => e.category === ev.category && e.id !== ev.id).slice(0,3).map((s) => (
-            <Link 
-              key={s.id} 
-              to={`/events/${s.id}`} 
-              className="rounded-xl border border-white/10 bg-card/60 backdrop-blur p-4 transition-all duration-200 hover:shadow-md hover:border-white/20 hover:bg-card/70"
-            >
-              <div className="flex items-center gap-3"><span className="text-lg" aria-hidden>{s.emoji}</span><span className="font-medium">{s.title}</span></div>
-              <p className="mt-1 text-sm text-muted-foreground">{s.blura}</p>
-            </Link>
-          ))}
+          {events
+            .filter((e) => e.category === ev.category && e.id !== ev.id)
+            .slice(0, 3)
+            .map((s) => (
+              <Link
+                key={s.id}
+                to={`/events/${s.id}`}
+                className="rounded-xl border border-white/10 bg-card/60 backdrop-blur p-4 transition-all duration-200 hover:shadow-md hover:border-white/20 hover:bg-card/70"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="text-lg" aria-hidden>
+                    {s.emoji}
+                  </span>
+                  <span className="font-medium">{s.title}</span>
+                </div>
+                <p className="mt-1 text-sm text-muted-foreground">{s.blura}</p>
+              </Link>
+            ))}
         </div>
       </section>
     </div>
