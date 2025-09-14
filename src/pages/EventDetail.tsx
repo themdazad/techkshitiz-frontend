@@ -144,7 +144,7 @@ export default function EventDetail() {
             <div>
               <dt className="text-gray-500 font-gruppo font-bold">Prizes</dt>
               <dd className="font-medium font-spacemono">
-                Goodies, Certificate
+                {ev.prize}
               </dd>
             </div>
             <div>
