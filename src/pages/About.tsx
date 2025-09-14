@@ -156,13 +156,13 @@ export default function AboutPage() {
           This edition brings together high‑energy activities like{" "}
           <strong>Hackathon</strong>, <strong>Debugger</strong>,{" "}
           <strong>Technical Quiz</strong>,<strong> IoT Fusion</strong>,{" "}
-          <strong>E‑Sports</strong>, <strong>Chess Online</strong>,{" "}
-          <strong>Graphic Design</strong>, <strong>Circuit Design</strong>,
-          <strong> Bridge Design</strong>, <strong>Crosswords</strong>,{" "}
+          <strong>E‑Sports</strong>, <strong>Graphic Design</strong>,{" "}
+          <strong>Typing Master</strong>, <strong>Circuit Design</strong>,
+          <strong> Bridge Design</strong>,{" "}
           <strong>Puzzle Escape Room</strong>,{" "}
           <strong>Crafting & Decorating Stalls</strong>,
-          <strong> Rangoli Event</strong>, <strong>RC Car Race</strong>,{" "}
-          <strong>Web Design</strong>, and <strong>Rubix Cube</strong>. From
+          <strong> Rangoli Event</strong>, <strong>AutoCAD Design</strong>, <strong>RC Car Race</strong>,{" "}
+          <strong>Web Design</strong>, <strong>Videography Competition</strong>, and <strong>Rubix Cube</strong>. From
           rapid prototyping and electronics to design thinking, strategy, and
           cultural creativity—there's a track for every talent level.
         </p>
