@@ -100,7 +100,7 @@ export default function WinnersPage() {
   return (
     <div className="container py-12">
       <header className="mb-6">
-        <h1 className="heading text-3xl md:text-4xl">Winners</h1>
+        <h1 className="heading text-3xl md:text-4xl font-normal text-sky-600">Winners</h1>
         <p className="mt-2 max-w-2xl text-muted-foreground">Spotlight on champions across events</p>
       </header>
       {/* Winners Marquee */}

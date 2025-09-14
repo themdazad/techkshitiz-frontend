@@ -8,11 +8,11 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { organizingTeam, clubIncharges, clubHeads } from "@/data/org";
-import {faqs} from "@/data/faq";
+import { faqs } from "@/data/faq";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+
 export default function AboutPage() {
-  
   // Developer data - you can move this to a separate data file if needed
   const developers = [
     {
@@ -44,48 +44,63 @@ export default function AboutPage() {
     }
   }, [location]);
 
-
   return (
-    
     <div className="container py-12">
-      <header className="max-w-3xl">
+      <header className="max-w-6xl">
         <p className="text-xs md:text-sm font-medium text-primary uppercase tracking-wide ">
           About the Club & Fest
         </p>
-        <h1 className="heading text-3xl md:text-5xl mt-2 ">
+        <h1 className="heading text-3xl md:text-5xl mt-2 font-normal text-sky-600">
           About Tech Kshitiz
         </h1>
-        <p className="mt-4 text-muted-foreground leading-relaxed">
-          Welcome to <strong>Techkshitiz</strong> - the leading technical club
-          at Government Engineering College, Siwan! Techkshitiz is a vibrant
-          community fostering technical excellence and innovation among
-          students. We provide a platform for hands-on learning, exploration of
-          cutting-edge technologies, and collaboration with like-minded peers.
-          Through engaging workshops, seminars, and hackathons, we empower
-          students to develop practical skills and tackle real-world challenges.
-          Our club serves as a hub for networking with industry professionals
-          and alumni, offering valuable insights and opportunities for career
-          growth. At Techkshitiz, we believe in the power of innovation to drive
-          positive change. Our members work on exciting projects, contribute to
-          collaborative initiatives, and push the boundaries of technology to
-          make a meaningful impact. Join us on our journey to shape the future
-          of technology and inspire the next generation of innovators. Connect
-          with us to stay updated on our latest events, projects, and
-          achievements.
-        </p>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <a
-            href="/events"
-            rel="noreferrer"
-            className="relative overflow-hidden rounded-lg bg-gradient-to-r from-primary via-sky-600 to-primary px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] before:transition-transform before:duration-700 hover:before:translate-x-[100%]"
-          >
-            Explore Events
-          </a>
+
+        {/* Updated section with image on the right */}
+        <div className="mt-4 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          <div>
+            <p className="text-muted-foreground leading-relaxed">
+              Welcome to <strong>Techkshitiz </strong>– the main technical club
+              of Government Engineering College, Siwan! We are a fun and active
+              community where students learn, create, and explore new
+              technologies. Through workshops, seminars, and hackathons, we help
+              students gain practical skills and solve real problems. Our club
+              also connects students with industry experts and alumni for career
+              guidance. At Techkshitiz, we believe innovation can change the
+              world. Join us to work on cool projects, learn new things, and
+              become a part of our tech family!
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a
+                href="/events"
+                rel="noreferrer"
+                className="relative overflow-hidden rounded-lg bg-gradient-to-r from-primary via-sky-600 to-primary px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] before:transition-transform before:duration-700 hover:before:translate-x-[100%]"
+              >
+                Explore Events
+              </a>
+            </div>
+          </div>
+
+          {/* Image section */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-md">
+              <img
+                src="https://res.cloudinary.com/deegqtr0m/image/upload/v1757855803/gecsiwanclg_q86grr.jpg"
+                alt="Government Engineering College Siwan Campus"
+                className="
+        w-full h-full rounded-2xl shadow-lg ring-1 ring-white/10 object-cover
+        transform transition-transform duration-500
+        
+      "
+                loading="lazy"
+              />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
+            </div>
+          </div>
         </div>
       </header>
+
       {/* What's new */}
       <section className="mt-12">
-        <h2 className="heading text-2xl md:text-3xl">What's new in 2025</h2>
+        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">What's new in 2025</h2>
         <div className="mt-4 grid gap-4 md:grid-cols-3">
           <FeatureCard
             title="Three‑Day Mega Fest"
@@ -103,7 +118,7 @@ export default function AboutPage() {
       </section>
       {/* About the Institute */}
       <section className="mt-12">
-        <h2 className="heading text-2xl md:text-3xl">About the Institute</h2>
+        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">About the Institute</h2>
         <div className="mt-4 grid gap-6 md:grid-cols-[auto,1fr] items-center rounded-2xl border border-white/10 bg-card/60 backdrop-blur p-6 animate-card">
           <div className="flex items-center gap-4">
             <img
@@ -136,7 +151,7 @@ export default function AboutPage() {
       </section>
       {/* Fest focus based on events */}
       <section className="mt-12">
-        <h2 className="heading text-2xl md:text-3xl">Fest Focus</h2>
+        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">Fest Focus</h2>
         <p className="mt-2 text-muted-foreground max-w-3xl ">
           This edition brings together high‑energy activities like{" "}
           <strong>Hackathon</strong>, <strong>Debugger</strong>,{" "}
@@ -166,7 +181,7 @@ export default function AboutPage() {
       </section>
       {/* Club Incharge Section */}
       <section className="mt-12">
-        <h2 className="heading text-2xl md:text-3xl">Club In Charge</h2>
+        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">Club In Charge</h2>
 
         {/* Grid Layout */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-6 ">
@@ -195,7 +210,7 @@ export default function AboutPage() {
       </section>
       {/* Techincal club head section */}
       <section className="mt-12">
-        <h2 className="heading text-2xl md:text-3xl">Technical Club Head</h2>
+        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">Technical Club Head</h2>
 
         {/* Grid Layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
@@ -286,7 +301,7 @@ export default function AboutPage() {
       {/* Developers Section */}
 
       <section className="mt-12">
-        <h2 className="heading text-2xl md:text-3xl">Meet the Developers</h2>
+        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">Meet the Developers</h2>
         <p className="mt-2 text-muted-foreground">
           The individuals behind this website
         </p>
@@ -369,7 +384,7 @@ export default function AboutPage() {
 
       {/* Venue & dates */}
       <section className="mt-12">
-        <h2 className="heading text-2xl md:text-3xl">Venue & Dates</h2>
+        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">Venue & Dates</h2>
         <div className="mt-4">
           <div className="rounded-xl border border-white/10 bg-card/60 backdrop-blur p-6">
             <h3 className="font-semibold">22–24 September 2025</h3>
@@ -396,7 +411,7 @@ export default function AboutPage() {
       </section>
       {/* FAQ */}
       <section className="mt-12" id="faq">
-        <h2 className="heading text-2xl md:text-3xl">FAQ</h2>
+        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">FAQ</h2>
         <Accordion
           type="single"
           collapsible
@@ -404,12 +419,8 @@ export default function AboutPage() {
         >
           {faqs.map((faq, index) => (
             <AccordionItem key={faq.id} value={faq.id}>
-              <AccordionTrigger >
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent>
-                {faq.answer}
-              </AccordionContent>
+              <AccordionTrigger>{faq.question}</AccordionTrigger>
+              <AccordionContent>{faq.answer}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>

@@ -4,7 +4,7 @@ export default function SchedulePage() {
   return (
     <div className="container py-12">
       <header className="mb-6">
-        <h1 className="heading text-3xl md:text-4xl">Event Schedule</h1>
+        <h1 className="heading text-3xl md:text-4xl font-normal text-sky-600">Event Schedule</h1>
         <p className="mt-2 max-w-3xl text-muted-foreground">
           Three-day schedule for Tech Kshitiz (22–24 September 2025).
         </p>

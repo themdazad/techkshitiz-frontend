@@ -43,7 +43,7 @@ export default function EventDetail() {
           Events
         </Link>
         <span className="mx-1">/</span>
-        <span className="text-gray-400">{ev.title}</span>
+        <span className=" font-normal text-sky-600">{ev.title}</span>
       </nav>
 
       <header className="mt-3 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
@@ -83,7 +83,7 @@ export default function EventDetail() {
           {/* Register Button */}
           {ev.id === "circuit-designing" ? (
             <span className="relative overflow-hidden rounded-lg bg-gray-500/40 px-6 py-3 text-sm font-semibold text-white opacity-50 cursor-not-allowed">
-              Registeration Closed
+              Registration Closed
             </span>
           ) : (
             <a
