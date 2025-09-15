@@ -6,4 +6,5 @@ export const sponsors: string[] = [
   "https://res.cloudinary.com/dswkss8nj/image/upload/v1757583453/WhatsApp_Image_2025-09-11_at_15.05.25_ad32d93b_hnvsfp.jpg",
   "https://res.cloudinary.com/dswkss8nj/image/upload/v1757440887/WhatsApp_Image_2025-09-09_at_23.21.55_e3f3ad67_bfihx8.jpg",
   "https://res.cloudinary.com/dswkss8nj/image/upload/v1757703821/shreeram_yubefh.png",
+  "https://res.cloudinary.com/dswkss8nj/image/upload/v1757937768/skilldarpan_wonasg.jpg",
 ];
