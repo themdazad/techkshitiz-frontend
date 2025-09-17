@@ -307,32 +307,6 @@ export const events: EventItem[] = [
       { name: "Aman Anurag", phone: "+91 9117242725" },
     ],
   },
-  {
-    id: "circuit-designing",
-    title: "Circuit Designing",
-    imgUrl: "6176910038715712713_121_it6k9o.jpg",
-    emoji: "🔌",
-    blura: "Build reliable circuits.",
-    blurb:
-      "The Circuit Design event at Techkshitiz, the technical fest of Government Engineering College, Siwan, is a platform where participants demonstrate their skills in creating and testing electronic circuits. It challenges students to apply their technical knowledge creatively and practically, encouraging innovation and hands-on learning in circuit development.",
-    level: "Intermediate",
-    duration: "1 hr",
-    location: "Lab 1",
-    teamSize: "1",
-    prize: "Exciting prizes , Medals and Certificates",
-    registration: "Free",
-    category: "Engineering & Design",
-    tags: ["team", "electronics"],
-    rulebookLink:
-      "https://docs.google.com/document/d/1WjKZVCg5A-WDrombp8Q-A-8y7l7dS-1v4nDaU6CfRog/edit?usp=sharing",
-    registerLink: "https://forms.gle/M1en6KcfcJknFNhh9",
-    coordinators: [
-      { name: "Sumansh Kumar", phone: "+91 7970556012" },
-      { name: "Priyanshu Kumar", phone: "+91 9771945740" },
-      { name: "Prayag Sagar", phone: "+91 9256762259" },
-    ],
-  },
-
   // 5. Brain Games & Quizzes
   {
     id: "puzzle-escape-room",
