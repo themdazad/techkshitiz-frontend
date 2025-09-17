@@ -245,20 +245,19 @@ export default function Index() {
           <div className="rounded-xl border border-white/15 bg-gradient-to-br from-white/5 to-transparent backdrop-blur p-5 shadow-sm">
             <p className="font-semibold text-white">Three‑Day Mega Fest</p>
             <p className="mt-1 text-sm text-gray-300">
-              22–24 Sept 2025 with schedules and streamlined registrations.
+               Join us from 22–24 September 2025 for three action-packed days filled with competitions, workshops, and networking opportunities.
             </p>
           </div>
           <div className="rounded-xl border border-white/15 bg-gradient-to-br from-white/5 to-transparent backdrop-blur p-5 shadow-sm">
             <p className="font-semibold text-white">Expanded Event Roster</p>
             <p className="mt-1 text-sm text-gray-300">
-              16+ events across Coding, Design, Engineering, Hardware, Strategy,
-              and Culture/Games.
+              Experience 16+ exciting events spanning Coding, Design, Engineering, Hardware, Strategy, and Cultural Activities.
             </p>
           </div>
           <div className="rounded-xl border border-white/15 bg-gradient-to-br from-white/5 to-transparent backdrop-blur p-5 shadow-sm">
             <p className="font-semibold text-white">Industry Connect</p>
             <p className="mt-1 text-sm text-gray-300">
-              Mentor hours,Team work and project showcases to elevate outcomes.
+              Get inspired through mentor sessions, hands-on team projects, and live showcases connecting you with industry professionals.
             </p>
           </div>
         </div>
