@@ -100,25 +100,29 @@ export default function AboutPage() {
 
       {/* What's new */}
       <section className="mt-12">
-        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">What's new in 2025</h2>
+        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">
+          What's new in 2025
+        </h2>
         <div className="mt-4 grid gap-4 md:grid-cols-3">
           <FeatureCard
             title="Three‑Day Mega Fest"
-            desc="22–24 Sept 2025 with mobile‑first schedules and streamlined registrations."
+            desc=" Join us from 22–24 September 2025 for three action-packed days filled with competitions, workshops, and networking opportunities."
           />
           <FeatureCard
             title="Expanded Event Roster"
-            desc="16+ events across Coding, Design, Engineering, Hardware, Strategy, and Culture/Games."
+            desc="Experience 16+ exciting events spanning Coding, Design, Engineering, Hardware, Strategy, and Cultural Activities."
           />
           <FeatureCard
             title="Industry Connect"
-            desc="Mentor hours, alumni talks, and project showcases to elevate outcomes."
+            desc="Get inspired through mentor sessions, hands-on team projects, and live showcases connecting you with industry professionals."
           />
         </div>
       </section>
       {/* About the Institute */}
       <section className="mt-12">
-        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">About the Institute</h2>
+        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">
+          About the Institute
+        </h2>
         <div className="mt-4 grid gap-6 md:grid-cols-[auto,1fr] items-center rounded-2xl border border-white/10 bg-card/60 backdrop-blur p-6 animate-card">
           <div className="flex items-center gap-4">
             <img
@@ -139,32 +143,35 @@ export default function AboutPage() {
               Government Engineering College Siwan
             </h3>
             <p className="mt-2 text-sm text-gray-300">
-              Government Engineering College Siwan (GEC Siwan) is dedicated to
-              excellence in engineering education and innovation. The campus
-              fosters hands‑on learning, research‑driven projects, and community
-              impact. Tech Kshitiz is proudly organized by students and mentors
-              of GEC Siwan to celebrate technology, creativity, and
-              collaboration.
+              Government Engineering College Siwan (GEC Siwan) stands at the
+              forefront of excellence in engineering education and innovation.
+              Our campus nurtures hands-on learning, research-driven projects,
+              and impactful community initiatives. Tech Kshitiz is proudly
+              organized by the students and mentors of GEC Siwan to celebrate
+              technology, creativity, and collaboration.
             </p>
           </div>
         </div>
       </section>
       {/* Fest focus based on events */}
       <section className="mt-12">
-        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">Fest Focus</h2>
+        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">
+          Fest Focus
+        </h2>
         <p className="mt-2 text-muted-foreground max-w-3xl ">
           This edition brings together high‑energy activities like{" "}
           <strong>Hackathon</strong>, <strong>Debugger</strong>,{" "}
           <strong>Technical Quiz</strong>,<strong> IoT Fusion</strong>,{" "}
           <strong>E‑Sports</strong>, <strong>Graphic Design</strong>,{" "}
           <strong>Typing Master</strong>, <strong>Circuit Design</strong>,
-          <strong> Bridge Design</strong>,{" "}
-          <strong>Puzzle Escape Room</strong>,{" "}
+          <strong> Bridge Design</strong>, <strong>Puzzle Escape Room</strong>,{" "}
           <strong>Crafting & Decorating Stalls</strong>,
-          <strong> Rangoli Event</strong>, <strong>AutoCAD Design</strong>, <strong>RC Car Race</strong>,{" "}
-          <strong>Web Design</strong>, <strong>Videography Competition</strong>, and <strong>Rubix Cube</strong>. From
-          rapid prototyping and electronics to design thinking, strategy, and
-          cultural creativity—there's a track for every talent level.
+          <strong> Rangoli Event</strong>, <strong>AutoCAD Design</strong>,{" "}
+          <strong>RC Car Race</strong>, <strong>Web Design</strong>,{" "}
+          <strong>Videography Competition</strong>, and{" "}
+          <strong>Rubix Cube</strong>. From rapid prototyping and electronics to
+          design thinking, strategy, and cultural creativity—there's a track for
+          every talent level.
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
           {["Coding", "Design", "Hardware", "Brain Games", "E-Sports"].map(
@@ -181,7 +188,9 @@ export default function AboutPage() {
       </section>
       {/* Club Incharge Section */}
       <section className="mt-12">
-        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">Club In Charge</h2>
+        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">
+          Club In Charge
+        </h2>
 
         {/* Grid Layout */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-6 ">
@@ -210,7 +219,9 @@ export default function AboutPage() {
       </section>
       {/* Techincal club head section */}
       <section className="mt-12">
-        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">Technical Club Head</h2>
+        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">
+          Technical Club Head
+        </h2>
 
         {/* Grid Layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
@@ -301,7 +312,9 @@ export default function AboutPage() {
       {/* Developers Section */}
 
       <section className="mt-12">
-        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">Meet the Developers</h2>
+        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">
+          Meet the Developers
+        </h2>
         <p className="mt-2 text-muted-foreground">
           The individuals behind this website
         </p>
@@ -384,7 +397,9 @@ export default function AboutPage() {
 
       {/* Venue & dates */}
       <section className="mt-12">
-        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">Venue & Dates</h2>
+        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">
+          Venue & Dates
+        </h2>
         <div className="mt-4">
           <div className="rounded-xl border border-white/10 bg-card/60 backdrop-blur p-6">
             <h3 className="font-semibold">22–24 September 2025</h3>
@@ -411,7 +426,9 @@ export default function AboutPage() {
       </section>
       {/* FAQ */}
       <section className="mt-12" id="faq">
-        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">FAQ</h2>
+        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">
+          FAQ
+        </h2>
         <Accordion
           type="single"
           collapsible

@@ -53,6 +53,8 @@ export const events: EventItem[] = [
     registerLink: "https://forms.gle/594YQ4Bs9e8Kg6QU9",
     rules: [
       "Evaluation of projects will be done in college campus only so you need to reach the venue",
+      "Prizes and physical certificate  will be awarded to all members of the first three winning teams.",
+      "E-Certificate will be provided to all the participants",
     ],
     coordinators: [
       { name: "Ayushmaan Shandilya", phone: "+91 8969352535" },
@@ -75,6 +77,10 @@ export const events: EventItem[] = [
     registration: "Free",
     category: "Coding & Technology",
     tags: ["single", "speed"],
+    rules: [
+      "Prizes and physical certificate will be provided only to the participant securing the first position. ",
+      "E-Certificate will be provided to all the participants",
+    ],
     rulebookLink:
       "https://docs.google.com/document/d/1f3NRZznSats1l3JpPEcpWt5ZTa-Y-QcotMEi6ueVTaw/edit?usp=sharing",
     registerLink: "https://forms.gle/NqUWBsutAbssfd1UA",
@@ -101,6 +107,10 @@ export const events: EventItem[] = [
     registration: "₹99",
     category: "Coding & Technology",
     tags: ["solo", "speed"],
+    rules: [
+      "Prizes and physical certificate  will be awarded to all members of the first two winning teams.",
+      "E-Certificate will be provided to all the participants",
+    ],
     rulebookLink:
       "https://docs.google.com/document/d/1gkLkyMqdhZ3VgUUVG_QYdpjtasBLZImGDA0NKaCufdc/edit?usp=sharing",
     registerLink: "https://forms.gle/ZMx6zkd5NKXhQPMp6",
@@ -126,6 +136,10 @@ export const events: EventItem[] = [
     registration: "Free",
     category: "Coding & Technology",
     tags: ["solo", "speed"],
+    rules: [
+      "Prizes and physical certificate will be provided only to the participant securing the first position. ",
+      "E-Certificate will be provided to all the participants",
+    ],
     rulebookLink:
       "https://docs.google.com/document/d/1QAxf09-9IRrscTrORK5HZ5N1btmgxyR3tG5l7AKjBGM/edit?usp=sharing",
     registerLink: "https://forms.gle/34Y8j8P9ppBuEYJF6",
@@ -153,6 +167,11 @@ export const events: EventItem[] = [
     registration: "Free",
     category: "Hardware & Mechatronics",
     tags: ["team", "hardware"],
+    rules: [
+      "Evaluation of projects will be done in college campus only so you need to reach the venue",
+      "Prizes and physical certificate  will be awarded to all members of the first three winning teams.",
+      "E-Certificate will be provided to all the participants",
+    ],
     rulebookLink:
       "https://docs.google.com/document/d/1vUT_KpIa7lGxGi1bBlUl1vt_NELkeu1TVI8CzSGZscE/edit?usp=sharing",
     registerLink: "https://forms.gle/yk7uxiF2Jm6yU7Zd9",
@@ -178,6 +197,11 @@ export const events: EventItem[] = [
     registration: "99",
     category: "Hardware & Mechatronics",
     tags: ["team", "race"],
+    rules: [
+      "Evaluation of projects will be done in college campus only so you need to reach the venue",
+      "Prizes and physical certificate  will be awarded to all members of the first three winning teams.",
+      "E-Certificate will be provided to all the participants",
+    ],
     rulebookLink:
       "https://docs.google.com/document/d/1zO1h5-ZlwyU91fyJL5b4cxzZOV5NYzGMiHQ8t_6XfY8/edit?usp=sharing",
     registerLink: "https://forms.gle/LdQQ7y9Cuxt6YvAi9",
@@ -205,6 +229,11 @@ export const events: EventItem[] = [
     prize: "Exciting prizes , Medals and Certificates",
     registration: "₹99",
     tags: ["team", "tournament"],
+    rules: [
+      "Evaluation of projects will be done in college campus only so you need to reach the venue",
+      "Prizes and physical certificate  will be awarded to all members of the first three winning teams.",
+      "E-Certificate will be provided to all the participants",
+    ],
     rulebookLink:
       "https://docs.google.com/document/d/1AEyMxJK9cX7jLULgXPd6uwshUdAGXmadrV9qiQlceNM/edit?usp=sharing",
     registerLink: "https://forms.gle/Wt35Fb7Zy3ZiCUsX6",
@@ -235,6 +264,10 @@ export const events: EventItem[] = [
     registration: "Free",
     category: "Engineering & Design",
     tags: ["team", "civil"],
+    rules: [
+      "Prizes and physical certificate  will be awarded to all members of the first two winning teams.",
+      "E-Certificate will be provided to all the participants",
+    ],
     rulebookLink:
       "https://docs.google.com/document/d/17Lj1TLR_bOQ0syeR4HbEnKoCSzrZLx4t5vE545fn6lM/edit?usp=sharing",
     registerLink: "https://forms.gle/dTiZpFT57DdeRGLh8",
@@ -261,6 +294,10 @@ export const events: EventItem[] = [
     registration: "Free",
     category: "Engineering & Design",
     tags: ["solo", "cad"],
+    rules: [
+      "Prizes and physical certificate  will be awarded to all members of the first two winning teams.",
+      "E-Certificate will be provided to all the participants",
+    ],
     rulebookLink:
       "https://docs.google.com/document/d/1jJX-_iyavhuaM2C5F_fF873OHzEKeoc118vctKXparg/edit?usp=sharing",
     registerLink: "https://forms.gle/fzBSrFNfrykCYUPn8",
@@ -313,6 +350,10 @@ export const events: EventItem[] = [
     registration: "Free",
     category: "Brain Games & Quizzes",
     tags: ["team", "puzzle"],
+    rules: [
+      "Prizes and physical certificate will be provided only to the participant securing the first first position. ",
+      "E-Certificate will be provided to all the participants",
+    ],
     rulebookLink:
       "https://docs.google.com/document/d/1CbVyNmoZ985MB-U0cPgv5CoPNyQPGMvqCuTwy1wMml0/edit?usp=sharing",
     registerLink: "https://forms.gle/xTfdext9uBPQbrN66",
@@ -341,6 +382,10 @@ export const events: EventItem[] = [
     registration: "Free",
     category: "Brain Games & Quizzes",
     tags: ["solo", "quiz"],
+    rules: [
+      "Prizes and physical certificate  will be awarded to all members of the first two winning teams.",
+      "E-Certificate will be provided to all the participants",
+    ],
     rulebookLink:
       "https://docs.google.com/document/d/150SH_sU3GEz1x53Fn5RQfVfyLslcK10o3ucyLVZbQ4U/edit?usp=sharing",
     registerLink: "https://forms.gle/mNMj8V49RqiXp6na9",
@@ -367,6 +412,10 @@ export const events: EventItem[] = [
     registration: "Free",
     category: "Brain Games & Quizzes",
     tags: ["solo", "quiz"],
+    rules: [
+      "Prizes and physical certificate  will be awarded to all members of the first two winning teams.",
+      "E-Certificate will be provided to all the participants",
+    ],
     rulebookLink:
       "https://docs.google.com/document/d/1_wP96O2zMI1kjhRXuDhp9-9a-WcCmHZMI7b5AjOte_k/edit?usp=sharing",
     registerLink: "https://forms.gle/JJyDTMx67csvRv4t5",
@@ -394,6 +443,10 @@ export const events: EventItem[] = [
     registration: "Free",
     category: "Creative & Showcase",
     tags: ["solo", "media"],
+    rules: [
+      "Prizes and physical certificate will be provided only to the participant securing the first position. ",
+      "E-Certificate will be provided to all the participants",
+    ],
     rulebookLink:
       "https://docs.google.com/document/d/1eqKrvmxLueGwWvFwi42Ro7nnYTBlX-k1ujF9syM8QAY/edit?usp=sharing",
     registerLink: "https://forms.gle/g5gPdmmLeuAtiipVA",
@@ -418,6 +471,10 @@ export const events: EventItem[] = [
     registration: "Free",
     category: "Creative & Showcase",
     tags: ["solo", "design"],
+    rules: [
+      "Prizes and physical certificate  will be awarded to all members of the first two winning teams.",
+      "E-Certificate will be provided to all the participants",
+    ],
     rulebookLink:
       "https://docs.google.com/document/d/1dY_K14tpu24Yad0CLSavzconQiygJbVvT8GIdnGy-_A/edit?usp=sharing",
     registerLink: "https://forms.gle/79bgh6ktzcWuU46L6",
@@ -445,6 +502,10 @@ export const events: EventItem[] = [
     registration: "Free",
     category: "Creative & Showcase",
     tags: ["team", "craft"],
+    rules: [
+      "Prizes and physical certificate  will be awarded to all members of the first two winning teams.",
+      "E-Certificate will be provided to all the participants",
+    ],
     rulebookLink:
       "https://docs.google.com/document/d/1Vs_IksNTRVBAZwh3CRRdac7NaH0wiw95xz8KxAwly9I/edit?usp=sharing",
     registerLink: "https://forms.gle/XL3ivtmQd8ctNG9D6",
@@ -469,6 +530,10 @@ export const events: EventItem[] = [
     registration: "Free",
     category: "Creative & Showcase",
     tags: ["team", "art"],
+    rules: [
+      "Prizes and physical certificate  will be awarded to all members of the first two winning teams.",
+      "E-Certificate will be provided to all the participants",
+    ],
     rulebookLink:
       "https://docs.google.com/document/d/1lVh6EGmz1UPEXpbfainHhSdmUhde2fHc2onjjnctmBk/edit?usp=sharing",
     registerLink: "https://forms.gle/GExCc6dQEwf4QkRp9",
