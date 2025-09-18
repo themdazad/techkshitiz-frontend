@@ -121,7 +121,7 @@ export default function Index() {
         <div className="container py-2 text-xs md:text-sm text-muted-foreground flex items-center gap-2">
           <span className="live-dot" aria-hidden />
           <span className="gradient-text animate-gradient">
-            Live update: Registration closing on 18th Sept. (Only for Bihar){" "}
+            Live update: Registration has been closed{" "}
           </span>
         </div>
       </div>
