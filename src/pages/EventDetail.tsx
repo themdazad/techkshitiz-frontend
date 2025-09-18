@@ -81,20 +81,9 @@ export default function EventDetail() {
           )}
 
           {/* Register Button */}
-          {ev.id === "circuit-designing" ? (
-            <span className="relative overflow-hidden rounded-lg bg-gray-500/40 px-6 py-3 text-sm font-semibold text-white opacity-50 cursor-not-allowed">
-              Registration Closed
-            </span>
-          ) : (
-            <a
-              href={ev.registerLink}
-              target="_blank"
-              rel="noreferrer"
-              className="relative overflow-hidden rounded-lg bg-gradient-to-r from-primary via-sky-600 to-primary px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] before:transition-transform before:duration-700 hover:before:translate-x-[100%]"
-            >
-              Register Now
-            </a>
-          )}
+          <span className="relative overflow-hidden rounded-lg bg-gray-500/40 px-6 py-3 text-sm font-semibold text-white opacity-50 cursor-not-allowed">
+            Registration Closed
+          </span>
         </div>
       </header>
 
