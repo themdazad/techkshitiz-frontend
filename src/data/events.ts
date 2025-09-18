@@ -45,7 +45,7 @@ export const events: EventItem[] = [
     location: "Campus Lab",
     teamSize: "2-4",
     prize: "Exciting prizes , Medals and Certificates",
-    registration: "₹99",
+    registration: "99",
     category: "Coding & Technology",
     tags: ["team", "innovation"],
     rulebookLink:
@@ -104,7 +104,7 @@ export const events: EventItem[] = [
     location: "Lab",
     teamSize: "1-3",
     prize: "Exciting prizes , Medals and Certificates",
-    registration: "₹99",
+    registration: "99",
     category: "Coding & Technology",
     tags: ["solo", "speed"],
     rules: [
@@ -227,7 +227,7 @@ export const events: EventItem[] = [
     category: "E-sports & Gaming",
     teamSize: "4",
     prize: "Exciting prizes , Medals and Certificates",
-    registration: "₹99",
+    registration: "99",
     tags: ["team", "tournament"],
     rules: [
       "Evaluation of projects will be done in college campus only so you need to reach the venue",
