@@ -27,7 +27,7 @@ export default function ContactPage() {
         </article>
         <article className="rounded-xl border border-white/10 bg-card/60 backdrop-blur p-6">
           <h2 className="font-semibold flex items-center gap-2"><Phone className="h-4 w-4" /> Phone</h2>
-          <p className="mt-2 text-sm text-gray-300">Find us on: <a className="underline" href={mapsUrl} target="_blank" rel="noreferrer">Google Maps</a></p>
+          <p className="mt-2 text-sm text-gray-300">Call us if you have any doubt regarding this event</p>
           <a className="mt-3 inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary via-sky-600 to-primary px-4 py-2 text-white" href={`tel:${phone}`}>Call Now</a>
         </article>
         <article className="rounded-xl border border-white/10 bg-card/60 backdrop-blur p-6">

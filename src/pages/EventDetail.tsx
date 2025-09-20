@@ -57,7 +57,7 @@ export default function EventDetail() {
           <div>
             <h1 className="heading text-3xl md:text-4xl">{ev.title}</h1>
             <p className="mt-1 text-muted-foreground">
-              {ev.category} • {ev.duration} •{/* {ev.location} */}
+              {ev.category} • {ev.duration} • {ev.location}
             </p>
           </div>
         </div>
@@ -168,6 +168,12 @@ export default function EventDetail() {
                 Registration Fee{" "}
               </dt>
               <dd className="font-medium font-spacemono">{ev.registration}</dd>
+            </div>
+            <div>
+              <dt className="text-gray-500 font-gruppo font-bold">
+                Location{" "}
+              </dt>
+              <dd className="font-medium font-spacemono">{ev.location}</dd>
             </div>
           </dl>
           <div className="mt-6">

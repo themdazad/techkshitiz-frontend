@@ -1,4 +1,4 @@
-import { schedule } from "@/data/events";
+import { schedule, eventDates } from "@/data/schedule";
 
 export default function SchedulePage() {
   return (
@@ -11,10 +11,10 @@ export default function SchedulePage() {
       </header>
 
       {([
-        { key: "Day 01", date: "22 Sept 2025" },
-        { key: "Day 02", date: "23 Sept 2025" },
-        { key: "Day 03", date: "24 Sept 2025" },
-      ] as const).map((d) => (
+        { key: "Day 01" as const, date: eventDates["Day 01"] },
+        { key: "Day 02" as const, date: eventDates["Day 02"] },
+        { key: "Day 03" as const, date: eventDates["Day 03"] },
+      ]).map((d) => (
         <section key={d.key} className="mt-10">
           <div className="flex items-end justify-between">
             <h2 className="heading text-2xl md:text-3xl">{d.key} • <span className="text-muted-foreground">{d.date}</span></h2>
@@ -29,7 +29,23 @@ export default function SchedulePage() {
                   <span className="font-semibold text-primary">{item.time}</span>
                 </div>
                 <h3 className="mt-1 font-semibold">{item.title}</h3>
-                <p className="text-sm text-gray-300">Duration: {item.duration} • Location: {item.location}</p>
+                <div className="text-sm text-gray-300">
+                  <p>Duration: {item.duration} • Location: {item.location}</p>
+                  {item.coordinators && item.coordinators.length > 0 && (
+                    <p className="mt-1">
+                      Coordinator{item.coordinators.length > 1 ? 's' : ''}: {' '}
+                      {item.coordinators.map((coord, i) => (
+                        <span key={i}>
+                          {coord.name} ({coord.phone})
+                          {i < item.coordinators!.length - 1 ? ', ' : ''}
+                        </span>
+                      ))}
+                    </p>
+                  )}
+                  {item.note && (
+                    <p className="mt-1 text-xs italic text-muted-foreground">{item.note}</p>
+                  )}
+                </div>
               </li>
             ))}
           </ol>
@@ -41,21 +57,37 @@ export default function SchedulePage() {
                 <tr>
                   <th className="px-4 py-3 text-left">Time</th>
                   <th className="px-4 py-3 text-left">Event</th>
-                  <th className="px-4 py-3 text-left">Duration</th>
                   <th className="px-4 py-3 text-left">Location</th>
+                  <th className="px-4 py-3 text-left">Coordinators</th>
                 </tr>
               </thead>
               <tbody>
                 {schedule[d.key].map((item, idx) => (
-                  <tr key={idx} className="border-t">
+                  <tr key={idx} className="border-t border-white/10">
                     <td className="px-4 py-3 whitespace-nowrap font-medium">{item.time}</td>
                     <td className="px-4 py-3">
-                      <div className="flex items-center gap-2">
-                        <span>{item.title}</span>
+                      <div className="flex flex-col">
+                        <span className="font-medium">{item.title}</span>
+                        {item.note && (
+                          <span className="text-xs text-muted-foreground italic mt-1">{item.note}</span>
+                        )}
                       </div>
                     </td>
-                    <td className="px-4 py-3">{item.duration}</td>
                     <td className="px-4 py-3">{item.location}</td>
+                    <td className="px-4 py-3">
+                      {item.coordinators && item.coordinators.length > 0 ? (
+                        <div className="space-y-1">
+                          {item.coordinators.map((coord, i) => (
+                            <div key={i} className="text-xs">
+                              <div className="font-medium">{coord.name}</div>
+                              <div className="text-muted-foreground">{coord.phone}</div>
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <span className="text-muted-foreground">-</span>
+                      )}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -65,8 +97,4 @@ export default function SchedulePage() {
       ))}
     </div>
   );
-}
-
-function isTBA(_item: { duration: string; note?: string; time: string }) {
-  return false;
 }

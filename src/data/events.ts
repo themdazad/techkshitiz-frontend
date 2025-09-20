@@ -24,7 +24,7 @@ export interface EventItem {
   rulebookLink: string;
   registerLink: string;
   rules?: string[];
-  coordinators?: { name: string; }[];
+  coordinators?: { name: string }[];
 }
 
 const DEFAULT_RULEBOOK = "https://drive.google.com";
@@ -42,7 +42,7 @@ export const events: EventItem[] = [
       "The Hackathon event at Techkshitiz is an exciting offline competition where teams or individuals solve real-world problems through programming. It emphasizes creativity, collaboration, and efficient problem-solving, giving tech enthusiasts a chance to showcase their skills and learn from peers.",
     level: "Intermediate",
     duration: "24 hrs",
-    location: "Campus Lab",
+    location: "Campus",
     teamSize: "2-4",
     prize: "Exciting prizes , Medals and Certificates",
     registration: "99",
@@ -58,7 +58,7 @@ export const events: EventItem[] = [
     ],
     coordinators: [
       { name: "Ayushmaan Shandilya" },
-          { name: "Sandeep Kumar" },
+      { name: "Sandeep Kumar" },
       { name: "Prayag Sagar" },
       { name: "Aashish Kumar" },
     ],
@@ -73,7 +73,7 @@ export const events: EventItem[] = [
       "This event is designed to challenge problem-solving abilities by having participants identify and fix errors in code efficiently during the event.",
     level: "Beginner",
     duration: "1 hr",
-    location: "Lab",
+    location: "Computer Lab",
     teamSize: "1",
     prize: "Exciting prizes , Medals and Certificates",
     registration: "Free",
@@ -88,9 +88,9 @@ export const events: EventItem[] = [
     registerLink: "https://forms.gle/NqUWBsutAbssfd1UA",
     coordinators: [
       { name: "Adeel Ala" },
-      { name: "Chanchal Kumar"},
+      { name: "Chanchal Kumar" },
       { name: "Sandeep Kumar" },
-      { name: "Deepak Kumar Prasad"},
+      { name: "Deepak Kumar Prasad" },
     ],
   },
   {
@@ -117,8 +117,9 @@ export const events: EventItem[] = [
       "https://docs.google.com/document/d/1gkLkyMqdhZ3VgUUVG_QYdpjtasBLZImGDA0NKaCufdc/edit?usp=sharing",
     registerLink: "https://forms.gle/ZMx6zkd5NKXhQPMp6",
     coordinators: [
-      { name: "Ayushmaan Shandilya"},
-      { name: "Kumari Rishidhi"},
+      { name: "Ayushmaan Shandilya" },
+      { name: "Kumari Rishidhi" },
+      { name: "Rohit Kumar Yadav" },
     ],
   },
   {
@@ -131,7 +132,7 @@ export const events: EventItem[] = [
       ".Participants will be given a set amount of time to type a provided text on computers supplied by the event organizers. The competition evaluates how fast and correctly each participant can type.",
     level: "Beginner",
     duration: "1 hr",
-    location: "Lab",
+    location: "Computer Lab",
     teamSize: "1",
     prize: "Exciting prizes , Medals and Certificates",
     registration: "Free",
@@ -145,9 +146,9 @@ export const events: EventItem[] = [
       "https://docs.google.com/document/d/1QAxf09-9IRrscTrORK5HZ5N1btmgxyR3tG5l7AKjBGM/edit?usp=sharing",
     registerLink: "https://forms.gle/34Y8j8P9ppBuEYJF6",
     coordinators: [
-      { name: "Deepak Kumar Prasad"},
+      { name: "Deepak Kumar Prasad" },
       { name: "Pratik Kumar" },
-      { name: "Sandeep Kumar"},
+      { name: "Sandeep Kumar" },
     ],
   },
 
@@ -162,7 +163,7 @@ export const events: EventItem[] = [
       "The IoT Fusion event at Techkshitiz is a dynamic competition focused on Internet of Things technology. It challenges participants to creatively solve real-world problems using IoT solutions, encouraging innovation, collaboration, and technical skills. The event offers a great platform for tech enthusiasts to showcase and enhance their IoT expertise in an engaging environment.",
     level: "Intermediate",
     duration: "1 hr",
-    location: "Lab 2",
+    location: "Campus",
     teamSize: "1-4",
     prize: "Exciting prizes , Medals and Certificates",
     registration: "Free",
@@ -177,9 +178,9 @@ export const events: EventItem[] = [
       "https://docs.google.com/document/d/1vUT_KpIa7lGxGi1bBlUl1vt_NELkeu1TVI8CzSGZscE/edit?usp=sharing",
     registerLink: "https://forms.gle/yk7uxiF2Jm6yU7Zd9",
     coordinators: [
-      { name: "Rajesh Kumar Baitha"},
-      { name: "Ashish Kumar"},
-      { name: "Aaditi Kumari"},
+      { name: "Rajesh Kumar Baitha" },
+      { name: "Ashish Kumar" },
+      { name: "Aaditi Kumari" },
     ],
   },
   {
@@ -192,7 +193,7 @@ export const events: EventItem[] = [
       "As part of TechKshitiz, the RC Car Racing competition tests participants' skills in building, controlling, and racing remote-controlled cars on a challenging track. This event combines technical knowledge with driving precision, where racers navigate obstacles, sharp turns, and jumps to achieve the fastest lap times.",
     level: "Intermediate",
     duration: "1 hr",
-    location: "Tracks",
+    location: "Badminton Court",
     teamSize: "2",
     prize: "Exciting prizes , Medals and Certificates",
     registration: "99",
@@ -208,8 +209,8 @@ export const events: EventItem[] = [
     registerLink: "https://forms.gle/LdQQ7y9Cuxt6YvAi9",
     coordinators: [
       { name: "Rajnish Kumar" },
-      { name: "Priyanshu Kumar"},
-      { name: "Prayag Sagar"},
+      { name: "Priyanshu Kumar" },
+      { name: "Prayag Sagar" },
     ],
   },
 
@@ -224,7 +225,7 @@ export const events: EventItem[] = [
       "The E-sports event at Techkshitiz is a competitive gaming segment featuring popular games like FreeFire and BGMI. It is part of the annual technical fest organized by the Technical Club of Government Engineering College, Siwan, offering an exciting platform for gamers to showcase their skills and compete in a vibrant tech festival environment.",
     level: "Beginner",
     duration: "1.5 hrs",
-    location: "Hall",
+    location: "Ground/Auditorium",
     category: "E-sports & Gaming",
     teamSize: "4",
     prize: "Exciting prizes , Medals and Certificates",
@@ -239,12 +240,12 @@ export const events: EventItem[] = [
       "https://docs.google.com/document/d/1AEyMxJK9cX7jLULgXPd6uwshUdAGXmadrV9qiQlceNM/edit?usp=sharing",
     registerLink: "https://forms.gle/Wt35Fb7Zy3ZiCUsX6",
     coordinators: [
-      { name: "Danish Hamraj"},
+      { name: "Danish Hamraj" },
       { name: "Rajnish Kumar" },
-      { name: "Pratik Kumar"},
+      { name: "Pratik Kumar" },
       { name: "Rajeev Sharma" },
       { name: "Priyanshu Raj" },
-      { name: "Ayush Kumar"},
+      { name: "Ayush Kumar" },
     ],
   },
 
@@ -259,7 +260,7 @@ export const events: EventItem[] = [
       "The Bridge Design event at Techkshitiz is a competition where participants showcase their structural engineering skills by designing and building bridges that can withstand weight. This event empowers tech enthusiasts through hands-on workshops and competitions",
     level: "Intermediate",
     duration: "3 hrs",
-    location: "Lab",
+    location: "Workshop",
     teamSize: "3",
     prize: "Exciting prizes , Medals and Certificates",
     registration: "Free",
@@ -273,10 +274,10 @@ export const events: EventItem[] = [
       "https://docs.google.com/document/d/17Lj1TLR_bOQ0syeR4HbEnKoCSzrZLx4t5vE545fn6lM/edit?usp=sharing",
     registerLink: "https://forms.gle/dTiZpFT57DdeRGLh8",
     coordinators: [
-      { name: "Aman Kumar"},
-      { name: "Sachin Kumar"},
-      { name: "Sumansh Kumar"},
-      { name: "Aman Anurag"},
+      { name: "Aman Kumar" },
+      { name: "Sachin Kumar" },
+      { name: "Sumansh Kumar" },
+      { name: "Aman Anurag" },
     ],
   },
   {
@@ -289,7 +290,7 @@ export const events: EventItem[] = [
       "As a key event of TechKshitiz, the AutoCAD Competition challenges participants to demonstrate their skills in computer-aided design and drafting using AutoCAD software. Competitors will be tasked with creating precise and accurate technical drawings within a given time, testing their speed, creativity, and attention to detail.",
     level: "Intermediate",
     duration: "1 hr",
-    location: "Lab",
+    location: "Computer Lab",
     teamSize: "1",
     prize: "Exciting prizes , Medals and Certificates",
     registration: "Free",
@@ -303,9 +304,9 @@ export const events: EventItem[] = [
       "https://docs.google.com/document/d/1jJX-_iyavhuaM2C5F_fF873OHzEKeoc118vctKXparg/edit?usp=sharing",
     registerLink: "https://forms.gle/fzBSrFNfrykCYUPn8",
     coordinators: [
-      { name: "Saurabh Mishra"},
-      { name: "Aman Kumar"},
-      { name: "Aman Anurag"},
+      { name: "Saurabh Mishra" },
+      { name: "Aman Kumar" },
+      { name: "Aman Anurag" },
     ],
   },
   // 5. Brain Games & Quizzes
@@ -319,7 +320,7 @@ export const events: EventItem[] = [
       "The Escape Room event at Techkshitiz is an exciting and challenging activity where participants solve intricate puzzles to escape from a themed room within a set time. It combines problem-solving, teamwork, and quick thinking, making it a thrilling part of the Techkshitiz technical festival. This event tests participants' logical and analytical skills in a fun, immersive environment.",
     level: "Intermediate",
     duration: "1 hr",
-    location: "Block B",
+    location: "Campus",
     teamSize: "4",
     prize: "Exciting prizes , Medals and Certificates",
     registration: "Free",
@@ -333,10 +334,10 @@ export const events: EventItem[] = [
       "https://docs.google.com/document/d/1CbVyNmoZ985MB-U0cPgv5CoPNyQPGMvqCuTwy1wMml0/edit?usp=sharing",
     registerLink: "https://forms.gle/xTfdext9uBPQbrN66",
     coordinators: [
-      { name: "Kumar Mohit"},
-      { name: "Rajnish Kumar"},
-      { name: "Priyanshu Raj"},
-      { name: "Ritika Rani"},
+      { name: "Kumar Mohit" },
+      { name: "Rajnish Kumar" },
+      { name: "Priyanshu Raj" },
+      { name: "Ritika Rani" },
       { name: "Anisha Patel" },
       { name: "Pragya Rani" },
     ],
@@ -351,7 +352,7 @@ export const events: EventItem[] = [
       "The quiz challenges participants' expertise in various domains of technology, offering an engaging and stimulating environment for tech enthusiasts to test their skills. This event promotes learning, quick thinking, and a passion for technology among students and participants.",
     level: "Beginner",
     duration: "1 hr",
-    location: "Auditorium",
+    location: "Computer Lab",
     teamSize: "1",
     prize: "Exciting prizes , Medals and Certificates",
     registration: "Free",
@@ -365,8 +366,8 @@ export const events: EventItem[] = [
       "https://docs.google.com/document/d/150SH_sU3GEz1x53Fn5RQfVfyLslcK10o3ucyLVZbQ4U/edit?usp=sharing",
     registerLink: "https://forms.gle/mNMj8V49RqiXp6na9",
     coordinators: [
-      { name: "Kumar Mohit"},
-      { name: "Adeel Ala"},
+      { name: "Kumar Mohit" },
+      { name: "Adeel Ala" },
       { name: "Sachin Kumar" },
       { name: "Priyanshu Raj" },
     ],
@@ -381,7 +382,7 @@ export const events: EventItem[] = [
       "The Rubik's Cube event at Techkshitiz is a competitive challenge where participants race to solve the Rubik's Cube as quickly as possible. It typically involves rounds of solving the cube in minimum time, testing speed, skill, and problem-solving abilities.",
     level: "Beginner",
     duration: "1 hr",
-    location: "Auditorium",
+    location: "Campus",
     teamSize: "1",
     prize: "Exciting prizes , Medals and Certificates",
     registration: "Free",
@@ -394,10 +395,7 @@ export const events: EventItem[] = [
     rulebookLink:
       "https://docs.google.com/document/d/1_wP96O2zMI1kjhRXuDhp9-9a-WcCmHZMI7b5AjOte_k/edit?usp=sharing",
     registerLink: "https://forms.gle/JJyDTMx67csvRv4t5",
-    coordinators: [
-      { name: "Rajan Kumar"},
-      { name: "Ruchi Kumari"},
-    ],
+    coordinators: [{ name: "Rajan Kumar" }, { name: "Ruchi Kumari" }],
   },
   // DEMO TEXT
   // HELLO
@@ -425,10 +423,7 @@ export const events: EventItem[] = [
     rulebookLink:
       "https://docs.google.com/document/d/1eqKrvmxLueGwWvFwi42Ro7nnYTBlX-k1ujF9syM8QAY/edit?usp=sharing",
     registerLink: "https://forms.gle/g5gPdmmLeuAtiipVA",
-    coordinators: [
-      { name: "Saurabh Mishra" },
-      { name: "Danish Hamraj"},
-    ],
+    coordinators: [{ name: "Saurabh Mishra" }, { name: "Danish Hamraj" }],
   },
   {
     id: "graphic-designing",
@@ -440,7 +435,7 @@ export const events: EventItem[] = [
       "The graphics design event at TechKshitiz showcases the creativity and design skills of participating students. It challenges them to create innovative and visually appealing designs, often focused on technology themes.",
     level: "Beginner",
     duration: "1 hr",
-    location: "Design Studio",
+    location: "Computer Lab",
     teamSize: "1",
     prize: "Exciting prizes , Medals and Certificates",
     registration: "Free",
@@ -454,10 +449,10 @@ export const events: EventItem[] = [
       "https://docs.google.com/document/d/1dY_K14tpu24Yad0CLSavzconQiygJbVvT8GIdnGy-_A/edit?usp=sharing",
     registerLink: "https://forms.gle/79bgh6ktzcWuU46L6",
     coordinators: [
-      { name: "Harish Tiwari"},
-      { name: "Ayushmaan Shandilya"},
-      { name: "Khushi Kumari"},
-      { name: "Kumari Rishidhi"},
+      { name: "Harish Tiwari" },
+      { name: "Ayushmaan Shandilya" },
+      { name: "Khushi Kumari" },
+      { name: "Kumari Rishidhi" },
       { name: "Khushi Kumari" },
     ],
   },
@@ -471,7 +466,7 @@ export const events: EventItem[] = [
       "The Crafting and Stall Decoration event at Techkshitiz is designed to showcase creativity, innovation, and aesthetic skills. Participants get a chance to transform simple spaces into visually appealing stalls through unique themes and handmade crafts.",
     level: "Beginner",
     duration: "-",
-    location: "Courtyard",
+    location: "Campus",
     teamSize: "2-4",
     prize: "Exciting prizes , Medals and Certificates",
     registration: "Free",
@@ -484,10 +479,7 @@ export const events: EventItem[] = [
     rulebookLink:
       "https://docs.google.com/document/d/1Vs_IksNTRVBAZwh3CRRdac7NaH0wiw95xz8KxAwly9I/edit?usp=sharing",
     registerLink: "https://forms.gle/XL3ivtmQd8ctNG9D6",
-    coordinators: [
-      { name: "Khushee Pandey"},
-      { name: "Sweety Kumari"},
-    ],
+    coordinators: [{ name: "Khushee Pandey" }, { name: "Sweety Kumari" }],
   },
   {
     id: "technical-rangoli",
@@ -499,7 +491,7 @@ export const events: EventItem[] = [
       "The Technical Rangoli event in TechKshitiz blends creativity with innovation by presenting technical concepts through traditional rangoli art. Participants use colors, patterns, and symbols to depict themes related to science, technology, and engineering in a visually appealing way.",
     level: "Beginner",
     duration: "2 hrs",
-    location: "Campus Ground",
+    location: "Campus",
     teamSize: "1-3",
     prize: "Exciting prizes , Medals and Certificates",
     registration: "Free",
@@ -512,10 +504,7 @@ export const events: EventItem[] = [
     rulebookLink:
       "https://docs.google.com/document/d/1lVh6EGmz1UPEXpbfainHhSdmUhde2fHc2onjjnctmBk/edit?usp=sharing",
     registerLink: "https://forms.gle/GExCc6dQEwf4QkRp9",
-    coordinators: [
-      { name: "Sweety Kumari"},
-      { name: "Kashish Singhal"},
-    ],
+    coordinators: [{ name: "Sweety Kumari" }, { name: "Kashish Singhal" }],
   },
 ];
 
