@@ -227,7 +227,7 @@ export const events: EventItem[] = [
     duration: "1.5 hrs",
     location: "Ground/Auditorium",
     category: "E-sports & Gaming",
-    teamSize: "2",
+    teamSize: "1-2",
     prize: "Exciting prizes , Medals and Certificates",
     registration: "99",
     tags: ["team", "tournament"],
