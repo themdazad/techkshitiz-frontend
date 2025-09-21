@@ -23,7 +23,7 @@ export const faqs: Faq[] = [
     id: "accommodation-food",
     question: "Will accommodation and meals be provided to participants?",
     answer:
-      "Free hostel accommodation is available for girls, with food charges applicable as per the Mess if availed. For boys, accommodation is available at ₹100 per day, with food charges as per the Mess if availed."
+      "Accommodation for boys is ₹100 per person for the entire event (not per day). Charges apply only if you stay overnight in the college. Accommodation for girls is completely free."
   },
   {
     id: "event-duration",
