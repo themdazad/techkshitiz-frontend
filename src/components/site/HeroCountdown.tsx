@@ -29,7 +29,7 @@ export function HeroCountdown({ className }: { className?: string }) {
               className="inline-block h-2 w-2 rounded-full bg-green-500 animate-pulse"
               aria-hidden
             />
-            Live Now
+            Ended! Thank you for joining us !
           </div>
         ) : (
           <div className="w-full flex items-center justify-center gap-2 whitespace-nowrap">

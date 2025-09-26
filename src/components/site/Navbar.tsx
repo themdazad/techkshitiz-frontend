@@ -114,8 +114,7 @@ export default function Navbar() {
           <div className="relative rounded-full p-[1px] bg-gradient-to-r from-primary/60 via-accent/60 to-secondary/60 shadow-sm">
             <div
               className={cn(
-                "inline-flex items-center gap-2 rounded-full bg-background/70 backdrop-blur px-3 py-1.5 text-sm font-medium border border-white/10",
-                live && "bg-green-50/90",
+                "inline-flex items-center gap-2 rounded-full bg-background/70 backdrop-blur px-3 py-1.5 text-sm font-medium border border-white/10"
               )}
               aria-live="polite"
             >
@@ -125,7 +124,7 @@ export default function Navbar() {
                     className="inline-block h-2 w-2 rounded-full bg-green-500 animate-pulse"
                     aria-hidden
                   />
-                  Live Now
+                  Ended! Thank you for joining us !
                 </>
               ) : (
                 <div className="flex items-center gap-2">

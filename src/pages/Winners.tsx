@@ -8,91 +8,98 @@ interface EventWinners { event: string; id: string; rows: EventWinnersRow[] }
 
 const winnersByEvent: EventWinners[] = [
   { event: "Hackathon", id: "hackathon", rows: [
-    { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
+    { rank: "Gold" as const, team: "CyberNova", members: "Shubham Kumar Gupta, Nidhi Nupur, Pranav Pratyush, Ashish Kumar", title: "GEC Gopalganj" },
+    { rank: "Silver" as const, team: "The Falcon", members: "Sonu Kumar, Raj Deepak, Priyanshu Ranjan, Ankit Kumar", title: "GEC Siwan" },
+    { rank: "Bronze" as const, team: "TechVerse", members: "Khushi Kumari, Aditya Kumar, Lav Kumar, Munna Kumar", title: "GEC Siwan" },
   ]},
   { event: "Debugger", id: "debugger", rows: [
-    { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
+    { rank: "Gold" as const, team: "Ankit Kumar Singh", members: "Individual Winner", title: "GEC Gopalganj" },
   ]},
   { event: "Web Designing", id: "technical-quiz", rows: [
-    { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
+    { rank: "Gold" as const, team: "LEGENDA TEAM", members: "Amar Kishor Kumar, Vishnu Kumar, Shivam Kumar", title: "GP Barauni" },
+    { rank: "Silver" as const, team: "VIDHAYAK JI", members: "Sujeet Kumar, Vicky Kumar, Utsav Kumar", title: "GP Siwan" },
   ]},
   { event: "Typing Master", id: "iot-fusion", rows: [
-    { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
+    { rank: "Gold" as const, team: "Ankit Kumar", members: "Individual Winner", title: "GEC Siwan" },
   ]},
   { event: "IoT Fusion", id: "e-sports", rows: [
-    { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
+    { rank: "Gold" as const, team: "Tech Titans", members: "Ritik Kumar Sharma, Anupriya, Amrita Kumari, Priyanshu Kumar", title: "GEC Siwan" },
+    { rank: "Silver" as const, team: "Backend Battalion", members: "Ashish Kumar, Prashant Gaurav, Golu Kumar, Rahul Kumar Mishra", title: "GEC Siwan" },
+    { rank: "Bronze" as const, team: "The Falcon", members: "Sonu Kumar, Raj Deepak, Priyanshu Ranjan, Ankit Kumar", title: "GEC Siwan" },
   ]},
   { event: "RC Car Racing", id: "chess-online", rows: [
-    { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
+    { rank: "Gold" as const, team: "Red Bull Racing", members: "Ritik Kumar Sharma, Anupriya", title: "GEC Siwan" },
+    { rank: "Silver" as const, team: "ELX", members: "Shubham Tiwari, Namit Kumar", title: "GP Siwan" },
   ]},
-  { event: "E-sports (BGMI,Free Fire)", id: "graphic-design", rows: [
-    { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
+  { event: "E-sports (BGMI)", id: "graphic-design", rows: [
+    { rank: "Gold" as const, team: "ZARRY", members: "Zaif Ahmad, Arshad Ali, Anup Kumar Ram, Mahfooz Alam", title: "SCEM Siwan" },
+    { rank: "Silver" as const, team: "CxG ESPORT", members: "Bittu Kumar Yadav, Hariom Yadav, Akash Yadav, Gulshan Kumar", title: "GP Siwan" },
+    { rank: "Bronze" as const, team: "LIZARD", members: "Atul Ranjan, Santosh Kumar, Rohit Raj, Raushan Kumar Verma", title: "GP Siwan" },
   ]},
+ { 
+  event: "E-sports (FREEFIRE)", 
+  id: "graphic-design", 
+  rows: [
+    { 
+      rank: "Gold" as const, 
+      team: "TEAM IGRIS", 
+      members: "Sundram Kumar, Anmol Kumar, Anish Kumar, Rajnish Kumar", 
+      title: "GP Siwan " 
+    },
+    { 
+      rank: "Silver" as const, 
+      team: "TEAM PREDATORS", 
+      members: "Aditya Kumar, Dipankar Sah, Md Sahil Aslam, Dip Raj", 
+      title: "GP Siwan" 
+    },
+    { 
+      rank: "Bronze" as const, 
+      team: "Phanthon", 
+      members: "Prince Kumar, Shivam Kumar, Abhisek Kumar, Pawan Kumar", 
+      title: "GP Siwan " 
+    },
+  ]
+},
+
   { event: "Bridge Designing", id: "circuit-design", rows: [
-    { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
+    { rank: "Gold" as const, team: "Buidico Designer", members: "Gautam Kumar, Anish Kumar, Suman Kumar, Navneet Kumar", title: "GEC Siwan" },
+    { rank: "Silver" as const, team: "BEAM DREAMERS", members: "Suhani Mishra, Anupriya, Sagar Raj, Mukund Singh", title: "GEC Siwan" },
+    { rank: "Bronze" as const, team: "LOAD CELL", members: "Aman Raj, Satya Prakash Yadav, Sonu Kumar Sah, Sachin Kumar", title: "GEC Siwan" },
   ]},
   { event: "AutoCAD Designing", id: "bridge-design", rows: [
-    { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
-  ]},
-  { event: "Circuit Designing", id: "crosswords", rows: [
-    { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
+    { rank: "Gold" as const, team: "Kunal Kumar", members: "Individual Winner", title: "GEC Siwan" },
+    { rank: "Silver" as const, team: "Aditya Kumar Sah", members: "Individual Winner", title: "GEC Siwan" },
   ]},
   { event: "Puzzle Escape Room", id: "puzzle-escape-room", rows: [
-    { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
+    { rank: "Gold" as const, team: "The Solvers", members: "Aditya Kumar Gupta, Aditya Kumar Sah, Ankit Kumar Mahto, Amandeepa Kumari", title: "GEC Siwan" },
   ]},
   { event: "Technical Quiz", id: "crafting-stalls", rows: [
-    { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
+    { rank: "Gold" as const, team: "Tejaswi Raj", members: "Individual Winner", title: "GEC Siwan" },
+    { rank: "Silver" as const, team: "Sajid Ahmad", members: "Individual Winner", title: "GEC Gopalganj" },
+    { rank: "Bronze" as const, team: "Ashish Kumar", members: "Individual Winner", title: "GEC Gopalganj" },
   ]},
   { event: "Rubix Cube Challange", id: "rangoli-event", rows: [
-    { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
+    { rank: "Gold" as const, team: "Subham Tiwari", members: "Individual Winner", title: "GP Siwan" },
+    { rank: "Silver" as const, team: "Himanshu Kumar", members: "Individual Winner", title: "GP Barauni" },
   ]},
   { event: "Videography Competition", id: "tech-flash", rows: [
-    { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
+    { rank: "Gold" as const, team: "ZEW ESCAPE", members: "Md Zeeshon Alam, Aditya Sharma", title: "GEC Siwan" },
+    { rank: "Silver" as const, team: "APERTURE ADDICTS", members: "Golu Kumar, Ashish Kumar", title: "GEC Siwan" },
   ]},
   { event: "Graphic Designing", id: "extempore", rows: [
-    { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
+    { rank: "Gold" as const, team: "Nidhi Nupur", members: "Individual Winner", title: "GEC Gopalganj - CSE (IoT & CS)" },
+    { rank: "Silver" as const, team: "Md Tabish", members: "Individual Winner", title: "SCEM Siwan" },
   ]},
   { event: "Crafting & Decoration Stalls", id: "rubix-cube", rows: [
-    { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
+    { rank: "Gold" as const, team: "Power Star", members: "Nirbhay Singh, Ankit Anand, Abhimanu Kumar, Abhishek Kumar Paswan, Akash Kumar Singh", title: "GEC Siwan" },
+    { rank: "Silver" as const, team: "Fab Four", members: "Nikhil Kumar, Abhinaw Kumar Singh, Ragni Kumari, Nisha Kumari", title: "SCEM Siwan" },
   ]},
-   { event: "Technical Rangoli", id: "rubix-cube", rows: [
-    { rank: "Gold", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Silver", team: "TBA", members: "TBA", title: "TBA" },
-    { rank: "Bronze", team: "TBA", members: "TBA", title: "TBA" },
+   { event: "Technical Rangoli", id: "rangoli-event-2", rows: [
+    { rank: "Gold" as const, team: "SPECTRUM SQUAD", members: "Aakanksha Singh, Anand Raj, Vivek Kumar", title: "GEC Siwan" },
+    { rank: "Silver" as const, team: "MADE IN INDIA", members: "Abha Kumari, Kumkum Kumari, Anshu Kumari", title: "GEC Siwan" },
   ]},
-];
+  
+].filter(event => event.rows.some(row => row.team !== "-"));
 
 export default function WinnersPage() {
   const looped = useMemo(() => winnersMarquee.concat(winnersMarquee), []);
