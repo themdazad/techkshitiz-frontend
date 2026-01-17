@@ -42,7 +42,9 @@ export default {
         ],
         'gruppo': ['Gruppo', 'sans-serif'],
         'magz': ['Magz', 'sans-serif'],
+        'syne': ['Syne', 'sans-serif'],
         'spacemono': ['Space Mono', 'monospace'],
+        'funcity': ['FunCity', 'sans-serif'],
         
       },
       colors: {

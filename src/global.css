@@ -1,3 +1,22 @@
+/* Soft fade at the bottom of hero section to blend with next section */
+.hero-bottom-fade {
+  background: linear-gradient(to bottom, transparent 0%, var(--background) 100%);
+}
+/* Faded grid background for hero section only */
+.grid-bg-fade {
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}
+/* Grid background utility for landing page */
+.grid-bg {
+  background-image:
+    linear-gradient(90deg, var(--grid-line-color) 1px, transparent 1px),
+    linear-gradient(var(--grid-line-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+  z-index: -1;
+}
 /** @import must precede all other statements */
 @import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Rowdies:wght@300;400;700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Gruppo&display=swap");
@@ -7,6 +26,49 @@
   font-family: "Magz";
   src: url("/fonts/Magz.ttf") format("truetype");
   font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+/* Custom FunCity font */
+@font-face {
+  font-family: "FunCity";
+  src: url("/fonts/FunCityLevel2Basic.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Syne";
+  src: url("/fonts/syne/TTF/Syne-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Syne";
+  src: url("/fonts/syne/TTF/Syne-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Syne";
+  src: url("/fonts/syne/TTF/Syne-Extra.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Syne";
+  src: url("/fonts/syne/TTF/Syne-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Syne Mono";
+  src: url("/fonts/syne/TTF/Syne-Mono.ttf") format("truetype");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -22,6 +84,7 @@
    * Maintain HSL formatting to avoid color issues.
   */
   :root {
+      --grid-line-color: rgba(0,0,0,0.08);
     /* Light theme */
     --background: 0 0% 100%; /* white */
     --foreground: 222.2 84% 4.9%; /* near-black */
@@ -33,7 +96,7 @@
     --popover-foreground: 222.2 84% 4.9%;
 
     /* Brand palette */
-    --primary: 217 100% 50%; /* Electric Blue */
+    --primary: 199 89% 60%; /* Sky Blue */
     --primary-foreground: 210 40% 98%; /* white */
 
     --secondary: 150 95% 46%; /* Neon Green */
@@ -50,7 +113,7 @@
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 217 100% 50%;
+    --ring: 199 89% 60%;
 
     --radius: 0.75rem;
 
@@ -66,6 +129,7 @@
   }
 
   .dark {
+      --grid-line-color: rgba(255,255,255,0.10);
     /* Dark theme */
     --background: 222 84% 4%;
     --foreground: 210 40% 98%;
@@ -76,7 +140,7 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 217 100% 60%;
+    --primary: 199 89% 60%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 150 95% 40%;
@@ -93,7 +157,7 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 217 100% 60%;
+    --ring: 199 89% 60%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -118,28 +182,32 @@
   }
 
   /* Typography rules */
-  p,
-  span,
-  td {
-    font-family: "Space Mono", monospace;
-  }
+
+  /* Only apply custom font to hero title */
   #hero-title,
   #hero-title * {
     font-family: "Magz", sans-serif !important;
   }
 
+  /* Use font-sans for all body text by default (Tailwind's base) */
+
+  /* Headings use display font via .heading utility */
+
   /* Utilities */
   .heading {
     @apply font-display tracking-normal text-foreground;
-    font-family: "Gruppo", sans-serif;
+    font-family: "Rowdies", "Titillium Web", ui-sans-serif, system-ui;
+  }
+
+  /* FunCity font utility for explicit use only */
+  .font-funcity {
+    font-family: "FunCity", sans-serif;
   }
   .gradient-text {
     background: linear-gradient(
       120deg,
-      #0066ff 0%,
-      #00bfff 40%,
-      #00ff9d 80%,
-      #0066ff 100%
+      #00ff9d 0%,
+      #00bfff 100%
     );
     background-size: 200% 200%;
     -webkit-background-clip: text;
@@ -401,6 +469,11 @@
   .group:hover .learn-more::after {
     transform: scaleX(1);
   }
+}
+
+/* Global Styles */
+.heading{
+  font-weight: bold;
 }
 
 /* Float animation for hero image */

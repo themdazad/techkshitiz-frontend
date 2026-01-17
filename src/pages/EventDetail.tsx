@@ -18,13 +18,13 @@ export default function EventDetail() {
   if (!ev) {
     return (
       <div className="container py-16">
-        <h1 className="heading text-3xl">Event not found</h1>
+        <h1 className="heading text-3xl text-primary">Event not found</h1>
         <p className="mt-2 text-muted-foreground">
           We couldn't find this event. Please browse all events.
         </p>
         <Link
           to="/events"
-          className="mt-4 inline-block rounded-md border px-4 py-2 text-sm hover:bg-muted"
+          className="mt-4 inline-block rounded-md border border-border px-4 py-2 text-sm hover:bg-muted"
         >
           Back to Events
         </Link>
@@ -43,7 +43,7 @@ export default function EventDetail() {
           Events
         </Link>
         <span className="mx-1">/</span>
-        <span className=" font-normal text-sky-600">{ev.title}</span>
+        <span className=" font-normal text-primary">{ev.title}</span>
       </nav>
 
       <header className="mt-3 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
@@ -55,7 +55,7 @@ export default function EventDetail() {
             {ev.emoji}
           </div>
           <div>
-            <h1 className="heading text-3xl md:text-4xl">{ev.title}</h1>
+            <h1 className="heading text-3xl md:text-4xl text-primary">{ev.title}</h1>
             <p className="mt-1 text-muted-foreground">
               {ev.category} • {ev.duration} • {ev.location}
             </p>
@@ -64,7 +64,7 @@ export default function EventDetail() {
         <div className="flex gap-3">
           {/* Rulebook Button */}
           {ev.id === "circuit-designing" ? (
-            <span className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-sm font-medium backdrop-blur opacity-50 cursor-not-allowed">
+            <span className="inline-flex items-center gap-2 rounded-lg border border-border bg-muted px-4 py-3 text-sm font-medium backdrop-blur opacity-50 cursor-not-allowed">
               <Download className="h-4 w-4" />
               Rulebook
             </span>
@@ -73,7 +73,7 @@ export default function EventDetail() {
               href={ev.rulebookLink}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-sm font-medium backdrop-blur transition-all duration-200 hover:bg-white/10 hover:border-white/30"
+              className="inline-flex items-center gap-2 rounded-lg border border-border bg-muted px-4 py-3 text-sm font-medium backdrop-blur transition-all duration-200 hover:bg-muted/70 hover:border-primary"
             >
               <Download className="h-4 w-4" />
               Rulebook
@@ -81,29 +81,29 @@ export default function EventDetail() {
           )}
 
           {/* Register Button */}
-          <span className="relative overflow-hidden rounded-lg bg-gray-500/40 px-6 py-3 text-sm font-semibold text-white opacity-50 cursor-not-allowed">
+          <span className="relative overflow-hidden rounded-lg bg-muted px-6 py-3 text-sm font-semibold text-muted-foreground opacity-50 cursor-not-allowed">
             Registration Closed
           </span>
         </div>
       </header>
 
       <section className="mt-8 grid gap-6 md:grid-cols-3">
-        <article className="md:col-span-2 rounded-xl border border-white/10 bg-card/60 backdrop-blur p-6 transition-all duration-200 hover:border-white/20 hover:bg-card/70 animate-card">
-          <h2 className="font-semibold">Overview</h2>
-          <p className="mt-2 text-gray-300">
+        <article className="md:col-span-2 rounded-xl border border-border bg-card/60 backdrop-blur p-6 transition-all duration-200 hover:border-primary hover:bg-card/70 animate-card">
+          <h2 className="font-semibold text-foreground">Overview</h2>
+          <p className="mt-2 text-foreground">
             {ev.blura}
             {ev.blurb}
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             {/* {ev.tags.map((t) => (
-              <span key={t} className="rounded-full bg-white/5 px-3 py-1 text-xs text-muted-foreground">{t}</span>
+              <span key={t} className="rounded-full bg-muted px-3 py-1 text-xs text-muted-foreground">{t}</span>
             ))} */}
           </div>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             <div>
-              <h3 className="font-semibold">Important Notes</h3>
-              <ul className="mt-2 list-disc pl-5 text-sm text-gray-300 space-y-1">
+              <h3 className="font-semibold text-foreground">Important Notes</h3>
+              <ul className="mt-2 list-disc pl-5 text-sm text-foreground space-y-1">
                 {(ev.rules ?? [])
                   .concat([
                     "Participants need to carry their college ID with them during the event.",
@@ -116,8 +116,8 @@ export default function EventDetail() {
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold">Coordinators</h3>
-              <ul className="mt-2 space-y-2 text-sm text-gray-300">
+              <h3 className="font-semibold text-foreground">Coordinators</h3>
+              <ul className="mt-2 space-y-2 text-sm text-foreground">
                 {(
                   ev.coordinators ?? [
                     { name: "Ayushmaan", phone: "+91 0000000000" },
@@ -127,9 +127,9 @@ export default function EventDetail() {
                 ).map((c, i) => (
                   <li
                     key={i}
-                    className="flex items-center justify-between rounded-md border border-white/10 bg-white/5 px-3 py-2"
+                    className="flex items-center justify-between rounded-md border border-border bg-muted px-3 py-2"
                   >
-                    <span className="font-medium">{c.name}</span>
+                    <span className="font-medium text-foreground">{c.name}</span>
                     <a
                       className="text-primary hover:underline"
                       href={`tel:${c.phone}`}
@@ -142,38 +142,38 @@ export default function EventDetail() {
             </div>
           </div>
         </article>
-        <article className="rounded-xl border border-white/10 bg-card/60 backdrop-blur p-6 transition-all duration-200 hover:border-white/20 hover:bg-card/70 animate-card">
-          <h3 className="font-semibold">At a glance</h3>
+        <article className="rounded-xl border border-border bg-card/60 backdrop-blur p-6 transition-all duration-200 hover:border-primary hover:bg-card/70 animate-card">
+          <h3 className="font-semibold text-foreground">At a glance</h3>
           <dl className="mt-3 grid grid-cols-1 gap-3 text-sm">
             <div>
-              <dt className="text-gray-500 font-gruppo font-bold">Prizes</dt>
-              <dd className="font-medium font-spacemono">{ev.prize}</dd>
+              <dt className="text-foreground font-gruppo font-bold">Prizes</dt>
+              <dd className="font-medium font-spacemono text-foreground">{ev.prize}</dd>
             </div>
             <div>
-              <dt className="text-gray-500 font-gruppo font-bold">Duration</dt>
-              <dd className="font-medium font-spacemono">{ev.duration}</dd>
+              <dt className="text-foreground font-gruppo font-bold">Duration</dt>
+              <dd className="font-medium font-spacemono text-foreground">{ev.duration}</dd>
             </div>
             {/* <div>
-              <dt className="text-gray-500 font-gruppo">Location</dt>
+              <dt className="text-muted-foreground font-gruppo">Location</dt>
               <dd className="font-medium font-spacemono">{ev.location}</dd>
             </div> */}
             <div>
-              <dt className="text-gray-500 font-gruppo font-bold ">
+              <dt className="text-foreground font-gruppo font-bold ">
                 Team Size
               </dt>
-              <dd className="font-medium font-spacemono">{ev.teamSize}</dd>
+              <dd className="font-medium font-spacemono text-foreground">{ev.teamSize}</dd>
             </div>
             <div>
-              <dt className="text-gray-500 font-gruppo font-bold">
-                Registration Fee{" "}
+              <dt className="text-foreground font-gruppo font-bold">
+                Registration Fee
               </dt>
-              <dd className="font-medium font-spacemono">{ev.registration}</dd>
+              <dd className="font-medium font-spacemono text-foreground">{ev.registration}</dd>
             </div>
             <div>
-              <dt className="text-gray-500 font-gruppo font-bold">
-                Location{" "}
+              <dt className="text-foreground font-gruppo font-bold">
+                Location
               </dt>
-              <dd className="font-medium font-spacemono">{ev.location}</dd>
+              <dd className="font-medium font-spacemono text-foreground">{ev.location}</dd>
             </div>
           </dl>
           <div className="mt-6">

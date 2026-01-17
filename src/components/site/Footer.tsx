@@ -3,7 +3,23 @@ import { Instagram, Twitter, Youtube, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <footer className="relative border-t border-white/10 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 overflow-hidden">
+      {/* Subtle background gradient and pattern */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10 opacity-90"
+        style={{
+          background:
+            'radial-gradient(ellipse 80% 60% at 50% 100%, hsl(var(--primary)/0.08), transparent 80%),\n' +
+            'linear-gradient(90deg, var(--grid-line-color) 1px, transparent 1px),\n' +
+            'linear-gradient(var(--grid-line-color) 1px, transparent 1px)',
+          backgroundSize: '100% 100%, 40px 40px, 40px 40px',
+          backgroundPosition: 'center bottom, center, center',
+          maskImage: 'linear-gradient(to top, black 80%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to top, black 80%, transparent 100%)',
+          filter: 'blur(8px)',
+        }}
+      />
       <div className="container py-10 grid gap-8 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-2">
@@ -44,10 +60,10 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t">
+      <div className="border-t bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container py-6 text-xs text-gray-500 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
           <span className="text-gray-400">Technical Club of GEC, Siwan</span>
-          <span>© 2025 Tech Kshitiz. All rights reserved.</span>
+            <span>© {new Date().getFullYear()} Tech Kshitiz. All rights reserved.</span>
         </div>
       </div>
     </footer>

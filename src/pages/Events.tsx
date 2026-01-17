@@ -34,11 +34,11 @@ export default function EventsPage() {
       <section className="container pt-10 pb-6">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
-            <h1 className="heading text-3xl md:text-4xl font-normal text-sky-600">
+            <h1 className="heading text-3xl md:text-4xl font-normal text-primary">
               Explore Events
             </h1>
             <p className="mt-2 text-muted-foreground max-w-2xl">
-              All the events occuring in Tech Kshitiz'25
+              All the events occurring in Tech Kshitiz'25
             </p>
           </div>
           <div className="flex gap-2">
@@ -75,109 +75,93 @@ export default function EventsPage() {
       </section>
 
       <section className="container pb-20">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((e) => (
             <article
               key={e.id}
-              className="group rounded-xl border border-white/10 bg-card/80 p-5 shadow-sm transition-all duration-200 hover:shadow-md hover:border-white/20 focus-within:shadow-md focus-within:border-white/20 animate-card no-parallax"
+              className="group rounded-2xl border border-white/10 bg-gradient-to-br from-background/90 to-card/80 shadow-lg transition-all duration-200 hover:shadow-xl hover:border-primary/40 focus-within:shadow-xl focus-within:border-primary/40 animate-card no-parallax overflow-hidden min-h-[250px] flex flex-col justify-between gap-2"
             >
+              {/* Image */}
               <Link
                 to={`/events/${e.id}`}
-                className="block overflow-hidden rounded-lg"
+                className="block overflow-hidden"
               >
                 <AspectRatio ratio={16 / 9}>
                   <img
                     src={`https://res.cloudinary.com/dxpleao6v/image/upload/${encodeURIComponent(e.imgUrl)}`}
                     alt={`${e.title} photo`}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     loading="lazy"
                   />
                 </AspectRatio>
               </Link>
 
-              <div className="mt-4 flex items-start justify-between">
+              {/* Main content */}
+              <div className="flex flex-col gap-3 p-4 sm:p-5">
+                {/* Top Row: Icon, Title, Category */}
                 <div className="flex items-center gap-3">
-                  <div className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10 text-lg">
+                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-primary/20 via-accent/20 to-secondary/20 text-2xl shadow-sm">
                     <span aria-hidden>{e.emoji}</span>
                   </div>
-                  <div>
-                    <h3 className="font-semibold">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="heading text-md truncate">
                       <Link to={`/events/${e.id}`} className="hover:underline">
                         {e.title}
                       </Link>
                     </h3>
-                    <p className="text-xs text-gray-500">{e.category} •</p>
+                    <div className="flex items-center gap-1 text-xs text-muted-foreground mt-0.5">
+                      <span className="text-foreground">{e.category}</span>
+                      {e.duration.includes("TBA") && (
+                        <span className="rounded bg-yellow-100/80 px-1 py-0.5 font-semibold text-yellow-900 ml-2">TBA</span>
+                      )}
+                    </div>
                   </div>
                 </div>
-                {e.duration.includes("TBA") && (
-                  <span
-                    className="rounded-full bg-yellow-100 px-2 py-0.5 text-[10px] font-medium text-yellow-900"
-                    title="Timing or duration to be announced"
-                  >
-                    TBA
-                  </span>
-                )}
-              </div>
 
-              <p className="mt-3 text-sm text-muted-foreground min-h-10">
-                {e.blura}
-              </p>
+               
 
-              <div className="mt-4 grid grid-cols-3 gap-2 text-xs">
-                <div className="flex items-center gap-1 p-2">
-                  <Clock className="h-4 w-4 text-blue-500 flex-shrink-0" />
-                  <span className="text-gray-300 text-[10px] leading-tight">
-                    {e.duration}
-                  </span>
+                {/* Info Row */}
+                <div className="flex flex-wrap justify-between gap-3 text-sm mt-1">
+                  <div className="flex items-center gap-2">
+                    <Clock className="h-6 w-6 text-primary" />
+                    <span className="text-foreground">Duration:{e.duration}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Users className="h-6 w-6 text-secondary" />
+                    <span className="text-foreground">Team Size: {e.teamSize}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <IndianRupee className="h-6 w-6 text-accent" />
+                    <span className="text-foreground">  Fee: {e.registration}</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-1 p-2">
-                  <Users className="h-4 w-4 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-300 text-[10px] leading-tight">
-                    {e.teamSize}
-                  </span>
-                </div>
-                <div className="flex items-center gap-1 p-2">
-                  <IndianRupee className="h-4 w-4 text-purple-500 flex-shrink-0" />
-                  <span className="text-gray-300 text-[10px] leading-tight">
-                    {e.registration}
-                  </span>
-                </div>
-              </div>
 
-              <div className="mt-2 text-xs">
-                <div className="flex items-center gap-2 p-2">
-                  <Trophy className="h-4 w-4 text-amber-500 flex-shrink-0" />
-                  <span className="text-gray-300 ">{e.prize}</span>
+                {/* Prize Row */}
+                <div className="flex items-center gap-2 text-base mt-1">
+                  <Trophy className="h-5 w-5 text-amber-500" />
+                  <span className="text-foreground">{e.prize}</span>
                 </div>
-              </div>
-
-              <div className="mt-4 flex items-center justify-between">
-                <div className="flex flex-wrap gap-1">
-                  {/* {e.tags.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-full bg-white/5 px-2 py-0.5 text-[10px] text-muted-foreground"
-                    >
-                      {t}
-                    </span>
-                  ))} */}
-                </div>
-                <div className="flex gap-2">
+                
+                {/* Description */}
+                <p className="text-base text-muted-foreground min-h-[2.2em] mt-0.5">
+                  <span className="text-foreground">{e.blura}</span>
+                </p>
+                {/* Actions */}
+                <div className="flex items-center justify-end gap-2 mt-4">
                   <Link
                     to={`/events/${e.id}`}
-                    className={`inline-flex items-center rounded-md border border-white/10 px-3 py-2 text-sm hover:bg-white/5 
-    ${e.id === "circuit-designing" ? "opacity-50 pointer-events-none cursor-not-allowed" : ""}`}
+                    className={`inline-flex items-center rounded-md border border-primary/30 px-5 py-2 text-sm font-semibold font-syne hover:bg-primary/10 transition-colors duration-150 ${e.id === "circuit-designing" ? "opacity-50 pointer-events-none cursor-not-allowed" : ""}`}
                   >
                     Details
                   </Link>
-
                   <a href={e.registerLink} target="_blank" rel="noreferrer">
-                    <Button size="sm" disabled>
+                    <Button size="sm" disabled className="bg-muted text-foreground border border-muted-foreground/20 cursor-not-allowed px-5 opacity-60">
                       Closed
                     </Button>
                   </a>
                 </div>
               </div>
+
             </article>
           ))}
         </div>

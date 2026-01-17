@@ -16,9 +16,39 @@ export const clubIncharges : clubIncharge[]=[
   { name: "Prof. Mohit Prakash", branch: "Electrical Engineering", photo: "https://res.cloudinary.com/dcsqprug1/image/upload/v1757235663/mohitprakash_gzkvp9.jpg" },
 ]
 
-export type clubHead = { name: string;branch: string; photo: string;description:string ; batch:string; linkedin:string; };
+export type clubHead = { name: string; branch: string; photo: string; description: string; batch: string; linkedin?: string; github?: string; instagram?: string; portfolio?: string };
 export const clubHeads : clubHead[]=[
-  { name: "Md. Azad", branch: "Electrical Engineering", photo: "https://res.cloudinary.com/dswkss8nj/image/upload/v1757491754/mdazad_fgzj4h.jpg",description:"Team Management & Planning",batch:"2023-26(LE)" ,linkedin:"https://www.linkedin.com/in/themdazad/"},
-  { name: "Abhinav Kumar", branch: "Electrical Engineering", photo: "https://res.cloudinary.com/dswkss8nj/image/upload/v1757491743/abhinav_uhlkyy.jpg",description:"Event Management & Planning",batch:"2023-26(LE)" ,linkedin:"https://www.linkedin.com/in/abhinav-kumar-gecsiwan/" },
-  { name: "Shahnoor Ishtiyaque", branch: "CSE - IoT", photo: "https://res.cloudinary.com/dswkss8nj/image/upload/v1757491745/shahnoor_massm1.jpg" ,description:"Promotions and participants Management",batch:"2022-26",linkedin:"https://www.linkedin.com/in/shahnoor-ishtiyaque-496843297/" },
+  {
+    name: "Md. Azad",
+    branch: "Electrical Engineering",
+    photo: "https://res.cloudinary.com/dswkss8nj/image/upload/v1757491754/mdazad_fgzj4h.jpg",
+    description: "Club Management & Planning Head",
+    batch: "2023-26(LE)",
+    linkedin: "https://www.linkedin.com/in/themdazad/",
+    github: "https://github.com/themdazad",
+    instagram: "https://instagram.com/the_mdazad",
+    portfolio: ""
+  },
+  {
+    name: "Abhinav Kumar",
+    branch: "Electrical Engineering",
+    photo: "https://res.cloudinary.com/dswkss8nj/image/upload/v1757491743/abhinav_uhlkyy.jpg",
+    description: "Event Management & Planning",
+    batch: "2023-26(LE)",
+    linkedin: "https://www.linkedin.com/in/abhinav-kumar-gecsiwan/",
+    github: "",
+    instagram: "",
+    portfolio: ""
+  },
+  {
+    name: "Shahnoor Ishtiyaque",
+    branch: "CSE - IoT",
+    photo: "https://res.cloudinary.com/dswkss8nj/image/upload/v1757491745/shahnoor_massm1.jpg",
+    description: "Promotions and participants Management",
+    batch: "2022-26",
+    linkedin: "https://www.linkedin.com/in/shahnoor-ishtiyaque-496843297/",
+    github: "",
+    instagram: "",
+    portfolio: ""
+  },
 ]

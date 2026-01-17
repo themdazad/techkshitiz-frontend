@@ -50,7 +50,7 @@ export default function AboutPage() {
         <p className="text-xs md:text-sm font-medium text-primary uppercase tracking-wide ">
           About the Club & Fest
         </p>
-        <h1 className="heading text-3xl md:text-5xl mt-2 font-normal text-sky-600">
+        <h1 className="heading text-3xl md:text-5xl mt-2 font-normal text-primary">
           About Tech Kshitiz
         </h1>
 
@@ -58,21 +58,13 @@ export default function AboutPage() {
         <div className="mt-4 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           <div>
             <p className="text-muted-foreground leading-relaxed">
-              Welcome to <strong>Techkshitiz </strong>– the main technical club
-              of Government Engineering College, Siwan! We are a fun and active
-              community where students learn, create, and explore new
-              technologies. Through workshops, seminars, and hackathons, we help
-              students gain practical skills and solve real problems. Our club
-              also connects students with industry experts and alumni for career
-              guidance. At Techkshitiz, we believe innovation can change the
-              world. Join us to work on cool projects, learn new things, and
-              become a part of our tech family!
+              <span className="text-foreground">Welcome to <strong>Techkshitiz </strong>– the main technical club of Government Engineering College, Siwan! We are a fun and active community where students learn, create, and explore new technologies. Through workshops, seminars, and hackathons, we help students gain practical skills and solve real problems. Our club also connects students with industry experts and alumni for career guidance. At Techkshitiz, we believe innovation can change the world. Join us to work on cool projects, learn new things, and become a part of our tech family!</span>
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
                 href="/events"
                 rel="noreferrer"
-                className="relative overflow-hidden rounded-lg bg-gradient-to-r from-primary via-sky-600 to-primary px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] before:transition-transform before:duration-700 hover:before:translate-x-[100%]"
+                className="relative overflow-hidden rounded-lg bg-gradient-to-r from-primary via-accent to-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] before:transition-transform before:duration-700 hover:before:translate-x-[100%]"
               >
                 Explore Events
               </a>
@@ -92,7 +84,7 @@ export default function AboutPage() {
       "
                 loading="lazy"
               />
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-background/80 via-transparent to-transparent pointer-events-none"></div>
             </div>
           </div>
         </div>
@@ -100,7 +92,7 @@ export default function AboutPage() {
 
       {/* What's new */}
       <section className="mt-12">
-        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">
+        <h2 className="heading text-2xl md:text-3xl font-normal text-primary">
           What's new in 2025
         </h2>
         <div className="mt-4 grid gap-4 md:grid-cols-3">
@@ -120,64 +112,48 @@ export default function AboutPage() {
       </section>
       {/* About the Institute */}
       <section className="mt-12">
-        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">
+        <h2 className="heading text-2xl md:text-3xl font-normal text-primary">
           About the Institute
         </h2>
-        <div className="mt-4 grid gap-6 md:grid-cols-[auto,1fr] items-center rounded-2xl border border-white/10 bg-card/60 backdrop-blur p-6 animate-card">
+        <div className="mt-4 grid gap-6 md:grid-cols-[auto,1fr] items-center rounded-2xl border border-border bg-card/60 backdrop-blur p-6 animate-card">
           <div className="flex items-center gap-4">
             <img
               src="https://res.cloudinary.com/dmu1qh4dj/image/upload/v1756782359/cropped_circle_image_y3vznc.png"
               alt="Tech Kshitiz logo"
-              className="h-16 w-16 rounded-full ring-1 ring-white/10"
+              className="h-16 w-16 rounded-full ring-1 ring-border"
             />
-            <div className="relative h-16 w-16 grid place-items-center rounded-full bg-gradient-to-br from-primary/20 via-accent/20 to-secondary/20 text-sm font-bold text-white select-none">
+            <div className="relative h-16 w-16 grid place-items-center rounded-full bg-gradient-to-br from-primary/20 via-accent/20 to-secondary/20 text-sm font-bold text-primary-foreground select-none">
               <img
                 src="https://res.cloudinary.com/dmu1qh4dj/image/upload/v1756812379/png_2_tbzrth.png"
                 alt="Tech Kshitiz logo"
-                className="h-16 w-16 rounded-full ring-1 ring-white/10"
+                className="h-16 w-16 rounded-full ring-1 ring-border"
               />
             </div>
           </div>
           <div>
-            <h3 className="font-semibold text-xl">
+            <h3 className="font-semibold text-xl text-foreground">
               Government Engineering College Siwan
             </h3>
-            <p className="mt-2 text-sm text-gray-300">
-              Government Engineering College Siwan (GEC Siwan) stands at the
-              forefront of excellence in engineering education and innovation.
-              Our campus nurtures hands-on learning, research-driven projects,
-              and impactful community initiatives. Tech Kshitiz is proudly
-              organized by the students and mentors of GEC Siwan to celebrate
-              technology, creativity, and collaboration.
+            <p className="mt-2 text-sm text-muted-foreground">
+              <span className="text-foreground">Government Engineering College Siwan (GEC Siwan) stands at the forefront of excellence in engineering education and innovation. Our campus nurtures hands-on learning, research-driven projects, and impactful community initiatives. Tech Kshitiz is proudly organized by the students and mentors of GEC Siwan to celebrate technology, creativity, and collaboration.</span>
             </p>
           </div>
         </div>
       </section>
       {/* Fest focus based on events */}
       <section className="mt-12">
-        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">
+        <h2 className="heading text-2xl md:text-3xl font-normal text-primary">
           Fest Focus
         </h2>
         <p className="mt-2 text-muted-foreground max-w-3xl ">
-          This edition brings together high‑energy activities like{" "}
-          <strong>Hackathon</strong>, <strong>Debugger</strong>,{" "}
-          <strong>Technical Quiz</strong>,<strong> IoT Fusion</strong>,{" "}
-          <strong>E‑Sports</strong>, <strong>Chess Online</strong>,{" "}
-          <strong>Graphic Design</strong>, <strong>Circuit Design</strong>,
-          <strong> Bridge Design</strong>, <strong>Crosswords</strong>,{" "}
-          <strong>Puzzle Escape Room</strong>,{" "}
-          <strong>Crafting & Decorating Stalls</strong>,
-          <strong> Rangoli Event</strong>, <strong>RC Car Race</strong>,{" "}
-          <strong>Web Design</strong>, and <strong>Rubix Cube</strong>. From
-          rapid prototyping and electronics to design thinking, strategy, and
-          cultural creativity—there's a track for every talent level.
+          <span className="text-foreground">This edition brings together high‑energy activities like <strong>Hackathon</strong>, <strong>Debugger</strong>, <strong>Technical Quiz</strong>,<strong> IoT Fusion</strong>, <strong>E‑Sports</strong>, <strong>Chess Online</strong>, <strong>Graphic Design</strong>, <strong>Circuit Design</strong>,<strong> Bridge Design</strong>, <strong>Crosswords</strong>, <strong>Puzzle Escape Room</strong>, <strong>Crafting & Decorating Stalls</strong>,<strong> Rangoli Event</strong>, <strong>RC Car Race</strong>, <strong>Web Design</strong>, and <strong>Rubix Cube</strong>. From rapid prototyping and electronics to design thinking, strategy, and cultural creativity—there's a track for every talent level.</span>
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
           {["Coding", "Design", "Hardware", "Brain Games", "E-Sports"].map(
             (t) => (
               <span
                 key={t}
-                className="rounded-full bg-white/5 px-3 py-1 text-xs text-gray-300"
+                className="rounded-full bg-muted px-3 py-1 text-xs text-muted-foreground"
               >
                 {t}
               </span>
@@ -187,7 +163,7 @@ export default function AboutPage() {
       </section>
       {/* Club Incharge Section */}
       <section className="mt-12">
-        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">
+        <h2 className="heading text-2xl md:text-3xl font-normal text-primary">
           Club In Charge
         </h2>
 
@@ -196,7 +172,7 @@ export default function AboutPage() {
           {clubIncharges.map((m, i) => (
             <div
               key={`${m.name}-${i}`}
-              className=" rounded-2xl border border-white/10 bg-card/60 backdrop-blur p-4 text-center shadow-md hover:shadow-lg transition-shadow duration-300"
+              className=" rounded-2xl border border-border bg-card/60 backdrop-blur p-4 text-center shadow-md hover:shadow-lg transition-shadow duration-300"
             >
               <div className="mx-auto h-20 w-20 overflow-hidden rounded-full ring-2 ring-primary/20">
                 <img
@@ -206,7 +182,7 @@ export default function AboutPage() {
                   loading="lazy"
                 />
               </div>
-              <h3 className="mt-3 text-sm md:text-base font-medium text-gray-200">
+              <h3 className="mt-3 text-sm md:text-base font-medium text-foreground">
                 {m.name}
               </h3>
               <p className="text-xs md:text-sm text-muted-foreground">
@@ -218,7 +194,7 @@ export default function AboutPage() {
       </section>
       {/* Techincal club head section */}
       <section className="mt-12">
-        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">
+        <h2 className="heading text-2xl md:text-3xl font-normal text-primary">
           Technical Club Head
         </h2>
 
@@ -227,7 +203,7 @@ export default function AboutPage() {
           {clubHeads.map((m, i) => (
             <div
               key={`${m.name}-${i}`}
-              className="group rounded-2xl border border-white/10 bg-card/60 p-6 shadow-md hover:shadow-xl hover:border-primary/30 transition-all duration-300 flex flex-col sm:flex-row items-center gap-6"
+              className="group rounded-2xl border border-border bg-card/60 p-6 shadow-md hover:shadow-xl hover:border-primary/30 transition-all duration-300 flex flex-col sm:flex-row items-center gap-6"
             >
               {/* Profile Picture */}
               <div className="flex-shrink-0">
@@ -243,20 +219,54 @@ export default function AboutPage() {
 
               {/* Content */}
               <div className="flex-1 text-center sm:text-left">
-                {/* Name with LinkedIn Icon */}
+                {/* Name and Social Icons */}
                 <div className="flex items-center justify-center sm:justify-start gap-2">
-                  <h3 className="text-base md:text-lg font-semibold text-gray-200">
+                  <h3 className="text-base md:text-lg font-semibold text-foreground">
                     {m.name}
                   </h3>
+                  {/* Social icons: only show if link exists, colors match developer section */}
+                  {m.github && (
+                    <a
+                      href={m.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-foreground transition-colors"
+                      aria-label={`${m.name}'s Github profile`}
+                    >
+                      <Github className="w-5 h-5" />
+                    </a>
+                  )}
                   {m.linkedin && (
                     <a
                       href={m.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center w-6 h-6 rounded-full text-white/50 hover:text-white transition-colors duration-200"
+                      className="text-muted-foreground hover:text-foreground transition-colors"
                       aria-label={`${m.name}'s LinkedIn profile`}
                     >
                       <Linkedin className="w-5 h-5" />
+                    </a>
+                  )}
+                  {m.instagram && (
+                    <a
+                      href={m.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-foreground transition-colors"
+                      aria-label={`${m.name}'s Instagram profile`}
+                    >
+                      <Instagram className="w-5 h-5" />
+                    </a>
+                  )}
+                  {m.portfolio && (
+                    <a
+                      href={m.portfolio}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-foreground transition-colors"
+                      aria-label={`${m.name}'s Portfolio`}
+                    >
+                      <Globe className="w-5 h-5" />
                     </a>
                   )}
                 </div>
@@ -272,8 +282,8 @@ export default function AboutPage() {
                 </div>
 
                 {/* Short Description */}
-                <p className="mt-2 text-xs md:text-sm text-gray-400">
-                  {m.description}
+                <p className="mt-2 text-xs md:text-sm text-muted-foreground">
+                  <span className="text-foreground">{m.description}</span>
                 </p>
               </div>
             </div>
@@ -299,7 +309,7 @@ export default function AboutPage() {
                     loading="lazy"
                   />
                 </div>
-                <figcaption className="mt-2 text-sm font-medium text-gray-200">
+                <figcaption className="mt-2 text-sm font-medium text-foreground">
                   {m.name}
                 </figcaption>
                 <p className="text-xs text-muted-foreground">{m.role}</p>
@@ -311,18 +321,18 @@ export default function AboutPage() {
       {/* Developers Section */}
 
       <section className="mt-12">
-        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">
+        <h2 className="heading text-2xl md:text-3xl font-normal text-primary">
           Meet the Developers
         </h2>
         <p className="mt-2 text-muted-foreground">
-          The individuals behind this website
+          <span className="text-foreground">The individuals behind this website</span>
         </p>
 
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {developers.map((developer, index) => (
             <div
               key={index}
-              className="group rounded-2xl border border-white/10 bg-card/60 backdrop-blur p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:border-primary/30 flex flex-col sm:flex-row items-center gap-6"
+              className="group rounded-2xl border border-border bg-card/60 backdrop-blur p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:border-primary/30 flex flex-col sm:flex-row items-center gap-6"
             >
               {/* Image */}
               <div className="flex-shrink-0">
@@ -338,7 +348,7 @@ export default function AboutPage() {
 
               {/* Info */}
               <div className="flex flex-col text-center sm:text-left">
-                <h3 className="text-lg font-semibold text-white">
+                <h3 className="text-lg font-semibold text-foreground">
                   {developer.name}
                 </h3>
                 <p className="text-sm text-primary font-medium mt-1">
@@ -352,7 +362,7 @@ export default function AboutPage() {
                       href={developer.social.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white/70 hover:text-white transition-colors"
+                      className="text-muted-foreground hover:text-foreground transition-colors"
                     >
                       <Github className="w-5 h-5" />
                     </a>
@@ -362,7 +372,7 @@ export default function AboutPage() {
                       href={developer.social.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white/70 hover:text-white transition-colors"
+                      className="text-muted-foreground hover:text-foreground transition-colors"
                     >
                       <Linkedin className="w-5 h-5" />
                     </a>
@@ -372,7 +382,7 @@ export default function AboutPage() {
                       href={developer.social.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white/70 hover:text-white transition-colors"
+                      className="text-muted-foreground hover:text-foreground transition-colors"
                     >
                       <Instagram className="w-5 h-5" />
                     </a>
@@ -382,7 +392,7 @@ export default function AboutPage() {
                       href={developer.social.portfolio}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white/70 hover:text-white transition-colors"
+                      className="text-muted-foreground hover:text-foreground transition-colors"
                     >
                       <Globe className="w-5 h-5" />
                     </a>
@@ -396,26 +406,25 @@ export default function AboutPage() {
 
       {/* Venue & dates */}
       <section className="mt-12">
-        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">
+        <h2 className="heading text-2xl md:text-3xl font-normal text-primary">
           Venue & Dates
         </h2>
         <div className="mt-4">
-          <div className="rounded-xl border border-white/10 bg-card/60 backdrop-blur p-6">
+          <div className="rounded-xl border border-border bg-card/60 backdrop-blur p-6">
             <h3 className="font-semibold">22–24 September 2025</h3>
-            <p className="mt-2 text-sm text-gray-300">
-              Government Engineering College, Siwan — Campus venue (see Contact
-              for full address).
+            <p className="mt-2 text-sm text-muted-foreground">
+              <span className="text-foreground">Government Engineering College, Siwan — Campus venue (see Contact for full address).</span>
             </p>
             <div className="mt-4 flex gap-3">
               <Link
                 to="/schedule"
-                className="rounded-md border px-4 py-2 text-sm hover:bg-muted"
+                className="rounded-md border border-border px-4 py-2 text-sm hover:bg-muted"
               >
                 View Schedule
               </Link>
               <Link
                 to="/contact"
-                className="rounded-md border px-4 py-2 text-sm hover:bg-muted"
+                className="rounded-md border border-border px-4 py-2 text-sm hover:bg-muted"
               >
                 How to reach
               </Link>
@@ -425,7 +434,7 @@ export default function AboutPage() {
       </section>
       {/* FAQ */}
       <section className="mt-12" id="faq">
-        <h2 className="heading text-2xl md:text-3xl font-normal text-sky-600">
+        <h2 className="heading text-2xl md:text-3xl font-normal text-primary">
           FAQ
         </h2>
         <Accordion
@@ -447,9 +456,9 @@ export default function AboutPage() {
 
 function FeatureCard({ title, desc }: { title: string; desc: string }) {
   return (
-    <div className="rounded-xl border border-white/15 bg-gradient-to-br from-white/5 to-transparent backdrop-blur p-5 shadow-sm">
-      <p className="font-semibold text-white">{title}</p>
-      <p className="mt-1 text-sm text-gray-300">{desc}</p>
+    <div className="rounded-xl border border-border bg-gradient-to-br from-muted to-transparent backdrop-blur p-5 shadow-sm">
+      <p className="font-semibold text-foreground">{title}</p>
+      <p className="mt-1 text-sm text-muted-foreground">{desc}</p>
     </div>
   );
 }

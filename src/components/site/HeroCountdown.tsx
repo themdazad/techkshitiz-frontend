@@ -26,10 +26,10 @@ export function HeroCountdown({ className }: { className?: string }) {
         {live ? (
           <div className="w-full flex items-center justify-center gap-2">
             <span
-              className="inline-block h-2 w-2 rounded-full bg-green-500 animate-pulse"
+              className="inline-block h-2 w-2 rounded-full bg-red-500 animate-pulse"
               aria-hidden
             />
-            Ended! Thank you for joining us !
+            Thank you for participating in Techkshitiz'25!
           </div>
         ) : (
           <div className="w-full flex items-center justify-center gap-2 whitespace-nowrap">

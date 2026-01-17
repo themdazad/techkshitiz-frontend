@@ -4,8 +4,8 @@ export default function MembersPage() {
   return (
     <div className="container py-12">
       <header className="max-w-3xl">
-        <h1 className="heading text-3xl md:text-4xl font-normal text-sky-600">Technical Club Members</h1>
-        <p className="mt-2 text-muted-foreground">Meet the members of the our club.</p>
+        <h1 className="heading text-3xl md:text-4xl font-normal text-primary">Technical Club Members</h1>
+        <p className="mt-2 text-foreground">Meet the members of the our club.</p>
       </header>
 
       <section className="mt-8 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">

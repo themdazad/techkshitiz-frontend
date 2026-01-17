@@ -4,9 +4,9 @@ export default function SchedulePage() {
   return (
     <div className="container py-12">
       <header className="mb-6">
-        <h1 className="heading text-3xl md:text-4xl font-normal text-sky-600">Event Schedule</h1>
+        <h1 className="heading text-3xl md:text-4xl font-normal text-primary">Event Schedule</h1>
         <p className="mt-2 max-w-3xl text-muted-foreground">
-          Three-day schedule for Tech Kshitiz (22–24 September 2025).
+          <span className="text-foreground">Three-day schedule for Tech Kshitiz (22–24 September 2025).</span>
         </p>
       </header>
 
@@ -17,7 +17,7 @@ export default function SchedulePage() {
       ]).map((d) => (
         <section key={d.key} className="mt-10">
           <div className="flex items-end justify-between">
-            <h2 className="heading text-2xl md:text-3xl">{d.key} • <span className="text-muted-foreground">{d.date}</span></h2>
+            <h2 className="heading text-2xl md:text-3xl">{d.key} • <span className="text-foreground">{d.date}</span></h2>
           </div>
 
           {/* Mobile vertical timeline */}
@@ -55,9 +55,9 @@ export default function SchedulePage() {
             <table className="w-full text-sm">
               <thead className="bg-white/5 text-gray-300">
                 <tr>
-                  <th className="px-4 py-3 text-left">Time</th>
-                  <th className="px-4 py-3 text-left">Event</th>
-                  <th className="px-4 py-3 text-left">Location</th>
+                  <th className="px-4 py-3 text-left text-foreground font-semibold">Time</th>
+                  <th className="px-4 py-3 text-left text-foreground font-semibold">Event</th>
+                  <th className="px-4 py-3 text-left text-foreground font-semibold">Location</th>
                   <th className="px-4 py-3 text-left">Coordinators</th>
                 </tr>
               </thead>

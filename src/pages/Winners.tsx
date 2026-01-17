@@ -107,8 +107,8 @@ export default function WinnersPage() {
   return (
     <div className="container py-12">
       <header className="mb-6">
-        <h1 className="heading text-3xl md:text-4xl font-normal text-sky-600">Winners</h1>
-        <p className="mt-2 max-w-2xl text-muted-foreground">Spotlight on champions across events</p>
+        <h1 className="heading text-3xl md:text-4xl font-normal text-primary">Winners</h1>
+        <p className="mt-2 max-w-2xl text-foreground">Spotlight on champions across events in techkshitiz 2025</p>
       </header>
       {/* Winners Marquee */}
       {/* Auto-scrolling strip */}
@@ -145,10 +145,10 @@ export default function WinnersPage() {
               <table className="w-full text-sm">
                 <thead className="bg-white/5 text-gray-300">
                   <tr>
-                    <th className="px-4 py-3 text-left">Rank</th>
-                    <th className="px-4 py-3 text-left">Team/Participant</th>
-                    <th className="px-4 py-3 text-left">Members</th>
-                    <th className="px-4 py-3 text-left">Project / Title</th>
+                    <th className="px-4 py-3 text-left text-foreground font-semibold">Rank</th>
+                    <th className="px-4 py-3 text-left text-foreground font-semibold">Team/Participant</th>
+                    <th className="px-4 py-3 text-left text-foreground font-semibold">Members</th>
+                    <th className="px-4 py-3 text-left text-foreground font-semibold">Project / Title</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -158,7 +158,7 @@ export default function WinnersPage() {
                         <RankBadge rank={r.rank} />
                       </td>
                       <td className="px-4 py-3 font-medium">{r.team}</td>
-                      <td className="px-4 py-3 text-gray-300">{r.members}</td>
+                      <td className="px-4 py-3 text-foreground">{r.members}</td>
                       <td className="px-4 py-3">{r.title}</td>
                     </tr>
                   ))}

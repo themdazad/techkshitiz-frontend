@@ -11,7 +11,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     const onScroll = () => setShowTop(window.scrollY > 300);
     onScroll();
     window.addEventListener("scroll", onScroll);
-    document.documentElement.classList.add("dark");
+
+    // Theme: set according to system preference
+    const setThemeFromSystem = () => {
+      const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.classList.toggle('dark', isDark);
+    };
+    setThemeFromSystem();
+    const mql = window.matchMedia('(prefers-color-scheme: dark)');
+    mql.addEventListener('change', setThemeFromSystem);
 
     // Smooth anchor links (native)
     const onDocClick = (e: MouseEvent) => {
@@ -32,6 +40,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     return () => {
       window.removeEventListener("scroll", onScroll);
       document.removeEventListener("click", onDocClick);
+      mql.removeEventListener('change', setThemeFromSystem);
     };
   }, []);
 
