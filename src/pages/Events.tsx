@@ -38,7 +38,7 @@ export default function EventsPage() {
               Explore Events
             </h1>
             <p className="mt-2 text-muted-foreground max-w-2xl">
-              All the events occurring in Tech Kshitiz'25
+              All the events occurring in TechKshitiz'25
             </p>
           </div>
           <div className="flex gap-2">
@@ -100,7 +100,7 @@ export default function EventsPage() {
               <div className="flex flex-col gap-3 p-4 sm:p-5">
                 {/* Top Row: Icon, Title, Category */}
                 <div className="flex items-center gap-3">
-                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-primary/20 via-accent/20 to-secondary/20 text-2xl shadow-sm">
+                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-primary/20 /20 to-secondary/20 text-2xl shadow-sm">
                     <span aria-hidden>{e.emoji}</span>
                   </div>
                   <div className="flex-1 min-w-0">

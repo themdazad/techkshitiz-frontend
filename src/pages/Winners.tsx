@@ -187,7 +187,7 @@ async function shareOrCopy(hash: string) {
   const url = `${window.location.origin}${window.location.pathname}${hash}`;
   if (navigator.share) {
     try {
-      await navigator.share({ title: "Tech Kshitiz Winners", url });
+      await navigator.share({ title: "TechKshitiz Winners", url });
       return;
     } catch {}
   }

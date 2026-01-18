@@ -6,7 +6,7 @@ export default function SchedulePage() {
       <header className="mb-6">
         <h1 className="heading text-3xl md:text-4xl font-normal text-primary">Event Schedule</h1>
         <p className="mt-2 max-w-3xl text-muted-foreground">
-          <span className="text-foreground">Three-day schedule for Tech Kshitiz (22–24 September 2025).</span>
+          <span className="text-foreground">Three-day schedule for TechKshitiz (22–24 September 2025).</span>
         </p>
       </header>
 

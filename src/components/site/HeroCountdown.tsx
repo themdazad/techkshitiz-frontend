@@ -13,7 +13,7 @@ export function HeroCountdown({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "relative inline-flex w-full max-w-sm rounded-full p-[1px] bg-gradient-to-r from-primary/60 via-accent/60 to-secondary/60",
+        "relative inline-flex w-full max-w-sm rounded-full p-[1px] bg-gradient-to-r from-primary/60 to-secondary/60",
         className,
       )}
     >

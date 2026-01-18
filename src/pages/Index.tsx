@@ -98,7 +98,7 @@ export default function Index() {
 			<div id="top" className="relative">
 
 			{/* Hero section with grid background and smooth bottom fade */}
-			<section className="relative w-full bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10 border-b live-banner">
+			<section className="relative w-full bg-gradient-to-r from-primary/10 /10 to-secondary/10 border-b live-banner">
 				{/* Grid background overlay only for hero, faded at bottom */}
 				<div
 					aria-hidden
@@ -206,10 +206,10 @@ export default function Index() {
 
 						{/* Floating Prize Image */}
 						<div className="hidden relative mx-auto w-full max-w-sm md:max-w-md">
-							<div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-accent/20 to-secondary/20 rounded-2xl blur-xl opacity-50 animate-pulse" />
+							<div className="absolute -inset-4 bg-gradient-to-r from-primary/20 /20 to-secondary/20 rounded-2xl blur-xl opacity-50 animate-pulse" />
 							<img
 								src="https://res.cloudinary.com/dswkss8nj/image/upload/v1757832290/prize_reveal_shgnjm.png"
-								alt="Tech Kshitiz logo"
+								alt="TechKshitiz logo"
 								className="relative w-full h-auto object-contain new-animate-float glow-soft"
 							/>
 						</div>
@@ -350,7 +350,7 @@ export default function Index() {
 							className="group rounded-xl border border-white/10 bg-card/80 p-5 transition hover:shadow-md focus:shadow-md animate-card no-parallax"
 						>
 							<div className="flex items-center gap-3">
-								<div className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10 text-lg">
+								<div className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-primary/10 /10 to-secondary/10 text-lg">
 									{h.icon}
 								</div>
 								<h3 className="font-syne font-bold text-lg md:text-xl">{h.title}</h3>
@@ -498,7 +498,7 @@ export default function Index() {
 
 			{/* Social */}
 			<section className="container pb-20">
-				<div className="rounded-2xl border border-white/10 bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10 p-8 text-center backdrop-blur">
+				<div className="rounded-2xl border border-white/10 bg-gradient-to-br from-primary/10 /10 to-secondary/10 p-8 text-center backdrop-blur">
 					<h2 className="heading font-syne font-bold text-2xl md:text-3xl text-center">
 						<span className="section-letters inline-block will-change-transform">
 							{"Be the part of our community".split(" ").map((word, i) => (

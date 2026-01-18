@@ -13,7 +13,7 @@ export default function ContactPage() {
     <div className="container py-12">
       <header>
         <h1 className="heading text-3xl md:text-4xl font-normal text-primary">Contact</h1>
-        <p className="mt-2 max-w-3xl text-foreground">Reach the Tech Kshitiz team. For queries on events, registration, or venues, use the details below.</p>
+        <p className="mt-2 max-w-3xl text-foreground">Reach the TechKshitiz team. For queries on events, registration, or venues, use the details below.</p>
       </header>
 
       <section className="mt-8 grid gap-6 md:grid-cols-3">

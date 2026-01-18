@@ -23,7 +23,7 @@ export default function Footer() {
       <div className="container py-10 grid gap-8 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-2">
-            {/* <img src="https://res.cloudinary.com/dmu1qh4dj/image/upload/v1756782359/cropped_circle_image_y3vznc.png" alt="Tech Kshitiz logo" className="h-7 w-7 rounded-full ring-1 ring-white/10" /> */}
+            {/* <img src="https://res.cloudinary.com/dmu1qh4dj/image/upload/v1756782359/cropped_circle_image_y3vznc.png" alt="TechKshitiz logo" className="h-7 w-7 rounded-full ring-1 ring-white/10" /> */}
             <span id="hero-title" className="font-display text-4xl">Techkshitiz</span>
           </div>
           <p className="mt-3 text-sm text-muted-foreground max-w-sm">
@@ -63,7 +63,7 @@ export default function Footer() {
       <div className="border-t bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container py-6 text-xs text-gray-500 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
           <span className="text-gray-400">Technical Club of GEC, Siwan</span>
-            <span>© {new Date().getFullYear()} Tech Kshitiz. All rights reserved.</span>
+            <span>© {new Date().getFullYear()} TechKshitiz. All rights reserved.</span>
         </div>
       </div>
     </footer>

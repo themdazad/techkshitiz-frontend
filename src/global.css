@@ -1,3 +1,6 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Gruppo&display=swap");
+
 /* Soft fade at the bottom of hero section to blend with next section */
 .hero-bottom-fade {
   background: linear-gradient(to bottom, transparent 0%, var(--background) 100%);
@@ -17,9 +20,6 @@
   -webkit-mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
   z-index: -1;
 }
-/** @import must precede all other statements */
-@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Rowdies:wght@300;400;700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Gruppo&display=swap");
 
 /* Custom Magz font */
 @font-face {
@@ -196,7 +196,7 @@
   /* Utilities */
   .heading {
     @apply font-display tracking-normal text-foreground;
-    font-family: "Rowdies", "Titillium Web", ui-sans-serif, system-ui;
+    font-family: ui-sans-serif, system-ui;
   }
 
   /* FunCity font utility for explicit use only */

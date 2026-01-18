@@ -51,7 +51,7 @@ export default function AboutPage() {
           About the Club & Fest
         </p>
         <h1 className="heading text-3xl md:text-5xl mt-2 font-normal text-primary">
-          About Tech Kshitiz
+          About TechKshitiz
         </h1>
 
         {/* Updated section with image on the right */}
@@ -64,7 +64,7 @@ export default function AboutPage() {
               <a
                 href="/events"
                 rel="noreferrer"
-                className="relative overflow-hidden rounded-lg bg-gradient-to-r from-primary via-accent to-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] before:transition-transform before:duration-700 hover:before:translate-x-[100%]"
+                className="relative overflow-hidden rounded-lg bg-gradient-to-r from-primary to-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] before:transition-transform before:duration-700 hover:before:translate-x-[100%]"
               >
                 Explore Events
               </a>
@@ -119,13 +119,13 @@ export default function AboutPage() {
           <div className="flex items-center gap-4">
             <img
               src="https://res.cloudinary.com/dmu1qh4dj/image/upload/v1756782359/cropped_circle_image_y3vznc.png"
-              alt="Tech Kshitiz logo"
+              alt="TechKshitiz logo"
               className="h-16 w-16 rounded-full ring-1 ring-border"
             />
-            <div className="relative h-16 w-16 grid place-items-center rounded-full bg-gradient-to-br from-primary/20 via-accent/20 to-secondary/20 text-sm font-bold text-primary-foreground select-none">
+            <div className="relative h-16 w-16 grid place-items-center rounded-full bg-gradient-to-br from-primary/20 /20 to-secondary/20 text-sm font-bold text-primary-foreground select-none">
               <img
                 src="https://res.cloudinary.com/dmu1qh4dj/image/upload/v1756812379/png_2_tbzrth.png"
-                alt="Tech Kshitiz logo"
+                alt="TechKshitiz logo"
                 className="h-16 w-16 rounded-full ring-1 ring-border"
               />
             </div>
@@ -135,7 +135,7 @@ export default function AboutPage() {
               Government Engineering College Siwan
             </h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              <span className="text-foreground">Government Engineering College Siwan (GEC Siwan) stands at the forefront of excellence in engineering education and innovation. Our campus nurtures hands-on learning, research-driven projects, and impactful community initiatives. Tech Kshitiz is proudly organized by the students and mentors of GEC Siwan to celebrate technology, creativity, and collaboration.</span>
+              <span className="text-foreground">Government Engineering College Siwan (GEC Siwan) stands at the forefront of excellence in engineering education and innovation. Our campus nurtures hands-on learning, research-driven projects, and impactful community initiatives. TechKshitiz is proudly organized by the students and mentors of GEC Siwan to celebrate technology, creativity, and collaboration.</span>
             </p>
           </div>
         </div>

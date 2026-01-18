@@ -49,7 +49,7 @@ export default function EventDetail() {
       <header className="mt-3 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div className="flex items-start gap-4">
           <div
-            className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10 text-2xl"
+            className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-primary/10 /10 to-secondary/10 text-2xl"
             aria-hidden
           >
             {ev.emoji}

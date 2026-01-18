@@ -10,10 +10,10 @@ const navItems = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/events", label: "Events" },
-  // { to: "/members", label: "Members" },
   { to: "/schedule", label: "Schedule" },
   { to: "/gallery", label: "Gallery" },
   { to: "/winners", label: "Winners" },
+  { to: "/certificate", label: "Certificate" },
   { to: "/contact", label: "Contact" },
 ];
 
@@ -84,16 +84,16 @@ export default function Navbar() {
           <Link
             to="/"
             className="flex items-center gap-2"
-            aria-label="Tech Kshitiz home"
+            aria-label="TechKshitiz home"
           >
             <img
               src="/logo/logo 1.png"
-              alt="Tech Kshitiz logo"
+              alt="TechKshitiz logo"
               className="h-12 w-auto select-none block dark:hidden"
             />
             <img
               src="/logo/logo 2.png"
-              alt="Tech Kshitiz logo dark"
+              alt="TechKshitiz logo dark"
               className="h-12 w-auto select-none hidden dark:block"
             />
           </Link>
@@ -106,7 +106,7 @@ export default function Navbar() {
               to={item.to}
               className={({ isActive }) =>
                 cn(
-                  "relative text-sm font-medium text-muted-foreground hover:text-foreground transition-colors after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:rounded after:bg-gradient-to-r after:from-primary after:via-accent after:to-secondary after:transition-all font-spacemono",
+                  "relative text-sm font-medium text-muted-foreground hover:text-foreground transition-colors after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:rounded after:bg-gradient-to-r after:from-primary after:to-secondary after:transition-all font-spacemono",
                   isActive && "text-foreground after:w-full",
                 )
               }
@@ -117,7 +117,7 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
-          <div className="relative rounded-full p-[1px] bg-gradient-to-r from-primary/60 via-accent/60 to-secondary/60 shadow-sm">
+          <div className="relative rounded-full p-[1px] bg-gradient-to-r from-primary/60 to-secondary/60 shadow-sm">
             <div
               className={cn(
                 "inline-flex items-center gap-2 rounded-full bg-background/70 backdrop-blur px-3 py-1.5 text-sm font-medium border border-border text-foreground"
