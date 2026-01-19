@@ -5,12 +5,13 @@ import api from "../axios-instance";
 const certificateApi = {
   verifyCertificate: async (certificateId: string) => {
     try {
-      const response = await api.post(`/certificate/verify?certificateId=${certificateId}`);
-      return response;
+      const response = await api.post(
+        `/certificate/verify?certificateId=${certificateId}`,
+      );
+      return response.data;
     } catch (error) {
       throw error;
     }
   },
-
-}
+};
 export default certificateApi;

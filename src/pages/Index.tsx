@@ -7,7 +7,6 @@ import { useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Instagram, Twitter, Youtube, Linkedin, Download, DownloadIcon, Lightbulb, Brain, Link2, Gamepad2, Palette, Flower2, Bug, Crown, CalendarDays, Target, Handshake } from "lucide-react";
 import { HeroCountdown } from "@/components/site/HeroCountdown";
-import { Button } from "@/components/ui/button";
 
 const highlights = [
 	{
@@ -125,6 +124,7 @@ export default function Index() {
 						}}
 					/>
 				</div>
+
         {/* Hero section */}
 				<div className="container text-center">
           
@@ -134,8 +134,8 @@ export default function Index() {
 							Coming Soon
 						</p>
             
-						<h1 className="heading font-syne font-bold text-5xl md:text-8xl text-primary mb-6">
-							<span id="hero-title" className="hero-letters inline-block will-change-transform">
+						<h1 className="heading font-bold text-5xl md:text-8xl text-primary mb-6">
+							<span id="hero-title" className="hero-letters  inline-block will-change-transform">
 								{(() => {
 									const title = "TechKshitiz";
 									return title.split("").map((ch, i) => {

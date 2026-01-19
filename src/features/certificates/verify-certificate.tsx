@@ -5,18 +5,39 @@ const VerifyCertificate = () => {
   const [certificateId, setCertificateId] = useState("");
   const [result, setResult] = useState("");
   const [loading, setLoading] = useState(false);
+  const [verified, setVerified] = useState<null | boolean>(null);
 
   const handleVerify = async (certificateId: string) => {
     try {
       setLoading(true);
-      const response = await certificateApi.verifyCertificate(certificateId);
-      if (response.data) {
-        const { message, data } = response.data;
-        // setResult(message);
-        setResult("This feature is currently unavailable. Please try again later.");
+      setVerified(null);
+      const result = await certificateApi.verifyCertificate(certificateId);
+      if (result) {
+        const { message, data } = result;
+        const { verified: isVerified, certificate } = data;
+        const participantDetails = certificate?.participant;
+        const teamDetails = certificate?.team;
+        const eventDetails = certificate?.event;
+
+        if (isVerified) {
+          setResult(
+            `Verification Confirmed: Certificate ${certificateId} is officially awarded to ${participantDetails?.name} for outstanding performance in the "${eventDetails?.name}" event. This achievement is validated by Government Engineering College, Siwan.`
+          );
+          setVerified(true);
+        } else {
+          setResult("Certificate is Invalid ❌");
+          setVerified(false);
+        }
+      } else {
+        const { message } = result;
+        setResult(message);
+        setVerified(false);
       }
     } catch (error) {
-      setResult("invalid");
+      setResult(
+        "Invalid certificate ID or an error occurred during verification.",
+      );
+      setVerified(false);
     } finally {
       setLoading(false);
     }
@@ -51,7 +72,22 @@ const VerifyCertificate = () => {
           {loading ? "Verifying..." : "Verify"}
         </button>
       </form>
-      <div className="mt-6 text-green-600 font-semibold">{result}</div>
+      {result && (
+        <div
+          className={`mt-6 font-semibold max-w-md text-center break-words ${
+            verified === false ? "text-red-600" : ""
+          }`}
+        >
+          {verified === true && result.startsWith("Verification Confirmed:") ? (
+            <>
+              <span className="text-green-600">Verification Confirmed:</span>
+              <span className="text-black dark:text-gray-100 font-normal">{result.replace("Verification Confirmed:", "")}</span>
+            </>
+          ) : (
+            result
+          )}
+        </div>
+      )}
     </div>
   );
 };
