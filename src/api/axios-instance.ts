@@ -1,10 +1,11 @@
 import axios from "axios";
 
 // Base URL from environment variables or default to localhost
-const baseUrl = "http://localhost:3000/api";
-// Create and export axios instance
+// const API_BASE_URL = "http://localhost:3000/api";
+const API_BASE_URL = "https://techkshitiz-backend.onrender.com/api";
+
 const api = axios.create({
-  baseURL: baseUrl,
+  baseURL: API_BASE_URL,
   headers: {
     "Content-Type": "application/json",
   },
