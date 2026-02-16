@@ -19,6 +19,7 @@ const VerifyCertificate = () => {
         const teamDetails = certificate?.team;
         const eventDetails = certificate?.event;
 
+
         if (isVerified) {
           setResult(
             `Verification Confirmed: Certificate ${certificateId} is officially awarded to ${participantDetails?.name} for outstanding performance in the "${eventDetails?.name}" event. This achievement is validated by Government Engineering College, Siwan.`
@@ -72,6 +73,12 @@ const VerifyCertificate = () => {
           {loading ? "Verifying..." : "Verify"}
         </button>
       </form>
+      {/* NOTE */}
+      <div>
+        <p className="mt-6 max-w-md text-center text-sm text-gray-500">
+          Note: Available Techkshitiz'25 and later.
+        </p>
+      </div>
       {result && (
         <div
           className={`mt-6 font-semibold max-w-md text-center break-words ${
