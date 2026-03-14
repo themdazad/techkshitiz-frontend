@@ -86,13 +86,13 @@ export default function Navbar() {
             className="flex items-center gap-2"
             aria-label="TechKshitiz home"
           >
-            <img
-              src="/logo/logo 1.png"
+             <img
+              src="/logo/logo 4.png"
               alt="TechKshitiz logo"
               className="h-12 w-auto select-none block dark:hidden"
             />
             <img
-              src="/logo/logo 2.png"
+              src="/logo/logo 3.png"
               alt="TechKshitiz logo dark"
               className="h-12 w-auto select-none hidden dark:block"
             />
