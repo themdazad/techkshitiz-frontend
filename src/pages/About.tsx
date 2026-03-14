@@ -17,7 +17,7 @@ export default function AboutPage() {
   const developers = [
     {
       name: "Ayushmaan Shandilya",
-      role: "Designer and Developer",
+      role: "Frontend Developer",
       description:
         "I am a passionate developer skilled in React.js, Next.js, TypeScript, and Node.js, with a strong focus on building scalable web applications and experimenting with AI-driven solutions. I am currently exploring AI agents and generative AI to create innovative and impactful projects.",
       image:
@@ -27,6 +27,19 @@ export default function AboutPage() {
         linkedin: "https://linkedin.com/in/ayushmaanxs",
         instagram: "https://instagram.com/ayushmaanxs",
         portfolio: "https://portfolio-ayushmaan.netlify.app/",
+      },
+    },
+    {
+      name: "Md. Azad",
+      role: "Full-Stack Developer",
+      description:
+        "I am a passionate developer skilled in React.js, Next.js, TypeScript, and Node.js, with a strong focus on building scalable web applications and experimenting with AI-driven solutions. I am currently exploring AI agents and generative AI to create innovative and impactful projects.",
+      image:
+        "https://res.cloudinary.com/dswkss8nj/image/upload/v1757491754/mdazad_fgzj4h.jpg",
+      social: {
+        github: "https://github.com/themdazad",
+        linkedin: "https://linkedin.com/in/themdazad",
+        instagram: "https://instagram.com/themdazad",
       },
     },
   ];
