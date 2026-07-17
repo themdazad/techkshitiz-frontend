@@ -1,25 +1,25 @@
 import { useMemo, useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { SITE_INFO } from "@/constants/branding";
 
 type Cat = "All" | "Coding" | "Design" | "Hardware" | "Fun";
 
 interface MediaItem { id: string; src: string; alt: string; cat: Exclude<Cat, "All">; w: number; h: number; type?: "image" | "video" }
 
 const media: MediaItem[] = [
-  { id: "g1", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756881119/IMG_4377_sgbrwj.jpg", alt: "TechKshitiz 1", cat: "Fun", w: 1200, h: 900, type: "image" },
-  { id: "g2", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756881118/IMG_3575_eayugk.jpg", alt: "TechKshitiz 2", cat: "Hardware", w: 1200, h: 800, type: "image" },
-  { id: "g3", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756836497/1_qamqxb.jpg", alt: "TechKshitiz 3", cat: "Fun", w: 1200, h: 900, type: "image" },
-  { id: "g4", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756881120/IMG_3816_twtbss.jpg", alt: "TechKshitiz 4", cat: "Design", w: 1200, h: 800, type: "image" },
-  { id: "g5", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756836502/3_l6caw7.jpg", alt: "TechKshitiz 5", cat: "Coding", w: 1200, h: 800, type: "image" },
-  { id: "g6", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756881119/IMG_4222_ej9nkc.jpg", alt: "TechKshitiz 6", cat: "Coding", w: 1200, h: 800, type: "image" },
-  { id: "g7", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756881119/IMG_4253_watmi8.jpg", alt: "TechKshitiz 7", cat: "Coding", w: 1280, h: 720, type: "image" },
-  { id: "g8", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756881118/IMG_4212_r5ynsp.jpg", alt: "TechKshitiz 8", cat: "Fun", w: 1200, h: 800, type: "image" },
-  { id: "g9", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756881118/IMG_4174_wnljun.jpg", alt: "TechKshitiz 9", cat: "Coding", w: 1200, h: 900, type: "image" },
-  { id: "g10", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756836501/2_kmxdlw.jpg", alt: "TechKshitiz 10", cat: "Design", w: 1200, h: 900, type: "image" },
-  { id: "g11", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756836497/1_qamqxb.jpg", alt: "TechKshitiz 11", cat: "Fun", w: 1200, h: 900, type: "image" },
-  { id: "g11", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756836497/1_qamqxb.jpg", alt: "TechKshitiz 12", cat: "Fun", w: 1200, h: 900, type: "image" },
-  { id: "g12", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756881132/IMG_3652_l98fdz.jpg", alt: "TechKshitiz 13", cat: "Fun", w: 1200, h: 900, type: "image" },
-  { id: "g31", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756881119/IMG_3952_zaogir.jpg", alt: "TechKshitiz 14", cat: "Design", w: 1200, h: 900, type: "image" },
+  { id: "g1", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756881119/IMG_4377_sgbrwj.jpg", alt: `${SITE_INFO.eventName} 1`, cat: "Fun", w: 1200, h: 900, type: "image" },
+  { id: "g2", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756881118/IMG_3575_eayugk.jpg", alt: `${SITE_INFO.eventName} 2`, cat: "Hardware", w: 1200, h: 800, type: "image" },
+  { id: "g3", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756836497/1_qamqxb.jpg", alt: `${SITE_INFO.eventName} 3`, cat: "Fun", w: 1200, h: 900, type: "image" },
+  { id: "g4", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756881120/IMG_3816_twtbss.jpg", alt: `${SITE_INFO.eventName} 4`, cat: "Design", w: 1200, h: 800, type: "image" },
+  { id: "g5", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756836502/3_l6caw7.jpg", alt: `${SITE_INFO.eventName} 5`, cat: "Coding", w: 1200, h: 800, type: "image" },
+  { id: "g6", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756881119/IMG_4222_ej9nkc.jpg", alt: `${SITE_INFO.eventName} 6`, cat: "Coding", w: 1200, h: 800, type: "image" },
+  { id: "g7", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756881119/IMG_4253_watmi8.jpg", alt: `${SITE_INFO.eventName} 7`, cat: "Coding", w: 1280, h: 720, type: "image" },
+  { id: "g8", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756881118/IMG_4212_r5ynsp.jpg", alt: `${SITE_INFO.eventName} 8`, cat: "Fun", w: 1200, h: 800, type: "image" },
+  { id: "g9", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756881118/IMG_4174_wnljun.jpg", alt: `${SITE_INFO.eventName} 9`, cat: "Coding", w: 1200, h: 900, type: "image" },
+  { id: "g10", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756836501/2_kmxdlw.jpg", alt: `${SITE_INFO.eventName} 10`, cat: "Design", w: 1200, h: 900, type: "image" },
+  { id: "g11", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756836497/1_qamqxb.jpg", alt: `${SITE_INFO.eventName} 11`, cat: "Fun", w: 1200, h: 900, type: "image" },
+  { id: "g12", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756881132/IMG_3652_l98fdz.jpg", alt: `${SITE_INFO.eventName} 12`, cat: "Fun", w: 1200, h: 900, type: "image" },
+  { id: "g13", src: "https://res.cloudinary.com/dp8njkkpz/image/upload/v1756881132/IMG_3652_l98fdz.jpg", alt: `${SITE_INFO.eventName} 13`, cat: "Fun", w: 1200, h: 900, type: "image" },
 ];
 
 export default function GalleryPage() {

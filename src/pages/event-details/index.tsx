@@ -5,10 +5,6 @@ import {
   Download,
   Calendar,
   ArrowRight,
-  Clock,
-  Users,
-  IndianRupee,
-  Trophy,
 } from "lucide-react";
 
 export default function EventDetail() {

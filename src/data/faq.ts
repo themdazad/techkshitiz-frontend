@@ -1,3 +1,5 @@
+import { SITE_INFO } from "@/constants/branding";
+
 export type Faq = { id: string; question: string; answer: string };
 
 export const faqs: Faq[] = [
@@ -53,13 +55,13 @@ export const faqs: Faq[] = [
     id: "rubiks-cube",
     question: "Rubik’s Cube Event – Will cubes be provided?",
     answer:
-      "Yes, Rubik’s cubes will be provided by the Techkshitiz Team for the event."
+      `Yes, Rubik’s cubes will be provided by the ${SITE_INFO.fullTitle} Team for the event.`
   },
   {
     id: "escape-room-esports",
     question: "Escape Room & E-Sports Events – What are the rules?",
     answer:
-      "The Escape Room event is exclusively for GEC Siwan students. E-Sports (BGMI + Free Fire) is open to all. Rulebooks are available on our website at www.techkshitiz.in."
+      `The Escape Room event is exclusively for GEC Siwan students. E-Sports (BGMI + Free Fire) is open to all. Rulebooks are available on our website at ${SITE_INFO.websiteUrl}.`
   },
   {
     id: "registration",

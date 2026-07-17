@@ -11,6 +11,7 @@ import { organizingTeam, clubIncharges, clubHeads } from "@/data/org";
 import { faqs } from "@/data/faq";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { SITE_INFO } from "@/constants/branding";
 
 export default function AboutPage() {
   // Developer data - you can move this to a separate data file if needed
@@ -35,11 +36,12 @@ export default function AboutPage() {
       description:
         "I am a passionate developer skilled in React.js, Next.js, TypeScript, and Node.js, with a strong focus on building scalable web applications and experimenting with AI-driven solutions. I am currently exploring AI agents and generative AI to create innovative and impactful projects.",
       image:
-        "https://res.cloudinary.com/dswkss8nj/image/upload/v1757491754/mdazad_fgzj4h.jpg",
+        "https://media.licdn.com/dms/image/v2/D4D03AQFS76byikAEqA/profile-displayphoto-scale_400_400/B4DZ9xHAfmK0Ak-/0/1784309092016?e=1785974400&v=beta&t=OKG2zgAWE0PUuMbCqXymZvC0lYxMT0EjaX8T0-J8w8I",
       social: {
         github: "https://github.com/themdazad",
         linkedin: "https://linkedin.com/in/themdazad",
         instagram: "https://instagram.com/themdazad",
+        portfolio: "https://themdazad.vercel.app/",
       },
     },
   ];
@@ -106,7 +108,7 @@ export default function AboutPage() {
       {/* What's new */}
       <section className="mt-12">
         <h2 className="heading text-2xl md:text-3xl font-normal text-primary">
-          What's new in 2025
+          What's new in 2026
         </h2>
         <div className="mt-4 grid gap-4 md:grid-cols-3">
           <FeatureCard
@@ -132,23 +134,23 @@ export default function AboutPage() {
           <div className="flex items-center gap-4">
             <img
               src="https://res.cloudinary.com/dmu1qh4dj/image/upload/v1756782359/cropped_circle_image_y3vznc.png"
-              alt="TechKshitiz logo"
+              alt={`${SITE_INFO.eventName} logo`}
               className="h-16 w-16 rounded-full ring-1 ring-border"
             />
             <div className="relative h-16 w-16 grid place-items-center rounded-full bg-gradient-to-br from-primary/20 /20 to-secondary/20 text-sm font-bold text-primary-foreground select-none">
               <img
                 src="https://res.cloudinary.com/dmu1qh4dj/image/upload/v1756812379/png_2_tbzrth.png"
-                alt="TechKshitiz logo"
+                alt={`${SITE_INFO.eventName} logo`}
                 className="h-16 w-16 rounded-full ring-1 ring-border"
               />
             </div>
           </div>
           <div>
             <h3 className="font-semibold text-xl text-foreground">
-              Government Engineering College Siwan
+              {SITE_INFO.collegeName}
             </h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              <span className="text-foreground">Government Engineering College Siwan (GEC Siwan) stands at the forefront of excellence in engineering education and innovation. Our campus nurtures hands-on learning, research-driven projects, and impactful community initiatives. TechKshitiz is proudly organized by the students and mentors of GEC Siwan to celebrate technology, creativity, and collaboration.</span>
+              <span className="text-foreground">{SITE_INFO.collegeName} stands at the forefront of excellence in engineering education and innovation. Our campus nurtures hands-on learning, research-driven projects, and impactful community initiatives. {SITE_INFO.eventName} is proudly organized by the students and mentors of GEC Siwan to celebrate technology, creativity, and collaboration.</span>
             </p>
           </div>
         </div>

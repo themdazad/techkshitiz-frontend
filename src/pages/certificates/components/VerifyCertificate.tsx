@@ -1,5 +1,5 @@
 import { useState } from "react";
-import certificateApi from "../../api/services/certificate.api.ts";
+import certificateApi from "@/api/services/certificate.api.ts";
 
 const VerifyCertificate = () => {
   const [certificateId, setCertificateId] = useState("");
@@ -71,12 +71,7 @@ const VerifyCertificate = () => {
           {loading ? "Verifying..." : "Verify"}
         </button>
       </form>
-      {/* NOTE */}
-      <div>
-        <p className="mt-6 max-w-md text-center text-sm text-gray-500">
-          Note: Available for Techkshitiz'25 and later only.
-        </p>
-      </div>
+     
       {result && (
         <div
           className={`mt-6 font-semibold max-w-md text-center break-words ${

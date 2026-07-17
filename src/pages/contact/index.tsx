@@ -1,10 +1,10 @@
 import { Phone, Mail, MapPin } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { SITE_INFO } from "@/constants/branding";
+
 
 export default function ContactPage() {
-  const address = "Campus of Siwan Engineering College, Mairwa Road, Old Suta Mill Factory, Bhada Khurd, Siwan Pin -841226";
-  const phone = "+917547899822";
-  const email = "gecsiwan.techkshitiz@gmail.com";
+  
+  const {eventName, email, contactPhone: phone, address } = SITE_INFO;
 
   const mapQuery = encodeURIComponent("Siwan Engineering College, Mairwa Road, Bhada Khurd, Siwan 841226");
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
@@ -13,7 +13,7 @@ export default function ContactPage() {
     <div className="container py-12">
       <header>
         <h1 className="heading text-3xl md:text-4xl font-normal text-primary">Contact</h1>
-        <p className="mt-2 max-w-3xl text-foreground">Reach the TechKshitiz team. For queries on events, registration, or venues, use the details below.</p>
+        <p className="mt-2 max-w-3xl text-foreground">Reach the {eventName} team. For queries on events, registration, or venues, use the details below.</p>
       </header>
 
       <section className="mt-8 grid gap-6 md:grid-cols-3">
@@ -31,8 +31,8 @@ export default function ContactPage() {
           <a className="mt-3 inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary via-sky-600 to-primary px-4 py-2 text-white" href={`tel:${phone}`}>Call Now</a>
         </article>
         <article className="rounded-xl border border-white/10 bg-card/60 backdrop-blur p-6">
-          <h2 className="font-semibold flex items-center gap-2"><Mail className="h-4 w-4" /> Email</h2>
-          <p className="mt-2 text-sm text-foreground">Email us on:</p>
+          <h2 className="font-semibold flex items-center gap-2"><Mail className="h-4 w-4" />Email</h2>
+          <p className="mt-2 text-sm text-foreground">{email}</p>
           <a className="mt-3 inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary via-sky-600 to-primary px-4 py-2 text-white text-sm" href={`mailto:${email}`}>Email Now</a>
         </article>
       </section>

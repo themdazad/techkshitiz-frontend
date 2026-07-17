@@ -27,7 +27,7 @@ export interface EventItem {
   coordinators?: { name: string }[];
 }
 
-const DEFAULT_RULEBOOK = "https://drive.google.com";
+const DEFAULT_RULEBOOK = "https://drive.google.com/";
 const DEFAULT_REGISTER = "https://forms.google.com/";
 
 export const events: EventItem[] = [

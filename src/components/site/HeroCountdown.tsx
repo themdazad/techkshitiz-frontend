@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { useCountdown } from "@/hooks/use-countdown";
 import React from "react";
+import { SITE_INFO } from "@/constants/branding";
 
 export function HeroCountdown({ className }: { className?: string }) {
   // Event start date - 22 September 2025, 8:00 AM IST (UTC+5:30)
@@ -29,7 +30,7 @@ export function HeroCountdown({ className }: { className?: string }) {
               className="inline-block h-2 w-2 rounded-full bg-red-500 animate-pulse"
               aria-hidden
             />
-            Thank you for participating in Techkshitiz'25!
+            Thank you for participating in {SITE_INFO.eventName}'{new Date().getFullYear()}!
           </div>
         ) : (
           <div className="w-full flex items-center justify-center gap-2 whitespace-nowrap">
