@@ -1,26 +1,15 @@
 // src/components/site/CommunitySection.tsx
 import { Instagram, Twitter, Youtube, Linkedin } from "lucide-react";
 import { cn } from "@/lib/utils";
+import HeadingText from "@/components/custom-ui/HeadingText";
 
 export function CommunitySection() {
   const ctaText = "Be the part of our community";
 
   return (
-    <section className="container pb-20">
-      <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-primary/10 to-secondary/10 p-8 text-center backdrop-blur">
-        <h2 className="heading font-syne font-bold text-2xl md:text-3xl text-center">
-          <span className="section-letters inline-block will-change-transform">
-            {ctaText.split(" ").map((word, i) => (
-              <span key={i} className="inline-block mr-2">
-                {word.split("").map((ch, j) => (
-                  <span key={j} className={cn("gradient-text hero-letter hero-3d inline-block")}>
-                    {ch}
-                  </span>
-                ))}
-              </span>
-            ))}
-          </span>
-        </h2>
+    <section className="container pb-20 ">
+      <div className="border border-white/10 bg-gradient-to-br from-primary/10 to-secondary/10 p-24 text-center backdrop-blur">
+        <HeadingText style={"text-4xl md:text-6xl"} text={ctaText}/>
 
         <p className="mt-2 text-muted-foreground">Follow for updates, teasers, and behind‑the‑scenes.</p>
         <div className="mt-4 flex justify-center gap-4">

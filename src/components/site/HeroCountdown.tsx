@@ -14,13 +14,13 @@ export function HeroCountdown({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "relative inline-flex w-full max-w-sm rounded-full p-[1px] bg-gradient-to-r from-primary/60 to-secondary/60",
+        "relative inline-flex  rounded-full p-[1px] bg-gradient-to-r from-primary/60 to-secondary/60",
         className,
       )}
     >
       <div
         className={cn(
-          "inline-flex w-full items-center justify-center rounded-full bg-background/70 backdrop-blur px-3 py-1.5 text-sm border border-white/10 gap-2",
+          "inline-flex max-w-max items-center justify-center rounded-full bg-background/70 backdrop-blur px-3 py-1.5 text-sm border border-white/10 gap-2",
         )}
         aria-live="polite"
       >
@@ -30,7 +30,7 @@ export function HeroCountdown({ className }: { className?: string }) {
               className="inline-block h-2 w-2 rounded-full bg-red-500 animate-pulse"
               aria-hidden
             />
-            Thank you for participating in {SITE_INFO.eventName}'{new Date().getFullYear()}!
+            Stay tuned for updates on {SITE_INFO.eventName} {SITE_INFO.editionYear}.
           </div>
         ) : (
           <div className="w-full flex items-center justify-center gap-2 whitespace-nowrap">

@@ -3,18 +3,17 @@ import { Link, NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import gsap from "gsap";
-import ThemeToggle from "@/components/ui/toggle";
+
 import { useCountdown } from "@/hooks/use-countdown";
 
 const navItems = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/events", label: "Events" },
-  // { to: "/schedule", label: "Schedule" },
+  { to: "/schedule", label: "Schedule" },
   { to: "/gallery", label: "Gallery" },
   { to: "/winners", label: "Winners" },
-  { to: "/certificate", label: "Certificate" },
-  { to: "/contact", label: "Contact" },
+  { to: "/certificate", label: "Certificate" }
 ];
 
 export default function Navbar() {
@@ -166,7 +165,6 @@ export default function Navbar() {
             </div>
             
           </div>
-           <ThemeToggle/>
         </div>
 
         <button

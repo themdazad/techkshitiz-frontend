@@ -1,27 +1,11 @@
+/* ==========================================================================
+   1. EXTERNAL IMPORTS & ASSETS
+   ========================================================================== */
+
 /** @import must precede all other statements */
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Gruppo&display=swap");
 
-/* Soft fade at the bottom of hero section to blend with next section */
-.hero-bottom-fade {
-  background: linear-gradient(to bottom, transparent 0%, var(--background) 100%);
-}
-/* Faded grid background for hero section only */
-.grid-bg-fade {
-  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-}
-/* Grid background utility for landing page */
-.grid-bg {
-  background-image:
-    linear-gradient(90deg, var(--grid-line-color) 1px, transparent 1px),
-    linear-gradient(var(--grid-line-color) 1px, transparent 1px);
-  background-size: 40px 40px;
-  mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
-  z-index: -1;
-}
-
-/* Custom Magz font */
+/* --- Brand Typography (Local System Font Faces) --- */
 @font-face {
   font-family: "Magz";
   src: url("/fonts/Magz.ttf") format("truetype");
@@ -29,7 +13,7 @@
   font-style: normal;
   font-display: swap;
 }
-/* Custom FunCity font */
+
 @font-face {
   font-family: "FunCity";
   src: url("/fonts/FunCityLevel2Basic.otf") format("opentype");
@@ -37,6 +21,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "Syne";
   src: url("/fonts/syne/TTF/Syne-Regular.ttf") format("truetype");
@@ -44,6 +29,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "Syne";
   src: url("/fonts/syne/TTF/Syne-Bold.ttf") format("truetype");
@@ -51,6 +37,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "Syne";
   src: url("/fonts/syne/TTF/Syne-Extra.ttf") format("truetype");
@@ -58,6 +45,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "Syne";
   src: url("/fonts/syne/TTF/Syne-Italic.ttf") format("truetype");
@@ -65,6 +53,7 @@
   font-style: italic;
   font-display: swap;
 }
+
 @font-face {
   font-family: "Syne Mono";
   src: url("/fonts/syne/TTF/Syne-Mono.ttf") format("truetype");
@@ -73,21 +62,29 @@
   font-display: swap;
 }
 
+
+/* ==========================================================================
+   2. TAILWIND CORE INJECTIONS
+   ========================================================================== */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+/* ==========================================================================
+   3. DESIGN TOKENS (CSS VARIABLES / HSL PALETTES)
+   ========================================================================== */
 @layer base {
   /**
-   * Tailwind CSS theme
-   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
-   * Maintain HSL formatting to avoid color issues.
-  */
+   * Tailwind CSS UI Variable Mapping
+   * Note: values are raw HSL primitives to enable alpha channels dynamically.
+   */
   :root {
-      --grid-line-color: rgba(0,0,0,0.08);
-    /* Light theme */
-    --background: 0 0% 100%; /* white */
-    --foreground: 222.2 84% 4.9%; /* near-black */
+    --grid-line-color: rgba(0, 0, 0, 0.08);
+    
+    /* --- Light Mode Palette --- */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -95,15 +92,15 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    /* Brand palette */
-    --primary: 199 89% 60%; /* Sky Blue */
-    --primary-foreground: 210 40% 98%; /* white */
+    /* --- Cyber Branding Accents --- */
+    --primary: 199 89% 60%;          /* Sky Blue */
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 150 95% 46%;        /* Neon Green */
+    --secondary-foreground: 222.2 47.4% 11.2%; 
 
-    --secondary: 150 95% 46%; /* Neon Green */
-    --secondary-foreground: 222.2 47.4% 11.2%; /* dark text for legibility on bright green */
-
-    --accent: 199 89% 48%; /* Sky Blue */
-    --accent-foreground: 210 40% 98%; /* white */
+    --accent: 199 89% 48%;
+    --accent-foreground: 210 40% 98%;
 
     --muted: 220 14% 96%;
     --muted-foreground: 222 8% 35%;
@@ -114,10 +111,9 @@
     --border: 220 13% 91%;
     --input: 220 13% 91%;
     --ring: 199 89% 60%;
-
     --radius: 0.75rem;
 
-    /* Sidebar tokens (unused for now but kept consistent) */
+    /* --- Shell Layout Variables (Staged for future construction) --- */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -129,8 +125,9 @@
   }
 
   .dark {
-      --grid-line-color: rgba(255,255,255,0.10);
-    /* Dark theme */
+    --grid-line-color: rgba(255, 255, 255, 0.10);
+    
+    /* --- Dark Mode Surface System --- */
     --background: 222 84% 4%;
     --foreground: 210 40% 98%;
 
@@ -170,287 +167,64 @@
   }
 }
 
+
+/* ==========================================================================
+   4. DOM GLOBAL BASE RESETS
+   ========================================================================== */
 @layer base {
   * {
     @apply border-border;
   }
+  
   html {
     scroll-behavior: smooth;
   }
+  
   body {
     @apply bg-background text-foreground antialiased;
   }
+}
 
-  /* Typography rules */
 
-  /* Only apply custom font to hero title */
+/* ==========================================================================
+   5. TYPOGRAPHY SYSTEM SETUP & UTILITIES
+   ========================================================================== */
+@layer base {
+  /* Scope Magz layout font exclusively to the Hero heading text string */
   #hero-title,
   #hero-title * {
     font-family: "Magz", sans-serif !important;
   }
 
-  /* Use font-sans for all body text by default (Tailwind's base) */
-
-  /* Headings use display font via .heading utility */
-
-  /* Utilities */
   .heading {
-    @apply font-display tracking-normal text-foreground;
+    @apply font-display tracking-normal text-foreground font-bold;
     font-family: ui-sans-serif, system-ui;
   }
 
-  /* FunCity font utility for explicit use only */
   .font-funcity {
     font-family: "FunCity", sans-serif;
   }
-  .gradient-text {
-    background: linear-gradient(
-      120deg,
-      #00ff9d 0%,
-      #00bfff 100%
-    );
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  .animate-gradient {
-    animation: gradient-pan 6s ease-in-out infinite;
-  }
-  @keyframes gradient-pan {
-    to {
-      background-position: 200% 0;
-    }
-  }
+}
 
-  /* Live banner attention */
-  .live-banner {
-    position: relative;
-    overflow: hidden;
-  }
-  .live-banner::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: linear-gradient(
-      120deg,
-      transparent 0%,
-      hsl(var(--ring) / 0.14) 50%,
-      transparent 100%
-    );
-    transform: translateX(-100%);
-    animation: banner-sweep 5.5s ease-in-out infinite;
-  }
-  @keyframes banner-sweep {
-    50% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(100%);
-    }
-  }
-  .live-dot {
-    position: relative;
-    width: 8px;
-    height: 8px;
-    border-radius: 9999px;
-    background: hsl(var(--primary));
-    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.6);
-    animation: live-ping 2s ease-in-out infinite;
-  }
-  @keyframes live-ping {
-    0% {
-      box-shadow: 0 0 0 0 hsl(var(--primary) / 0.45);
-    }
-    70% {
-      box-shadow: 0 0 0 10px hsl(var(--primary) / 0);
-    }
-    100% {
-      box-shadow: 0 0 0 0 hsl(var(--primary) / 0);
-    }
-  }
 
-  /* Animated gradient button wrapper */
-  .btn-gradient {
-    position: relative;
-    display: inline-flex;
-    border-radius: 9999px;
-    padding: 1px;
-    background: linear-gradient(90deg, #0066ff 0%, #00bfff 50%, #00ff9d 100%);
-    background-size: 200% 200%;
-    animation: btn-gradient-shift 6s linear infinite;
-    box-shadow: 0 8px 24px -16px rgba(0, 102, 255, 0.35);
-    transform: translateZ(0);
-  }
-  .btn-gradient:hover {
-    animation-duration: 3s;
-  }
-  .btn-gradient:active {
-    transform: translateY(1px);
-  }
-  .btn-gradient::after {
-    content: "";
-    position: absolute;
-    inset: -2px;
-    border-radius: inherit;
-    background: radial-gradient(
-      180px 40px at var(--mx, 50%) 0%,
-      hsl(var(--primary) / 0.25),
-      transparent 60%
-    );
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    filter: blur(8px);
-    pointer-events: none;
-  }
-  .btn-gradient:hover::after {
-    opacity: 1;
-  }
-  @keyframes btn-gradient-shift {
-    0% {
-      background-position: 0% 50%;
-    }
-    100% {
-      background-position: 200% 50%;
-    }
-  }
-
-  /* Animated button utility for anchors not using Button component */
-  .btn-animated {
-    animation: button-breathe 3.2s ease-in-out infinite;
-  }
-
-  /* Modern card animation */
-  .animate-card {
-    position: relative;
-    overflow: hidden;
-    transition:
-      transform 0.28s ease,
-      box-shadow 0.28s ease;
-    will-change: transform;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-    isolation: isolate;
-  }
-  .animate-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px -12px hsl(var(--ring) / 0.25);
-  }
-  .animate-card::before {
-    content: "";
-    position: absolute;
-    inset: -1px;
-    border-radius: inherit;
-    pointer-events: none;
-    background:
-      radial-gradient(
-        220px 220px at var(--mx, 50%) var(--my, 50%),
-        hsl(var(--primary) / 0.16),
-        transparent 60%
-      ),
-      radial-gradient(
-        600px 300px at 10% -10%,
-        hsl(var(--accent) / 0.1),
-        transparent 70%
-      ),
-      radial-gradient(
-        600px 300px at 110% 110%,
-        hsl(var(--secondary) / 0.1),
-        transparent 70%
-      );
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    mix-blend-mode: screen;
-  }
-  .animate-card:hover::before {
-    opacity: 1;
-  }
-  .animate-card::after {
-    content: "";
-    position: absolute;
-    inset: -1px;
-    border-radius: inherit;
-    pointer-events: none;
-    background: conic-gradient(
-      from 0deg at 50% 50%,
-      hsl(var(--primary) / 0),
-      hsl(var(--primary) / 0.12),
-      hsl(var(--accent) / 0),
-      hsl(var(--secondary) / 0.12),
-      hsl(var(--primary) / 0)
-    );
-    filter: blur(12px);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    mix-blend-mode: screen;
-  }
-  .animate-card:hover::after {
-    opacity: 0.25;
-  }
-
-  /* Marquee animation for winners strip */
-  @keyframes marquee {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
-  }
-  .marquee {
-    animation: marquee 35s linear infinite;
-  }
-  .marquee-fast {
-    animation-duration: 22s;
-  }
-  .marquee:hover {
-    animation-play-state: paused;
-  }
-
+/* ==========================================================================
+   6. APP COMPONENT UTILITIES & VISUAL LAYERS
+   ========================================================================== */
+@layer base {
+  /* --- Interactive Micro-States & Navigation Elements --- */
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+  
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
 
-  /* Hero letters 3D */
-  .hero-letters {
-    transform-style: preserve-3d;
-    perspective: 800px;
-    display: inline-block;
-    overflow: hidden;
-    -webkit-mask-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0) 0%,
-      #000 15%,
-      #000 85%,
-      rgba(0, 0, 0, 0) 100%
-    );
-    mask-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0) 0%,
-      #000 15%,
-      #000 85%,
-      rgba(0, 0, 0, 0) 100%
-    );
-  }
-  .hero-letter {
-    will-change: transform, opacity, filter;
-  }
-  .hero-3d {
-    text-shadow:
-      0 2px 2px rgba(23, 234, 162, 0.18),
-      0 2px 2px rgba(0, 168, 255, 0.25),
-      0 0 2px rgba(167, 60, 255, 0.28);
-  }
-
-  /* Learn more underline animation */
   .learn-more {
     position: relative;
   }
+  
   .learn-more::after {
     content: "";
     position: absolute;
@@ -466,53 +240,266 @@
     transition: transform 0.3s ease;
     opacity: 0.9;
   }
+  
   .group:hover .learn-more::after {
     transform: scaleX(1);
   }
+
+  /* --- Hero Scene Infrastructure & Canvas Scaffolding --- */
+  .live-banner {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .live-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(120deg, transparent 0%, hsl(var(--ring) / 0.14) 50%, transparent 100%);
+    transform: translateX(-100%);
+    animation: banner-sweep 5.5s ease-in-out infinite;
+  }
+
+  .hero-bottom-fade {
+    background: linear-gradient(to bottom, transparent 0%, var(--background) 100%);
+  }
+
+  .grid-bg-fade {
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(90deg, var(--grid-line-color) 1px, transparent 1px),
+      linear-gradient(var(--grid-line-color) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+    z-index: -1;
+  }
+
+  /* --- Futuristic Glow, Button & Data Metrics Display Elements --- */
+  .live-dot {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background: hsl(var(--primary));
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.6);
+    animation: live-ping 2s ease-in-out infinite;
+  }
+
+  .btn-gradient {
+    position: relative;
+    display: inline-flex;
+    border-radius: 9999px;
+    padding: 1px;
+    background: linear-gradient(90deg, #0066ff 0%, #00bfff 50%, #00ff9d 100%);
+    background-size: 200% 200%;
+    animation: btn-gradient-shift 6s linear infinite;
+    box-shadow: 0 8px 24px -16px rgba(0, 102, 255, 0.35);
+    transform: translateZ(0);
+  }
+  
+  .btn-gradient:hover {
+    animation-duration: 3s;
+  }
+  
+  .btn-gradient:active {
+    transform: translateY(1px);
+  }
+  
+  .btn-gradient::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: radial-gradient(180px 40px at var(--mx, 50%) 0%, hsl(var(--primary) / 0.25), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    filter: blur(8px);
+    pointer-events: none;
+  }
+  
+  .btn-gradient:hover::after {
+    opacity: 1;
+  }
+
+  .btn-animated {
+    animation: button-breathe 3.2s ease-in-out infinite;
+  }
+
+  /* --- Interactive Holographic Information Cards --- */
+  .animate-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    isolation: isolate;
+  }
+  
+  .animate-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -12px hsl(var(--ring) / 0.25);
+  }
+  
+  .animate-card::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    pointer-events: none;
+    background:
+      radial-gradient(220px 220px at var(--mx, 50%) var(--my, 50%), hsl(var(--primary) / 0.16), transparent 60%),
+      radial-gradient(600px 300px at 10% -10%, hsl(var(--accent) / 0.1), transparent 70%),
+      radial-gradient(600px 300px at 110% 110%, hsl(var(--secondary) / 0.1), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    mix-blend-mode: screen;
+  }
+  
+  .animate-card:hover::before {
+    opacity: 1;
+  }
+  
+  .animate-card::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    pointer-events: none;
+    background: conic-gradient(from 0deg at 50% 50%, hsl(var(--primary) / 0), hsl(var(--primary) / 0.12), hsl(var(--accent) / 0), hsl(var(--secondary) / 0.12), hsl(var(--primary) / 0));
+    filter: blur(12px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    mix-blend-mode: screen;
+  }
+  
+  .animate-card:hover::after {
+    opacity: 0.25;
+  }
+
+  /* --- Infinite Streaming Content Bands --- */
+  .marquee {
+    animation: marquee 35s linear infinite;
+  }
+  
+  .marquee-fast {
+    animation-duration: 22s;
+  }
+  
+  .marquee:hover {
+    animation-play-state: paused;
+  }
+
+  /* --- Typography Layout Matrices --- */
+  .gradient-text {
+    background: linear-gradient(120deg, #00ff9d 0%, #00bfff 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .animate-gradient {
+    animation: gradient-pan 6s ease-in-out infinite;
+  }
+
+  .hero-letters {
+    transform-style: preserve-3d;
+    perspective: 800px;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000 15%, #000 85%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000 15%, #000 85%, rgba(0, 0, 0, 0) 100%);
+  }
+  
+  .hero-letter {
+    will-change: transform, opacity, filter;
+  }
+  
+  .hero-3d {
+    text-shadow:
+      0 2px 2px rgba(23, 234, 162, 0.18),
+      0 2px 2px rgba(0, 168, 255, 0.25),
+      0 0 2px rgba(60, 122, 255, 0.28);
+  }
+  
+  .new-animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
 }
 
-/* Global Styles */
-.heading{
-  font-weight: bold;
-}
 
-/* Float animation for hero image */
-@keyframes float-slow {
-  0% {
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(5px);
-  }
-}
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
-}
-.new-animate-float {
-  animation: float 4s ease-in-out infinite;
-}
+/* ==========================================================================
+   7. ADVANCED LAYOUT EXPRESSIONS (UTILITIES & SHADOW MODIFIERS)
+   ========================================================================== */
 @layer utilities {
   .animate-float-slow {
     animation: float-slow 9s ease-in-out infinite alternate;
     will-change: transform;
   }
-}
-@media (prefers-reduced-motion: reduce) {
-  .animate-float-slow {
-    animation: none !important;
+
+  .glow-ring::before {
+    content: "";
+    position: absolute;
+    inset: -8%;
+    border-radius: 24px;
+    background: radial-gradient(45% 45% at 50% 50%, hsl(var(--primary) / 0.2), hsl(var(--accent) / 0.12) 40%, transparent 70%);
+    pointer-events: none;
+    animation: glow-ring 6s ease-in-out infinite;
+  }
+  
+  .glow-soft {
+    filter: drop-shadow(0 6px 20px hsl(var(--primary) / 0.18))
+      drop-shadow(0 4px 30px hsl(var(--accent) / 0.14));
   }
 }
 
-/* Glow utilities for hero image */
+
+/* ==========================================================================
+   8. KEYFRAME FRAMEWORKS & ANIMATION MATH
+   ========================================================================== */
+@keyframes gradient-pan {
+  to { background-position: 200% 0; }
+}
+
+@keyframes banner-sweep {
+  50%, 100% { transform: translateX(100%); }
+}
+
+@keyframes live-ping {
+  0% { box-shadow: 0 0 0 0 hsl(var(--primary) / 0.45); }
+  70% { box-shadow: 0 0 0 10px hsl(var(--primary) / 0); }
+  100% { box-shadow: 0 0 0 0 hsl(var(--primary) / 0); }
+}
+
+@keyframes btn-gradient-shift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes float-slow {
+  0% { transform: translateY(-5px); }
+  100% { transform: translateY(5px); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
 @keyframes glow-ring {
-  0%,
-  100% {
+  0%, 100% {
     opacity: 0.45;
     filter: blur(14px);
   }
@@ -521,28 +508,19 @@
     filter: blur(18px);
   }
 }
-@layer utilities {
-  .glow-ring::before {
-    content: "";
-    position: absolute;
-    inset: -8%;
-    border-radius: 24px;
-    background: radial-gradient(
-      45% 45% at 50% 50%,
-      hsl(var(--primary) / 0.2),
-      hsl(var(--accent) / 0.12) 40%,
-      transparent 70%
-    );
-    pointer-events: none;
-    animation: glow-ring 6s ease-in-out infinite;
-  }
-  .glow-soft {
-    filter: drop-shadow(0 6px 20px hsl(var(--primary) / 0.18))
-      drop-shadow(0 4px 30px hsl(var(--accent) / 0.14));
-  }
-}
+
+
+/* ==========================================================================
+   9. ACCESSIBILITY OPERATIONAL EXCEPTIONS (HARDWARE SAFETY SWITCHES)
+   ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
-  .glow-ring::before {
+  .animate-float-slow,
+  .glow-ring::before,
+  .new-animate-float,
+  .marquee,
+  .btn-gradient,
+  .live-banner::after {
     animation: none !important;
+    transition: none !important;
   }
 }

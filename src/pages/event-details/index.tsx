@@ -6,6 +6,8 @@ import {
   Calendar,
   ArrowRight,
 } from "lucide-react";
+import HeadingText from "@/components/custom-ui/HeadingText";
+import CyberFrame from "@/components/custom-ui/CyberFrame";
 
 export default function EventDetail() {
   const { id } = useParams<{ id: string }>();
@@ -14,7 +16,8 @@ export default function EventDetail() {
   if (!ev) {
     return (
       <div className="container py-16">
-        <h1 className="heading text-3xl text-primary">Event not found</h1>
+
+        <HeadingText style={"heading text-3xl text-primary"} text={"Event not found"}/>
         <p className="mt-2 text-muted-foreground">
           We couldn't find this event. Please browse all events.
         </p>
@@ -40,19 +43,16 @@ export default function EventDetail() {
         </Link>
         <span className="mx-1">/</span>
         <span className=" font-normal text-primary">{ev.title}</span>
+        
       </nav>
 
       <header className="mt-3 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div className="flex items-start gap-4">
-          <div
-            className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-primary/10 /10 to-secondary/10 text-2xl"
-            aria-hidden
-          >
-            {ev.emoji}
-          </div>
+        
           <div>
-            <h1 className="heading text-3xl md:text-4xl text-primary">{ev.title}</h1>
-            <p className="mt-1 text-muted-foreground">
+            <h1 className="heading text-3xl md:text-4xl text-primary"></h1>
+             <HeadingText style={"heading text-2xl  md:text-4xl text-primary"} text={ev.title}/>
+            <p className="text-muted-foreground">
               {ev.category} • {ev.duration} • {ev.location}
             </p>
           </div>
@@ -60,31 +60,36 @@ export default function EventDetail() {
         <div className="flex gap-3">
           {/* Rulebook Button */}
           {ev.id === "circuit-designing" ? (
-            <span className="inline-flex items-center gap-2 rounded-lg border border-border bg-muted px-4 py-3 text-sm font-medium backdrop-blur opacity-50 cursor-not-allowed">
+            <CyberFrame variant="modern" className="inline-flex items-center gap-2 border border-border bg-muted px-4 py-3 text-sm font-medium backdrop-blur opacity-50 cursor-not-allowed">
               <Download className="h-4 w-4" />
               Rulebook
-            </span>
+            </CyberFrame>
           ) : (
+            <CyberFrame variant="modern">
             <a
               href={ev.rulebookLink}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-border bg-muted px-4 py-3 text-sm font-medium backdrop-blur transition-all duration-200 hover:bg-muted/70 hover:border-primary"
+              className="inline-flex items-center gap-2 border border-border bg-muted px-4 py-3 text-sm font-medium backdrop-blur transition-all duration-200 hover:bg-muted/70 hover:border-primary"
             >
               <Download className="h-4 w-4" />
               Rulebook
             </a>
+            </CyberFrame>
           )}
 
           {/* Register Button */}
-          <span className="relative overflow-hidden rounded-lg bg-muted px-6 py-3 text-sm font-semibold text-muted-foreground opacity-50 cursor-not-allowed">
+          <CyberFrame variant="modern">
+          <span className="relative overflow-hidden bg-muted px-6 py-3 text-sm font-semibold text-muted-foreground opacity-50 cursor-not-allowed">
             Registration Closed
           </span>
+          </CyberFrame>
         </div>
       </header>
 
       <section className="mt-8 grid gap-6 md:grid-cols-3">
-        <article className="md:col-span-2 rounded-xl border border-border bg-card/60 backdrop-blur p-6 transition-all duration-200 hover:border-primary hover:bg-card/70 animate-card">
+
+        <CyberFrame variant="modern" className="md:col-span-2 p-6 backdrop-blur">
           <h2 className="font-semibold text-foreground">Overview</h2>
           <p className="mt-2 text-foreground">
             {ev.blura}
@@ -137,8 +142,9 @@ export default function EventDetail() {
               </ul>
             </div>
           </div>
-        </article>
-        <article className="rounded-xl border border-border bg-card/60 backdrop-blur p-6 transition-all duration-200 hover:border-primary hover:bg-card/70 animate-card">
+        </CyberFrame>
+
+        <CyberFrame variant="modern" className="backdrop-blur p-6 ">
           <h3 className="font-semibold text-foreground">At a glance</h3>
           <dl className="mt-3 grid grid-cols-1 gap-3 text-sm">
             <div>
@@ -182,7 +188,7 @@ export default function EventDetail() {
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
-        </article>
+        </CyberFrame>
       </section>
 
       <section className="mt-10">

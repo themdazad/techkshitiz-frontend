@@ -1,4 +1,4 @@
-import { organizingTeam } from "@/data/org";
+import { organizingTeam } from "@/data/org-members";
 
 export default function MembersPage() {
   return (

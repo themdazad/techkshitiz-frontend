@@ -5,7 +5,7 @@ export interface ScheduleItem {
   title: string;
   duration: string;
   location: string;
-  coordinators?: { name: string; phone: string; }[];
+  coordinators?: string[];
   note?: string;
 }
 
@@ -16,27 +16,22 @@ export const schedule: Record<DayKey, ScheduleItem[]> = {
       time: "08:00 - 10:00 am",
       duration: "2 hrs",
       location: "Campus",
-      coordinators: [
-        { name: "Sweety", phone: "9304565637" }
-      ]
+      coordinators: [ "Sweety", "Rajnish" ]
     },
     {
       title: "Selfie Point Stand (Craft & Decoration)",
       time: "08:00 - 10:00 am",
       duration: "2 hrs",
       location: "Campus",
-      coordinators: [
-        { name: "Sweety", phone: "9304565637" }
-      ]
+      coordinators: [ "Sweety" ]
+      
     },
     {
       title: "Videography Challenge",
       time: "08:00 - 10:00 am",
       duration: "2 hrs",
       location: "Campus",
-      coordinators: [
-        { name: "Saurabh Mishra", phone: "9973320409" }
-      ]
+      coordinators: ["Saurabh Mishra"]
     },
     {
       title: "Break",
@@ -62,7 +57,7 @@ export const schedule: Record<DayKey, ScheduleItem[]> = {
       duration: "24 hrs",
       location: "Whatsapp Group",
       coordinators: [
-        { name: "Ayushmaan", phone: "8969352535" }
+        "Ayushmaan"
       ]
     },
     {
@@ -71,7 +66,7 @@ export const schedule: Record<DayKey, ScheduleItem[]> = {
       duration: "12 hrs",
       location: "Whatsapp Group",
       coordinators: [
-        { name: "Ayushmaan", phone: "8969352535" }
+        "Ayushmaan"
       ]
     },
     {
@@ -80,7 +75,7 @@ export const schedule: Record<DayKey, ScheduleItem[]> = {
       duration: "45 mins",
       location: "Computer Lab",
       coordinators: [
-        { name: "Priyanshu", phone: "6207795220" }
+        "Priyanshu"
       ]
     },
     {
@@ -89,7 +84,7 @@ export const schedule: Record<DayKey, ScheduleItem[]> = {
       duration: "1 hr",
       location: "Central Computer Lab + Advance Computer Lab",
       coordinators: [
-        { name: "Adeel", phone: "8873469135" }
+        "Adeel"
       ]
     },
     {
@@ -98,7 +93,7 @@ export const schedule: Record<DayKey, ScheduleItem[]> = {
       duration: "1 hr",
       location: "TBA",
       coordinators: [
-        { name: "Harish", phone: "8406086269" }
+        "Harish"
       ]
     },
     {
@@ -107,7 +102,7 @@ export const schedule: Record<DayKey, ScheduleItem[]> = {
       duration: "1.5 hrs",
       location: "Ground/Auditorium",
       coordinators: [
-        { name: "Rajeev", phone: "9304477244" }
+        "Rajeev"
       ]
     }
   ],
@@ -118,7 +113,7 @@ export const schedule: Record<DayKey, ScheduleItem[]> = {
       duration: "3 hrs",
       location: "TBA",
       coordinators: [
-        { name: "Mohit", phone: "7645924757" }
+        "Mohit"
       ]
     },
     {
@@ -127,7 +122,7 @@ export const schedule: Record<DayKey, ScheduleItem[]> = {
       duration: "1 hr",
       location: "Badminton Court",
       coordinators: [
-        { name: "Rajnish", phone: "9142778727" }
+        "Rajnish"
       ]
     },
     {
@@ -136,7 +131,7 @@ export const schedule: Record<DayKey, ScheduleItem[]> = {
       duration: "2 hrs",
       location: "TBA",
       coordinators: [
-        { name: "Ashish", phone: "7700812113" }
+        "Ashish"
       ]
     },
     {
@@ -145,7 +140,7 @@ export const schedule: Record<DayKey, ScheduleItem[]> = {
       duration: "1 hr",
       location: "TBA",
       coordinators: [
-        { name: "Rajan", phone: "8228051357" }
+        "Rajan"
       ]
     },
     {
@@ -160,7 +155,7 @@ export const schedule: Record<DayKey, ScheduleItem[]> = {
       duration: "3 hrs",
       location: "TBA",
       coordinators: [
-        { name: "Aman Kumar", phone: "9065261735" }
+        "Aman Kumar"
       ]
     },
     {
@@ -169,7 +164,7 @@ export const schedule: Record<DayKey, ScheduleItem[]> = {
       duration: "3 hrs",
       location: "Auditorium",
       coordinators: [
-        { name: "Ayushmaan", phone: "8969352535" }
+        "Ayushmaan"
       ]
     },
     {
@@ -178,7 +173,7 @@ export const schedule: Record<DayKey, ScheduleItem[]> = {
       duration: "2 hrs",
       location: "Ground/Auditorium",
       coordinators: [
-        { name: "Rajeev", phone: "9304477244" }
+        "Rajeev"
       ]
     }
   ],
@@ -189,7 +184,7 @@ export const schedule: Record<DayKey, ScheduleItem[]> = {
       duration: "1 hr",
       location: "Computer Lab",
       coordinators: [
-        { name: "Deepak", phone: "9507438716" }
+        "Deepak"
       ]
     },
     {
@@ -198,7 +193,7 @@ export const schedule: Record<DayKey, ScheduleItem[]> = {
       duration: "1 hr",
       location: "TBA",
       coordinators: [
-        { name: "Aman Anurag", phone: "9117242725" }
+        "Aman Anurag"
       ]
     },
     {
@@ -207,7 +202,7 @@ export const schedule: Record<DayKey, ScheduleItem[]> = {
       duration: "1 hr",
       location: "TBA",
       coordinators: [
-        { name: "Ayushmaan", phone: "8969352535" }
+        "Ayushmaan"
       ]
     },
     {

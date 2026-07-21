@@ -8,22 +8,22 @@ export const organizingTeam: TeamMember[] = [
   { name: "Rohan", role: "Tech", branch: "EE", photo: "https://res.cloudinary.com/dmu1qh4dj/image/upload/v1756736721/samples/smile.jpg" },
   { name: "Isha", role: "Content", branch: "IT", photo: "https://res.cloudinary.com/dmu1qh4dj/image/upload/v1756736721/samples/smile.jpg" },
 ];
-export type clubIncharge = { name: string;branch: string; photo: string };
-export const clubIncharges : clubIncharge[]=[
+export type ClubIncharge = { name: string;branch: string; photo: string };
+export const clubIncharges : ClubIncharge[]=[
   { name: "Dr. Preetam Amrit", branch: "Computer Science & Engineering", photo: "https://res.cloudinary.com/dcsqprug1/image/upload/v1757235672/preetamamrit_laga0j.jpg" },
   { name: "Prof. Sundram Mishra", branch: "Electrical Engineering", photo: "https://res.cloudinary.com/dcsqprug1/image/upload/v1757235668/SundramMishra_f9ld3e.jpg" },
   { name: "Dr. Yamika Patel", branch: "Mechanical Engineering", photo: "https://res.cloudinary.com/dcsqprug1/image/upload/v1757235664/yamikapatel_apkdex.jpg" },
   { name: "Prof. Mohit Prakash", branch: "Electrical Engineering", photo: "https://res.cloudinary.com/dcsqprug1/image/upload/v1757235663/mohitprakash_gzkvp9.jpg" },
 ]
 
-export type clubHead = { name: string; branch: string; photo: string; description: string; batch: string; linkedin?: string; github?: string; instagram?: string; portfolio?: string };
-export const clubHeads : clubHead[]=[
+export type ClubHead = { name: string; branch: string; photo: string; description: string; batch: string; linkedin?: string; github?: string; instagram?: string; portfolio?: string };
+export const clubHeads : ClubHead[]=[
   {
     name: "Md. Azad",
     branch: "Electrical Engineering",
     photo: "https://res.cloudinary.com/dswkss8nj/image/upload/v1757491754/mdazad_fgzj4h.jpg",
-    description: "Club Management & Planning Head",
-    batch: "2023-26(LE)",
+    description: "Club Management & Planning",
+    batch: "2022-26",
     linkedin: "https://www.linkedin.com/in/themdazad/",
     github: "https://github.com/themdazad",
     instagram: "https://instagram.com/the_mdazad",
@@ -33,8 +33,8 @@ export const clubHeads : clubHead[]=[
     name: "Abhinav Kumar",
     branch: "Electrical Engineering",
     photo: "https://res.cloudinary.com/dswkss8nj/image/upload/v1757491743/abhinav_uhlkyy.jpg",
-    description: "Event Management & Planning",
-    batch: "2023-26(LE)",
+    description: "Event Management",
+    batch: "2022-26",
     linkedin: "https://www.linkedin.com/in/abhinav-kumar-gecsiwan/",
     github: "",
     instagram: "",

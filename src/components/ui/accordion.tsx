@@ -12,16 +12,15 @@ const AccordionItem = React.forwardRef<
   <AccordionPrimitive.Item
     ref={ref}
     className={cn(
-      // pehle tha: "mb-4"
-      "group border border-[#1E293B] rounded-lg bg-[#0B1120] transition-colors duration-300 last:mb-0", 
-      "hover:bg-[#020817] hover:border-[#334155]",
-      "data-[state=open]:border-[#475569] data-[state=open]:bg-[#0F172A]",
+      // Ultra-dark background with subtle borders that adapt to the cyan theme
+      "group border border-border/40 bg-card/40 backdrop-blur-sm text-card-foreground transition-all duration-200 last:mb-0 mb-4", 
+      "hover:bg-card/80 hover:border-primary/30 hover:shadow-[0_0_15px_rgba(6,182,212,0.05)]",
+      "data-[state=open]:border-primary/50 data-[state=open]:bg-card/90 data-[state=open]:shadow-[0_0_20px_rgba(6,182,212,0.1)]",
       className
     )}
     {...props}
   />
 ));
-
 AccordionItem.displayName = "AccordionItem";
 
 const AccordionTrigger = React.forwardRef<
@@ -32,21 +31,22 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        // removed focus rings
-        "flex flex-1 items-center justify-between p-6 text-left text-white transition-colors duration-300 rounded-lg",
-        "group-data-[state=open]:text-white group-data-[state=open]:pb-5",
+        "flex flex-1 items-center justify-between p-6 text-left text-muted-foreground transition-colors duration-200 select-none",
+        "hover:text-foreground",
+        "group-data-[state=open]:text-foreground group-data-[state=open]:pb-4",
         "[&[data-state=open]>svg]:rotate-180",
         className
       )}
       {...props}
     >
-      <div className="flex items-center gap-3">
-        <div className="p-2 rounded-full bg-[#1E293B] group-data-[state=open]:bg-[#334155] transition-colors duration-300">
-          <HelpCircle className="h-4 w-4 text-gray-300 group-data-[state=open]:text-white" />
+      <div className="flex items-center gap-4">
+        {/* Icon wrapper glowing with primary cyan accents when active */}
+        <div className="p-2 rounded-lg bg-muted border border-border/40 group-data-[state=open]:bg-primary/10 group-data-[state=open]:border-primary/30 transition-all duration-200">
+          <HelpCircle className="h-4 w-4 text-muted-foreground group-data-[state=open]:text-primary transition-colors" />
         </div>
-        <span className="text-base leading-relaxed">{children}</span>
+        <span className="text-base font-medium tracking-wide leading-relaxed">{children}</span>
       </div>
-      <ChevronDown className="h-5 w-5 shrink-0 text-gray-300 transition-transform duration-300 group-data-[state=open]:text-white" />
+      <ChevronDown className="h-5 w-5 shrink-0 text-muted-foreground transition-all duration-200 group-data-[state=open]:text-primary" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));
@@ -58,14 +58,13 @@ const AccordionContent = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    // removed animate-accordion-down/up → now just height transition
-    className="overflow-hidden transition-[max-height,opacity] duration-300 data-[state=open]:opacity-100 data-[state=closed]:opacity-0"
+    className="overflow-hidden transition-[max-height,opacity] duration-200 data-[state=open]:opacity-100 data-[state=closed]:opacity-0"
     {...props}
   >
     <div
       className={cn(
-        "px-6 pb-6 text-sm leading-relaxed text-white border-t border-[#1E293B] pt-4 bg-[#0B1120] rounded-b-lg transition-colors duration-300",
-        "group-data-[state=open]:bg-[#0F172A]",
+        "px-6 pb-6 text-sm leading-relaxed text-muted-foreground/90 border-t border-border/20 pt-4  transition-colors duration-200",
+        "group-data-[state=open]:text-foreground/80",
         className
       )}
     >

@@ -40,7 +40,7 @@ export const highlights: HighlightItem[] = [
 
 export const features: FeatureCardItem[] = [
   {
-    title: "All-New TechKshitiz Experience",
+    title: "All-New Experience",
     description: `${SITE_INFO.fullTitle} brings a fresh format, new themes, and more interactive sessions to ignite your creativity and skills.`,
     icon: CalendarDays,
     colorClass: "text-primary",
@@ -54,7 +54,7 @@ export const features: FeatureCardItem[] = [
     gradientClass: "from-accent/10 to-transparent",
   },
   {
-    title: "Stronger Community & Networking",
+    title: "Stronger Networking",
     description: "Connect with mentors, industry leaders, and fellow innovators through exclusive networking and team-building activities.",
     icon: Handshake,
     colorClass: "text-secondary",
@@ -63,16 +63,10 @@ export const features: FeatureCardItem[] = [
 ];
 
 export const statsData = (primaryColorClass: string): StatItem[] => [
-  {
-    label: "Projects Completed",
-    value: "48+",
-    icon: React.createElement("svg", { className: `h-7 w-7 ${primaryColorClass}`, fill: "none", stroke: "currentColor", strokeWidth: 2, viewBox: "0 0 24 24" }, 
-      React.createElement("path", { d: "M2 17l10 5 10-5M2 12l10 5 10-5M2 7l10 5 10-5" })
-    ),
-  },
+ 
   {
     label: "Total Participants",
-    value: "850+",
+    value: "1400+",
     icon: React.createElement("svg", { className: `h-7 w-7 ${primaryColorClass}`, fill: "none", stroke: "currentColor", strokeWidth: 2, viewBox: "0 0 24 24" }, 
       React.createElement("path", { d: "M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" }),
       React.createElement("circle", { cx: "9", cy: "7", r: "4" }),
@@ -87,6 +81,13 @@ export const statsData = (primaryColorClass: string): StatItem[] => [
       React.createElement("path", { d: "M17 18a5 5 0 0 0-10 0" }),
       React.createElement("circle", { cx: "12", cy: "8", r: "7" }),
       React.createElement("polyline", { points: "8 14 12 10 16 14" })
+    ),
+  },
+   {
+    label: "Projects Completed",
+    value: "48+",
+    icon: React.createElement("svg", { className: `h-7 w-7 ${primaryColorClass}`, fill: "none", stroke: "currentColor", strokeWidth: 2, viewBox: "0 0 24 24" }, 
+      React.createElement("path", { d: "M2 17l10 5 10-5M2 12l10 5 10-5M2 7l10 5 10-5" })
     ),
   },
   {

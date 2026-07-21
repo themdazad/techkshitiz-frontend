@@ -1,185 +1,396 @@
-import { useMemo } from "react";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import HeadingText from "@/components/custom-ui/HeadingText";
+import Tag from "@/components/custom-ui/Tag";
 import { Button } from "@/components/ui/button";
-import { winnersMarquee } from "@/data/winners";
 
-// Winners per event (use TBA means To be announced)
-interface EventWinnersRow { rank: "Gold" | "Silver" | "Bronze"; team: string; members: string; title: string }
-interface EventWinners { event: string; id: string; rows: EventWinnersRow[] }
+// Interfaces
+interface EventWinnersRow {
+  rank: "Gold" | "Silver" | "Bronze" | string;
+  team: string;
+  members: string;
+  college: string;
+}
+
+interface EventWinners {
+  event: string;
+  id: string;
+  rows: EventWinnersRow[];
+}
 
 const winnersByEvent: EventWinners[] = [
-  { event: "Hackathon", id: "hackathon", rows: [
-    { rank: "Gold" as const, team: "CyberNova", members: "Shubham Kumar Gupta, Nidhi Nupur, Pranav Pratyush, Ashish Kumar", title: "GEC Gopalganj" },
-    { rank: "Silver" as const, team: "The Falcon", members: "Sonu Kumar, Raj Deepak, Priyanshu Ranjan, Ankit Kumar", title: "GEC Siwan" },
-    { rank: "Bronze" as const, team: "TechVerse", members: "Khushi Kumari, Aditya Kumar, Lav Kumar, Munna Kumar", title: "GEC Siwan" },
-  ]},
-  { event: "Debugger", id: "debugger", rows: [
-    { rank: "Gold" as const, team: "Ankit Kumar Singh", members: "Individual Winner", title: "GEC Gopalganj" },
-  ]},
-  { event: "Web Designing", id: "technical-quiz", rows: [
-    { rank: "Gold" as const, team: "LEGENDA TEAM", members: "Amar Kishor Kumar, Vishnu Kumar, Shivam Kumar", title: "GP Barauni" },
-    { rank: "Silver" as const, team: "VIDHAYAK JI", members: "Sujeet Kumar, Vicky Kumar, Utsav Kumar", title: "GP Siwan" },
-  ]},
-  { event: "Typing Master", id: "iot-fusion", rows: [
-    { rank: "Gold" as const, team: "Ankit Kumar", members: "Individual Winner", title: "GEC Siwan" },
-  ]},
-  { event: "IoT Fusion", id: "e-sports", rows: [
-    { rank: "Gold" as const, team: "Tech Titans", members: "Ritik Kumar Sharma, Anupriya, Amrita Kumari, Priyanshu Kumar", title: "GEC Siwan" },
-    { rank: "Silver" as const, team: "Backend Battalion", members: "Ashish Kumar, Prashant Gaurav, Golu Kumar, Rahul Kumar Mishra", title: "GEC Siwan" },
-    { rank: "Bronze" as const, team: "The Falcon", members: "Sonu Kumar, Raj Deepak, Priyanshu Ranjan, Ankit Kumar", title: "GEC Siwan" },
-  ]},
-  { event: "RC Car Racing", id: "chess-online", rows: [
-    { rank: "Gold" as const, team: "Red Bull Racing", members: "Ritik Kumar Sharma, Anupriya", title: "GEC Siwan" },
-    { rank: "Silver" as const, team: "ELX", members: "Shubham Tiwari, Namit Kumar", title: "GP Siwan" },
-  ]},
-  { event: "E-sports (BGMI)", id: "graphic-design", rows: [
-    { rank: "Gold" as const, team: "ZARRY", members: "Zaif Ahmad, Arshad Ali, Anup Kumar Ram, Mahfooz Alam", title: "SCEM Siwan" },
-    { rank: "Silver" as const, team: "CxG ESPORT", members: "Bittu Kumar Yadav, Hariom Yadav, Akash Yadav, Gulshan Kumar", title: "GP Siwan" },
-    { rank: "Bronze" as const, team: "LIZARD", members: "Atul Ranjan, Santosh Kumar, Rohit Raj, Raushan Kumar Verma", title: "GP Siwan" },
-  ]},
- { 
-  event: "E-sports (FREEFIRE)", 
-  id: "graphic-design", 
-  rows: [
-    { 
-      rank: "Gold" as const, 
-      team: "TEAM IGRIS", 
-      members: "Sundram Kumar, Anmol Kumar, Anish Kumar, Rajnish Kumar", 
-      title: "GP Siwan " 
-    },
-    { 
-      rank: "Silver" as const, 
-      team: "TEAM PREDATORS", 
-      members: "Aditya Kumar, Dipankar Sah, Md Sahil Aslam, Dip Raj", 
-      title: "GP Siwan" 
-    },
-    { 
-      rank: "Bronze" as const, 
-      team: "Phanthon", 
-      members: "Prince Kumar, Shivam Kumar, Abhisek Kumar, Pawan Kumar", 
-      title: "GP Siwan " 
-    },
-  ]
-},
-
-  { event: "Bridge Designing", id: "circuit-design", rows: [
-    { rank: "Gold" as const, team: "Buidico Designer", members: "Gautam Kumar, Anish Kumar, Suman Kumar, Navneet Kumar", title: "GEC Siwan" },
-    { rank: "Silver" as const, team: "BEAM DREAMERS", members: "Suhani Mishra, Anupriya, Sagar Raj, Mukund Singh", title: "GEC Siwan" },
-    { rank: "Bronze" as const, team: "LOAD CELL", members: "Aman Raj, Satya Prakash Yadav, Sonu Kumar Sah, Sachin Kumar", title: "GEC Siwan" },
-  ]},
-  { event: "AutoCAD Designing", id: "bridge-design", rows: [
-    { rank: "Gold" as const, team: "Kunal Kumar", members: "Individual Winner", title: "GEC Siwan" },
-    { rank: "Silver" as const, team: "Aditya Kumar Sah", members: "Individual Winner", title: "GEC Siwan" },
-  ]},
-  { event: "Puzzle Escape Room", id: "puzzle-escape-room", rows: [
-    { rank: "Gold" as const, team: "The Solvers", members: "Aditya Kumar Gupta, Aditya Kumar Sah, Ankit Kumar Mahto, Amandeepa Kumari", title: "GEC Siwan" },
-  ]},
-  { event: "Technical Quiz", id: "crafting-stalls", rows: [
-    { rank: "Gold" as const, team: "Tejaswi Raj", members: "Individual Winner", title: "GEC Siwan" },
-    { rank: "Silver" as const, team: "Sajid Ahmad", members: "Individual Winner", title: "GEC Gopalganj" },
-    { rank: "Bronze" as const, team: "Ashish Kumar", members: "Individual Winner", title: "GEC Gopalganj" },
-  ]},
-  { event: "Rubix Cube Challange", id: "rangoli-event", rows: [
-    { rank: "Gold" as const, team: "Subham Tiwari", members: "Individual Winner", title: "GP Siwan" },
-    { rank: "Silver" as const, team: "Himanshu Kumar", members: "Individual Winner", title: "GP Barauni" },
-  ]},
-  { event: "Videography Competition", id: "tech-flash", rows: [
-    { rank: "Gold" as const, team: "ZEW ESCAPE", members: "Md Zeeshon Alam, Aditya Sharma", title: "GEC Siwan" },
-    { rank: "Silver" as const, team: "APERTURE ADDICTS", members: "Golu Kumar, Ashish Kumar", title: "GEC Siwan" },
-  ]},
-  { event: "Graphic Designing", id: "extempore", rows: [
-    { rank: "Gold" as const, team: "Nidhi Nupur", members: "Individual Winner", title: "GEC Gopalganj - CSE (IoT & CS)" },
-    { rank: "Silver" as const, team: "Md Tabish", members: "Individual Winner", title: "SCEM Siwan" },
-  ]},
-  { event: "Crafting & Decoration Stalls", id: "rubix-cube", rows: [
-    { rank: "Gold" as const, team: "Power Star", members: "Nirbhay Singh, Ankit Anand, Abhimanu Kumar, Abhishek Kumar Paswan, Akash Kumar Singh", title: "GEC Siwan" },
-    { rank: "Silver" as const, team: "Fab Four", members: "Nikhil Kumar, Abhinaw Kumar Singh, Ragni Kumari, Nisha Kumari", title: "SCEM Siwan" },
-  ]},
-   { event: "Technical Rangoli", id: "rangoli-event-2", rows: [
-    { rank: "Gold" as const, team: "SPECTRUM SQUAD", members: "Aakanksha Singh, Anand Raj, Vivek Kumar", title: "GEC Siwan" },
-    { rank: "Silver" as const, team: "MADE IN INDIA", members: "Abha Kumari, Kumkum Kumari, Anshu Kumari", title: "GEC Siwan" },
-  ]},
-  
-].filter(event => event.rows.some(row => row.team !== "-"));
+  {
+    event: "Hackathon",
+    id: "hackathon",
+    rows: [
+      { rank: "Gold", team: "CyberNova", members: "Shubham Kumar Gupta, Nidhi Nupur, Pranav Pratyush, Ashish Kumar", college: "GEC Gopalganj" },
+      { rank: "Silver", team: "The Falcon", members: "Sonu Kumar, Raj Deepak, Priyanshu Ranjan, Ankit Kumar", college: "GEC Siwan" },
+      { rank: "Bronze", team: "TechVerse", members: "Khushi Kumari, Aditya Kumar, Lav Kumar, Munna Kumar", college: "GEC Siwan" },
+    ],
+  },
+  {
+    event: "Debugger",
+    id: "debugger",
+    rows: [
+      { rank: "Gold", team: "Ankit Kumar Singh", members: "Individual Winner", college: "GEC Gopalganj" },
+    ],
+  },
+  {
+    event: "Web Designing",
+    id: "web-designing",
+    rows: [
+      { rank: "Gold", team: "LEGENDA TEAM", members: "Amar Kishor Kumar, Vishnu Kumar, Shivam Kumar", college: "GP Barauni" },
+      { rank: "Silver", team: "VIDHAYAK JI", members: "Sujeet Kumar, Vicky Kumar, Utsav Kumar", college: "GP Siwan" },
+    ],
+  },
+  {
+    event: "Typing Master",
+    id: "typing-master",
+    rows: [
+      { rank: "Gold", team: "Ankit Kumar", members: "Individual Winner", college: "GEC Siwan" },
+    ],
+  },
+  {
+    event: "IoT Fusion",
+    id: "iot-fusion",
+    rows: [
+      { rank: "Gold", team: "Tech Titans", members: "Ritik Kumar Sharma, Anupriya, Amrita Kumari, Priyanshu Kumar", college: "GEC Siwan" },
+      { rank: "Silver", team: "Backend Battalion", members: "Ashish Kumar, Prashant Gaurav, Golu Kumar, Rahul Kumar Mishra", college: "GEC Siwan" },
+      { rank: "Bronze", team: "The Falcon", members: "Sonu Kumar, Raj Deepak, Priyanshu Ranjan, Ankit Kumar", college: "GEC Siwan" },
+    ],
+  },
+  {
+    event: "RC Car Racing",
+    id: "rc-car-racing",
+    rows: [
+      { rank: "Gold", team: "Red Bull Racing", members: "Ritik Kumar Sharma, Anupriya", college: "GEC Siwan" },
+      { rank: "Silver", team: "ELX", members: "Shubham Tiwari, Namit Kumar", college: "GP Siwan" },
+    ],
+  },
+  {
+    event: "E-sports (BGMI)",
+    id: "esports-bgmi",
+    rows: [
+      { rank: "Gold", team: "ZARRY", members: "Zaif Ahmad, Arshad Ali, Anup Kumar Ram, Mahfooz Alam", college: "SCEM Siwan" },
+      { rank: "Silver", team: "CxG ESPORT", members: "Bittu Kumar Yadav, Hariom Yadav, Akash Yadav, Gulshan Kumar", college: "GP Siwan" },
+      { rank: "Bronze", team: "LIZARD", members: "Atul Ranjan, Santosh Kumar, Rohit Raj, Raushan Kumar Verma", college: "GP Siwan" },
+    ],
+  },
+  {
+    event: "E-sports (FREEFIRE)",
+    id: "esports-freefire",
+    rows: [
+      { rank: "Gold", team: "TEAM IGRIS", members: "Sundram Kumar, Anmol Kumar, Anish Kumar, Rajnish Kumar", college: "GP Siwan" },
+      { rank: "Silver", team: "TEAM PREDATORS", members: "Aditya Kumar, Dipankar Sah, Md Sahil Aslam, Dip Raj", college: "GP Siwan" },
+      { rank: "Bronze", team: "Phanthon", members: "Prince Kumar, Shivam Kumar, Abhisek Kumar, Pawan Kumar", college: "GP Siwan" },
+    ],
+  },
+  {
+    event: "Bridge Designing",
+    id: "bridge-designing",
+    rows: [
+      { rank: "Gold", team: "Buidico Designer", members: "Gautam Kumar, Anish Kumar, Suman Kumar, Navneet Kumar", college: "GEC Siwan" },
+      { rank: "Silver", team: "BEAM DREAMERS", members: "Suhani Mishra, Anupriya, Sagar Raj, Mukund Singh", college: "GEC Siwan" },
+      { rank: "Bronze", team: "LOAD CELL", members: "Aman Raj, Satya Prakash Yadav, Sonu Kumar Sah, Sachin Kumar", college: "GEC Siwan" },
+    ],
+  },
+  {
+    event: "AutoCAD Designing",
+    id: "autocad-designing",
+    rows: [
+      { rank: "Gold", team: "Kunal Kumar", members: "Individual Winner", college: "GEC Siwan" },
+      { rank: "Silver", team: "Aditya Kumar Sah", members: "Individual Winner", college: "GEC Siwan" },
+    ],
+  },
+  {
+    event: "Puzzle Escape Room",
+    id: "puzzle-escape-room",
+    rows: [
+      { rank: "Gold", team: "The Solvers", members: "Aditya Kumar Gupta, Aditya Kumar Sah, Ankit Kumar Mahto, Amandeepa Kumari", college: "GEC Siwan" },
+    ],
+  },
+  {
+    event: "Technical Quiz",
+    id: "technical-quiz",
+    rows: [
+      { rank: "Gold", team: "Tejaswi Raj", members: "Individual Winner", college: "GEC Siwan" },
+      { rank: "Silver", team: "Sajid Ahmad", members: "Individual Winner", college: "GEC Gopalganj" },
+      { rank: "Bronze", team: "Ashish Kumar", members: "Individual Winner", college: "GEC Gopalganj" },
+    ],
+  },
+  {
+    event: "Rubix Cube Challenge",
+    id: "rubix-cube",
+    rows: [
+      { rank: "Gold", team: "Subham Tiwari", members: "Individual Winner", college: "GP Siwan" },
+      { rank: "Silver", team: "Himanshu Kumar", members: "Individual Winner", college: "GP Barauni" },
+    ],
+  },
+  {
+    event: "Videography Competition",
+    id: "videography",
+    rows: [
+      { rank: "Gold", team: "ZEW ESCAPE", members: "Md Zeeshon Alam, Aditya Sharma", college: "GEC Siwan" },
+      { rank: "Silver", team: "APERTURE ADDICTS", members: "Golu Kumar, Ashish Kumar", college: "GEC Siwan" },
+    ],
+  },
+  {
+    event: "Graphic Designing",
+    id: "graphic-designing",
+    rows: [
+      { rank: "Gold", team: "Nidhi Nupur", members: "Individual Winner", college: "GEC Gopalganj - CSE (IoT & CS)" },
+      { rank: "Silver", team: "Md Tabish", members: "Individual Winner", college: "SCEM Siwan" },
+    ],
+  },
+  {
+    event: "Crafting & Decoration Stalls",
+    id: "crafting-decoration",
+    rows: [
+      { rank: "Gold", team: "Power Star", members: "Nirbhay Singh, Ankit Anand, Abhimanu Kumar, Abhishek Kumar Paswan, Akash Kumar Singh", college: "GEC Siwan" },
+      { rank: "Silver", team: "Fab Four", members: "Nikhil Kumar, Abhinaw Kumar Singh, Ragni Kumari, Nisha Kumari", college: "SCEM Siwan" },
+    ],
+  },
+  {
+    event: "Technical Rangoli",
+    id: "technical-rangoli",
+    rows: [
+      { rank: "Gold", team: "SPECTRUM SQUAD", members: "Aakanksha Singh, Anand Raj, Vivek Kumar", college: "GEC Siwan" },
+      { rank: "Silver", team: "MADE IN INDIA", members: "Abha Kumari, Kumkum Kumari, Anshu Kumari", college: "GEC Siwan" },
+    ],
+  },
+].filter((event) => event.rows.some((row) => row.team !== "-"));
 
 export default function WinnersPage() {
-  const looped = useMemo(() => winnersMarquee.concat(winnersMarquee), []);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      ".winner-header",
+      { opacity: 0, y: -20 },
+      { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
+    );
+
+    gsap.fromTo(
+      ".event-card",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.08,
+        duration: 0.5,
+        ease: "power2.out",
+      }
+    );
+  }, { scope: containerRef });
 
   return (
-    <div className="container py-12">
-      <header className="mb-6">
-        <h1 className="heading text-3xl md:text-4xl font-normal text-primary">Winners</h1>
-        <p className="mt-2 max-w-2xl text-foreground">Spotlight on champions across events in techkshitiz 2025</p>
-      </header>
-      {/* Winners Marquee */}
-      {/* Auto-scrolling strip */}
-      {/* <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-card/60 backdrop-blur p-6 animate-card">
-        <div className="marquee w-max flex items-stretch gap-8">
-          {looped.map((w, i) => (
-            <figure key={`${w.name}-${i}`} className="shrink-0 w-40 text-center">
-              <div className="mx-auto h-24 w-24 overflow-hidden rounded-full ring-2 ring-primary/20">
-                <img src={w.photo} alt={w.name} className="h-full w-full object-cover" loading="lazy" />
-              </div>
-              <figcaption className="mt-2 text-sm font-medium text-gray-200 whitespace-nowrap">{w.name}</figcaption>
-              <p className="text-xs text-muted-foreground">{w.event}</p>
-            </figure>
-          ))}
-        </div>
-      </div> */}
+    <div ref={containerRef} className="container max-w-7xl mx-auto px-4 py-12 relative min-h-screen">
+      
+      {/* Background SVG Grid Pattern */}
+      <div className="absolute inset-0 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none -z-10" />
 
-      {/* Winners tables per event */}
-      <section className="mt-10 space-y-10">
+      {/* Header */}
+      <header className="winner-header flex flex-col items-center text-center mb-16 space-y-4">
+        <Tag text="// TECHKSHITIZ_2025_VICTORS" />
+        <HeadingText
+          style="text-4xl md:text-6xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-200 to-blue-500"
+          text="Hall of Champions"
+        />
+        <p className="max-w-2xl text-sm md:text-base text-muted-foreground leading-relaxed">
+          Celebrating the innovators, competitors, and visionaries who conquered TechKshitiz 2025.
+        </p>
+      </header>
+
+      {/* Events List */}
+      <section className="space-y-12">
         {winnersByEvent.map((ev) => (
-          <article key={ev.id} id={ev.id} className="scroll-mt-24">
-            <div className="flex items-center justify-between">
-              <h2 className="heading text-xl md:text-2xl">{ev.event}</h2>
+          <CyberFrame key={ev.id} id={ev.id} className="event-card">
+            
+            {/* Header with SVG Trophy */}
+            <div className="flex flex-wrap items-center justify-between border-b border-white/10 pb-4 mb-6 gap-3">
+              <div className="flex items-center gap-3">
+                <CyberTrophyIcon className="w-8 h-8 text-amber-400 drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]" />
+                <h2 className="text-xl md:text-2xl font-bold tracking-wide text-foreground">
+                  {ev.event}
+                </h2>
+              </div>
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => shareOrCopy(`#${ev.id}`)}
-                aria-label={`Share winners for ${ev.event}`}
+                className="rounded-full border-sky-500/30 hover:border-sky-400 bg-sky-500/10 hover:bg-sky-500/20 text-xs gap-2 transition-all text-sky-200"
               >
+                <ShareSvg className="w-3.5 h-3.5" />
                 Share
               </Button>
             </div>
-            <div className="mt-4 overflow-x-auto no-scrollbar rounded-xl border border-white/10 bg-card/60 backdrop-blur animate-card">
-              <table className="w-full text-sm">
-                <thead className="bg-white/5 text-gray-300">
-                  <tr>
-                    <th className="px-4 py-3 text-left text-foreground font-semibold">Rank</th>
-                    <th className="px-4 py-3 text-left text-foreground font-semibold">Team/Participant</th>
-                    <th className="px-4 py-3 text-left text-foreground font-semibold">Members</th>
-                    <th className="px-4 py-3 text-left text-foreground font-semibold">Project / Title</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {ev.rows.map((r, i) => (
-                    <tr key={i} className="border-t">
-                      <td className="px-4 py-3 whitespace-nowrap">
-                        <RankBadge rank={r.rank} />
-                      </td>
-                      <td className="px-4 py-3 font-medium">{r.team}</td>
-                      <td className="px-4 py-3 text-foreground">{r.members}</td>
-                      <td className="px-4 py-3">{r.title}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+
+            {/* Podium Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {ev.rows.map((r, i) => (
+                <WinnerPodiumCard key={i} row={r} />
+              ))}
             </div>
-          </article>
+
+          </CyberFrame>
         ))}
       </section>
     </div>
   );
 }
 
-function RankBadge({ rank }: { rank: "Gold" | "Silver" | "Bronze" }) {
-  const styles: Record<typeof rank, string> = {
-    Gold: "bg-gradient-to-r from-yellow-300 to-amber-300 text-amber-900",
-    Silver: "bg-gradient-to-r from-slate-200 to-slate-300 text-slate-800",
-    Bronze: "bg-gradient-to-r from-orange-200 to-amber-200 text-amber-900",
-  } as const;
+{/* Cyber Container Frame with SVG Corner Brackets */}
+function CyberFrame({ children, className = "", id }: { children: React.ReactNode; className?: string; id?: string }) {
   return (
-    <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-semibold ${styles[rank]}`}>{rank}</span>
+    <article
+      id={id}
+      className={`relative scroll-mt-28 rounded-2xl border border-sky-500/20 bg-slate-950/70 backdrop-blur-xl p-6 md:p-8 shadow-[0_0_30px_rgba(0,0,0,0.8)] transition-all hover:border-sky-500/50 ${className}`}
+    >
+      {/* Corner SVG Accents */}
+      <CornerAccentSvg className="absolute top-1 left-1 w-4 h-4 text-sky-400" />
+      <CornerAccentSvg className="absolute top-1 right-1 w-4 h-4 text-sky-400 rotate-90" />
+      <CornerAccentSvg className="absolute bottom-1 right-1 w-4 h-4 text-sky-400 rotate-180" />
+      <CornerAccentSvg className="absolute bottom-1 left-1 w-4 h-4 text-sky-400 -rotate-90" />
+      
+      {children}
+    </article>
+  );
+}
+
+{/* Winner Podium Card */}
+function WinnerPodiumCard({ row }: { row: EventWinnersRow }) {
+  const isGold = row.rank === "Gold";
+  const isSilver = row.rank === "Silver";
+
+  const rankConfig = {
+    Gold: {
+      border: "border-amber-500/40 bg-gradient-to-b from-amber-500/10 via-transparent to-transparent",
+      badgeBg: "bg-amber-500/20 text-amber-300 border-amber-500/40",
+      glow: "shadow-[0_0_20px_-5px_rgba(245,158,11,0.3)]",
+    },
+    Silver: {
+      border: "border-slate-300/40 bg-gradient-to-b from-slate-300/10 via-transparent to-transparent",
+      badgeBg: "bg-slate-300/20 text-slate-200 border-slate-300/40",
+      glow: "shadow-[0_0_20px_-5px_rgba(203,213,225,0.2)]",
+    },
+    Bronze: {
+      border: "border-amber-700/40 bg-gradient-to-b from-amber-700/10 via-transparent to-transparent",
+      badgeBg: "bg-amber-700/20 text-amber-400 border-amber-700/40",
+      glow: "",
+    },
+  }[row.rank as "Gold" | "Silver" | "Bronze"] || {
+    border: "border-sky-500/30 bg-sky-500/5",
+    badgeBg: "bg-sky-500/20 text-sky-300 border-sky-500/40",
+    glow: "",
+  };
+
+  return (
+    <div
+      className={`relative overflow-hidden flex flex-col justify-between rounded-xl border ${rankConfig.border} ${rankConfig.glow} p-5 transition-all duration-300 hover:-translate-y-1 hover:border-sky-400/60`}
+    >
+      <div>
+        {/* Top Badge */}
+        <div className="flex items-center justify-between mb-4 gap-2">
+          <span
+            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full border text-xs font-mono font-bold tracking-wider uppercase ${rankConfig.badgeBg}`}
+          >
+            <MedalSvg rank={row.rank} className="w-4 h-4 shrink-0" />
+            {row.rank} Position
+          </span>
+          <span className="text-[11px] font-mono text-sky-300/70 truncate">{row.college}</span>
+        </div>
+
+        {/* Team Name */}
+        <h3 className="text-lg font-bold text-slate-100 mb-2 tracking-wide">
+          {row.team}
+        </h3>
+
+        {/* Members */}
+        <p className="text-xs text-slate-400 leading-relaxed flex items-start gap-2">
+          <UserSvg className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
+          <span>{row.members}</span>
+        </p>
+      </div>
+
+      {/* Footer SVG Accent */}
+      <div className="mt-5 pt-3 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-slate-500">
+        <span className="flex items-center gap-1">
+          <VerifiedCheckSvg className="w-3.5 h-3.5 text-sky-400" />
+          OFFICIAL VICTOR
+        </span>
+        <TechCircuitSvg className="w-8 h-3 text-sky-500/30" />
+      </div>
+    </div>
+  );
+}
+
+// Custom SVGs (High Quality Cyberpunk Styling)
+
+function CyberTrophyIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} stroke="currentColor" strokeWidth="1.5">
+      <path d="M8 21h8m-4-4v4M6 3h12v5a6 6 0 01-12 0V3z" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M6 5H4a2 2 0 00-2 2v1a4 4 0 004 4h2M18 5h2a2 2 0 012 2v1a4 4 0 01-4 4h-2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
+function MedalSvg({ rank, className = "" }: { rank: string; className?: string }) {
+  const color = rank === "Gold" ? "#f59e0b" : rank === "Silver" ? "#cbd5e1" : "#d97706";
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className}>
+      <circle cx="12" cy="14" r="6" stroke={color} strokeWidth="2" fill={`${color}22`} />
+      <path d="M8.5 2L12 9L15.5 2" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function UserSvg({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} stroke="currentColor" strokeWidth="1.8">
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" strokeLinecap="round" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function CornerAccentSvg({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 10 10" fill="none" className={className}>
+      <path d="M0 0H10V2H2V10H0V0Z" fill="currentColor" />
+    </svg>
+  );
+}
+
+function VerifiedCheckSvg({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className}>
+      <path d="M12 2L15 4L19 4L20 8L23 11L21 15L22 19L18 20L15 23L12 21L9 23L6 20L2 19L3 15L1 11L4 8L5 4L9 4L12 2Z" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M9 12L11 14L15 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function TechCircuitSvg({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 50 20" fill="none" className={className}>
+      <path d="M0 10H15L20 5H35L40 10H50" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="20" cy="5" r="2" fill="currentColor" />
+      <circle cx="35" cy="5" r="2" fill="currentColor" />
+    </svg>
+  );
+}
+
+function ShareSvg({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} stroke="currentColor" strokeWidth="2">
+      <circle cx="18" cy="5" r="3" />
+      <circle cx="6" cy="12" r="3" />
+      <circle cx="18" cy="19" r="3" />
+      <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" />
+    </svg>
   );
 }
 
@@ -192,5 +403,5 @@ async function shareOrCopy(hash: string) {
     } catch {}
   }
   await navigator.clipboard.writeText(url);
-  alert("Link copied to clipboard");
+  alert("Winner link copied to clipboard!");
 }

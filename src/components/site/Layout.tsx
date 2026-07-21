@@ -12,14 +12,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     onScroll();
     window.addEventListener("scroll", onScroll);
 
-    // Theme: set according to system preference
-    const setThemeFromSystem = () => {
-      const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      document.documentElement.classList.toggle('dark', isDark);
-    };
-    setThemeFromSystem();
-    const mql = window.matchMedia('(prefers-color-scheme: dark)');
-    mql.addEventListener('change', setThemeFromSystem);
+ // Theme: set according to system preference
+const setThemeFromSystem = () => {
+  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  document.documentElement.classList.toggle('dark', isDark);
+};
+setThemeFromSystem();
+const mql = window.matchMedia('(prefers-color-scheme: dark)');
+// Force dark mode
+document.documentElement.classList.add('dark');
 
     // Smooth anchor links (native)
     const onDocClick = (e: MouseEvent) => {

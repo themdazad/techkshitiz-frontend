@@ -15,7 +15,7 @@ export const useCertificate = () => {
             if(result.error){
                 throw new Error(result.error.message || 'Error verifying certificate');
             }
-            setLoading(false);w
+            setLoading(false);
             return result.data;
         }catch(error){
             setError(error);

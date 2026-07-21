@@ -6,22 +6,7 @@ import { SOCIAL_LINKS } from "@/constants/navigation";
 export default function Footer() {
   return (
     <footer className="relative border-t border-white/10 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 overflow-hidden">
-      {/* Subtle background gradient and pattern */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 opacity-90"
-        style={{
-          background:
-            'radial-gradient(ellipse 80% 60% at 50% 100%, hsl(var(--primary)/0.08), transparent 80%),\n' +
-            'linear-gradient(90deg, var(--grid-line-color) 1px, transparent 1px),\n' +
-            'linear-gradient(var(--grid-line-color) 1px, transparent 1px)',
-          backgroundSize: '100% 100%, 40px 40px, 40px 40px',
-          backgroundPosition: 'center bottom, center, center',
-          maskImage: 'linear-gradient(to top, black 80%, transparent 100%)',
-          WebkitMaskImage: 'linear-gradient(to top, black 80%, transparent 100%)',
-          filter: 'blur(8px)',
-        }}
-      />
+     
       <div className="container py-10 grid gap-8 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-2">
