@@ -245,7 +245,7 @@ function CyberFrame({ children, className = "", id }: { children: React.ReactNod
   return (
     <article
       id={id}
-      className={`relative scroll-mt-28 rounded-2xl border border-sky-500/20 bg-slate-950/70 backdrop-blur-xl p-6 md:p-8 shadow-[0_0_30px_rgba(0,0,0,0.8)] transition-all hover:border-sky-500/50 ${className}`}
+      className={`relative scroll-mt-28 border border-sky-500/20 bg-slate-950/70 backdrop-blur-xl p-6 md:p-8 shadow-[0_0_30px_rgba(0,0,0,0.8)] transition-all hover:border-sky-500/50 ${className}`}
     >
       {/* Corner SVG Accents */}
       <CornerAccentSvg className="absolute top-1 left-1 w-4 h-4 text-sky-400" />
@@ -287,7 +287,7 @@ function WinnerPodiumCard({ row }: { row: EventWinnersRow }) {
 
   return (
     <div
-      className={`relative overflow-hidden flex flex-col justify-between rounded-xl border ${rankConfig.border} ${rankConfig.glow} p-5 transition-all duration-300 hover:-translate-y-1 hover:border-sky-400/60`}
+      className={`relative overflow-hidden flex flex-col justify-between border ${rankConfig.border} ${rankConfig.glow} p-5 transition-all duration-300 hover:-translate-y-1 hover:border-sky-400/60`}
     >
       <div>
         {/* Top Badge */}
@@ -298,7 +298,7 @@ function WinnerPodiumCard({ row }: { row: EventWinnersRow }) {
             <MedalSvg rank={row.rank} className="w-4 h-4 shrink-0" />
             {row.rank} Position
           </span>
-          <span className="text-[11px] font-mono text-sky-300/70 truncate">{row.college}</span>
+          <span className="text-[11px] font-mono text-sky-300/70 truncate"> <VerifiedCheckSvg className="w-3.5 h-3.5 text-sky-400" /></span>
         </div>
 
         {/* Team Name */}
@@ -314,10 +314,9 @@ function WinnerPodiumCard({ row }: { row: EventWinnersRow }) {
       </div>
 
       {/* Footer SVG Accent */}
-      <div className="mt-5 pt-3 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-slate-500">
+      <div className="mt-5 pt-3 border-t border-white/10 flex items-center justify-between text-sm font-mono text-slate-500">
         <span className="flex items-center gap-1">
-          <VerifiedCheckSvg className="w-3.5 h-3.5 text-sky-400" />
-          OFFICIAL VICTOR
+         {row.college}
         </span>
         <TechCircuitSvg className="w-8 h-3 text-sky-500/30" />
       </div>

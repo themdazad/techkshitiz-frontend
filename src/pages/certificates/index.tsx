@@ -54,7 +54,7 @@ const CertificatesPage = () => {
             onClick={() => setActiveTab("verify")}
             className={`relative flex items-center gap-2 px-6 py-2.5 font-mono text-xs md:text-sm font-semibold tracking-wide transition-all duration-300 ${
               activeTab === "verify"
-                ? "bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-[0_0_15px_rgba(56,189,248,0.4)]"
+                ? "bg-gradient-to-r from-cyan-400 to-sky-400 text-white shadow-[0_0_15px_rgba(56,189,248,0.4)]"
                 : "text-slate-400 hover:text-slate-200 hover:bg-white/5"
             }`}
           >
@@ -67,7 +67,7 @@ const CertificatesPage = () => {
             onClick={() => setActiveTab("participants")}
             className={`relative flex items-center gap-2 px-6 py-2.5 font-mono text-xs md:text-sm font-semibold tracking-wide transition-all duration-300 ${
               activeTab === "participants"
-                ? "bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-[0_0_15px_rgba(56,189,248,0.4)]"
+                ? "bg-gradient-to-r from-cyan-500 to-cyan-600 text-white shadow-[0_0_15px_rgba(56,189,248,0.4)]"
                 : "text-slate-400 hover:text-slate-200 hover:bg-white/5"
             }`}
           >

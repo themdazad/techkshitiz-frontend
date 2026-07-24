@@ -26,7 +26,7 @@ const ParticipantsCertificate = () => {
         
         {/* Input Wrapper - Sharp Cyber Box */}
         <div className="relative group">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-sky-500 to-blue-600 opacity-20 group-hover:opacity-60 transition duration-300 blur-sm" />
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-sky-500 to-sky-600 opacity-20 group-hover:opacity-60 transition duration-300 blur-sm" />
           
           <div className="relative flex items-center bg-slate-900/90 border border-sky-500/30 overflow-hidden focus-within:border-sky-400 transition-all">
             <div className="pl-4 text-sky-400/70">
@@ -48,7 +48,7 @@ const ParticipantsCertificate = () => {
         <button
           type="submit"
           disabled={loading}
-          className="relative w-full overflow-hidden bg-gradient-to-r from-sky-500 via-blue-600 to-cyan-500 p-[1px] font-mono text-xs font-bold uppercase tracking-wider text-white shadow-[0_0_20px_rgba(56,189,248,0.2)] hover:shadow-[0_0_25px_rgba(56,189,248,0.4)] active:scale-[0.99] transition-all disabled:opacity-60"
+          className="relative w-full overflow-hidden bg-gradient-to-r from-sky-500 via-sky-600 to-cyan-500 p-[1px] font-mono text-xs font-bold uppercase tracking-wider text-white shadow-[0_0_20px_rgba(56,189,248,0.2)] hover:shadow-[0_0_25px_rgba(56,189,248,0.4)] active:scale-[0.99] transition-all disabled:opacity-60"
         >
           <div className="flex items-center justify-center gap-2 bg-slate-950 hover:bg-transparent px-6 py-3.5 transition-all">
             {loading ? (
