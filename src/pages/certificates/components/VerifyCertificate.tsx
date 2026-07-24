@@ -47,12 +47,6 @@ const VerifyCertificate = () => {
   return (
     <div className="py-6 flex flex-col items-center justify-center w-full max-w-lg mx-auto">
       
-      {/* Status Badge - Sharp Cyber Box */}
-      <div className="flex items-center gap-2 mb-6 px-3 py-1 border border-green-500/30 bg-green-500/10 text-sky-300 text-xs font-mono">
-        <span className="w-2 h-2 rounded-full text-green-200 bg-green-400 animate-pulse" />
-        AUTHENTICATION TERMINAL
-      </div>
-
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -71,7 +65,7 @@ const VerifyCertificate = () => {
             
             <input
               type="text"
-              placeholder="Enter Certificate ID (e.g., GECSTKHKTHN00)"
+              placeholder="Enter Certificate ID"
               className="w-full bg-transparent px-3 py-3.5 text-sm font-mono text-slate-100 placeholder:text-slate-500 focus:outline-none uppercase"
               value={certificateId}
               onChange={(e) => setCertificateId(e.target.value)}
